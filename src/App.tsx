@@ -1,12 +1,14 @@
-import { useState } from 'react';
-
+/* eslint-disable react/react-in-jsx-scope */
 import './App.css';
 
 function App() {
   return (
-    <p className="read-the-docs">
-      Click on the Vite and React logos to learn more
-    </p>
+    <>
+      <h1 className="app_title">Olá Mundo</h1>
+      <p>
+        Texto longo apresentando qualquer coisa
+      </p>
+    </>
   );
 }
 

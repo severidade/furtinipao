@@ -13,7 +13,7 @@ function App() {
       </div>
       <h1 className="app_title">Olá Mundo</h1>
       <p>
-        Texto longo apresentando qualquer coisa deploy
+        Texto longo apresentando qualquer coisa
       </p>
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

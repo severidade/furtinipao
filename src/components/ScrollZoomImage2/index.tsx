@@ -10,19 +10,23 @@ function ScrollZoomImage2() {
   // Atualiza a altura da janela e a posição do elemento quando o componente é montado
   useEffect(() => {
     const handleResize = () => {
-      setWindowHeight(window.innerHeight); // Altura da janela
+      setWindowHeight(document.documentElement.clientHeight); // Usar o clientHeight
       const element = document.getElementById('scroll-zoom-image');
       if (element) {
         const rect = element.getBoundingClientRect();
-        setElementTop(rect.top); // Posição do topo do elemento em relação à janela
+        setElementTop(rect.top); // Posição do topo do elemento
       }
     };
 
     // Adiciona o evento de resize
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleResize); // Recalcular na rolagem também
     handleResize(); // Chama a função logo que o componente é montado
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleResize);
+    };
   }, []);
 
   const { scrollY } = useScroll();

@@ -12,12 +12,7 @@
   --color-medium-gray: #4B4B4B;
   --color-hard-gray: #353535;
   
-  --default-radius: 0.5rem;
-  --default-gap: 2rem;
-
-  --sidebar-width-mobile: 80vw;
-  --sidebar-width-desktop: 20vw;
-  --video-width-mobile: 90vw;
+  background-color: var(--);;
   --video-width-desktop: 55vw;
 
   width: 100vw;

@@ -1,10 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
 import ScrollZoomImage from './components/ScrollZoomImage/index.tsx';
+import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 
 function App() {
   return (
     <>
+      <WhatsAppReserve />
       <div className="image-container-single">
         <ScrollZoomImage />
       </div>

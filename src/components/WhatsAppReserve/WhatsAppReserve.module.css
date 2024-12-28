@@ -1,0 +1,14 @@
+.WhatsAppReserve_fixed {
+  position: fixed;
+  z-index: 4;
+  bottom: 4rem;
+  right: 4rem;
+  width: 6rem;
+  height: 6rem;
+  overflow: hidden;
+  text-indent: -1000%;
+  border-radius: 100%;
+  background: #58724F url('./assets/whatsapp_icon.svg') no-repeat center center;
+  background-size: 60%;
+  cursor: pointer
+}

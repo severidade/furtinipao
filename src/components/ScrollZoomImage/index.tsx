@@ -46,7 +46,7 @@ export default function ScrollZoomImage() {
       style={{
         scale,
         width: '100%',
-        height: '100vh',
+        height: '70vh',
         objectFit: 'cover',
         objectPosition: 'center',
       }}

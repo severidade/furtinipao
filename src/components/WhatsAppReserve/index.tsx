@@ -3,7 +3,7 @@ import styles from './WhatsAppReserve.module.css';
 
 export default function WhatsAppReserve() {
   const phoneNumber = '5531992456878';
-  const message = 'Olá! Gostaria de fazer uma reserva';
+  const message = 'Olá! Gostaria de fazer uma reserva.';
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

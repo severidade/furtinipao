@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { motion, useSpring, useScroll } from 'motion/react';
 
-export default function ScrollLinked() {
+export default function ScrollIndicator() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

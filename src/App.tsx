@@ -1,15 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
-import ScrollLinked from './components/Scroll-linked/index.tsx';
-// import ScrollZoomImage from './components/ScrollZoomImage/index.tsx';
-import ScrollZoomImage2 from './components/ScrollZoomImage2/index.tsx';
+import ScrollZoomImage from './components/ScrollZoomImage/index.tsx';
 
 function App() {
   return (
     <>
-      <ScrollLinked />
       <div className="image-container-single">
-        <ScrollZoomImage2 />
+        <ScrollZoomImage />
       </div>
       <h1 className="app_title">Olá Mundo</h1>
       <p>

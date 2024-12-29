@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Halogen';
+  src: url('../fonts/halogen/Halogen-Thin.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenThinOblique';
+  src: url('../fonts/halogen/Halogen-ThinOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-ThinOblique.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenRegularOblique';
+  src: url('../fonts/halogen/Halogen-RegularOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-RegularOblique.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halogen';
+  src: url('../fonts/halogen/Halogen-Medium.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halogen';
+  src: url('../fonts/halogen/Halogen-Regular.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenMediumOblique';
+  src: url('../fonts/halogen/Halogen-MediumOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-MediumOblique.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halogen';
+  src: url('../fonts/halogen/Halogen-Light.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenLightOblique';
+  src: url('../fonts/halogen/Halogen-LightOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-LightOblique.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenHairline';
+  src: url('../fonts/halogen/Halogen-Hairline.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Hairline.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenHairlineOblique';
+  src: url('../fonts/halogen/Halogen-HairlineOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-HairlineOblique.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenBoldOblique';
+  src: url('../fonts/halogen/Halogen-BoldOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-BoldOblique.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halogen';
+  src: url('../fonts/halogen/Halogen-Black.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HalogenBlackOblique';
+  src: url('../fonts/halogen/Halogen-BlackOblique.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-BlackOblique.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halogen';
+  src: url('../fonts/halogen/Halogen-Bold.woff2') format('woff2'),
+       url('../fonts/halogen/Halogen-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

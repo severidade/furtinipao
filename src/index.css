@@ -40,8 +40,9 @@ body::-webkit-scrollbar {
 }
 
 .app_title {
-  font-family: var(--font-title-primary);
-  font-size: 11vw;
+  /* font-family: var(--font-title-primary); */
+  font-family: 'Halogen';
+  font-size: 2,6rem;
   color: var(--color-dark);
   text-align: center;
   line-height: 1;
@@ -52,6 +53,13 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: flex-end;
   display: flex;
+}
+
+.app_title_subtitle{
+  font-family: 'MacklinText';
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 p { font-size: 1.6rem;}

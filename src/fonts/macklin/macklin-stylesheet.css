@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-Regular.woff2') format('woff2'),
+        url('MacklinText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-MediumItalic.woff2') format('woff2'),
+        url('MacklinText-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-Medium.woff2') format('woff2'),
+        url('MacklinText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-LightItalic.woff2') format('woff2'),
+        url('MacklinText-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-Italic.woff2') format('woff2'),
+        url('MacklinText-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-Light.woff2') format('woff2'),
+        url('MacklinText-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-BoldItalic.woff2') format('woff2'),
+        url('MacklinText-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Macklin Text';
+    src: url('MacklinText-Bold.woff2') format('woff2'),
+        url('MacklinText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

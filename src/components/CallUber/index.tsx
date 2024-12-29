@@ -18,9 +18,8 @@ export default function CallUber() {
     // Tenta abrir o app primeiro
     window.location.href = appDeepLink;
 
-    // Se não abrir o app, tenta abrir o link da web
     setTimeout(() => {
-      window.open(deepLinking, '_blank');
+      window.location.assign(deepLinking);
     }, 500);
   };
 

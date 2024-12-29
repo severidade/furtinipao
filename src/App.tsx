@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
+import CallUber from './components/CallUber/index.tsx';
 import ScrollZoomImage from './components/ScrollZoomImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 
@@ -14,6 +15,7 @@ function App() {
       <p>
         Texto longo apresentando qualquer coisa
       </p>
+      <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

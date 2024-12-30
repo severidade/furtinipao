@@ -28,24 +28,7 @@
   background-size: contain;
 }
 
-
-
-
-
-
 .tijolo {
   height: 50vh;
 }
 
-.WhatsAppReserve_fixed {
-  position: fixed;
-  z-index: 4;
-  bottom: 4rem;
-  right: 4rem;
-  width: 6rem;
-  height: 6rem;
-  overflow: hidden;
-  text-indent: -1000%;
-  border-radius: 100%;
-  background-color: #58724F;
-}

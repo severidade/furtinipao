@@ -36,7 +36,7 @@ export default function HeroImage() {
   const scale = useTransform(
     scrollY,
     [elementTop - windowHeight, elementTop + windowHeight],
-    [3, 1],
+    [3, 1.1],
   );
 
   return (

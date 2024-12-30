@@ -8,7 +8,6 @@
   padding: 3rem 4rem;
   position: relative;
   background: #F9F3EA url('../../assets/texture.png') repeat center;
-  /* background: #F9F3EA url('../../assets/texture.png') repeat center; */
 }
 
 .hero_welcome::before {
@@ -19,7 +18,7 @@
   width: 100%;
   height: 350px;
   z-index: 1;
-  background: url(../../assets/texture_areia_original.svg) no-repeat center;
+  background: url(../../assets/texture_new.svg) no-repeat center;
   transform: translateY(-55%);
 } 
 
@@ -27,7 +26,8 @@
   /* font-family: var(--font-title-primary); */
   font-family: 'Halogen';
   font-size: 3rem;
-  color: #707070;
+  color: var(--brown-darker);
+  /* color: #707070; */
   line-height: 1.2;
   width: 100%;
   flex-grow: 0.5;

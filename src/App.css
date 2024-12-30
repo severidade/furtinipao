@@ -8,7 +8,7 @@
   height: var(--heder-height);
   position: fixed;
   z-index: 3;
-  background-color: var(--brown-darker);
+  background-color: var(--nav);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   height: 44px;
   overflow: hidden;
   text-indent: -1000%;
-  background: url('./assets/furtini-logo.svg') no-repeat center;
+  background: url('./assets/furtini-logo2.svg') no-repeat center;
   background-size: contain;
 }
 

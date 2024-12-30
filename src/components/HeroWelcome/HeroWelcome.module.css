@@ -1,0 +1,29 @@
+.hero_welcome {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 3rem 4rem;
+  background: #F9F3EA url('../assets/texture.png') repeat center center;
+}
+
+.hero_welcome_title{
+  /* font-family: var(--font-title-primary); */
+  font-family: 'Halogen';
+  font-size: 3rem;
+  color: #707070;
+  line-height: 1.2;
+  width: 100%;
+  flex-grow: 0.5;
+  font-weight: 100;
+}
+
+.hero_welcome_subtitle{
+  font-family: 'MacklinText';
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #707070;
+}

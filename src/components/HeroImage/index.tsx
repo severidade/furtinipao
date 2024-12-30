@@ -1,9 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import styles from './HeroImage.module.css';
 import fundoImage from '../../assets/cafe.jpg';
 
-export default function ScrollZoomImage() {
+export default function HeroImage() {
   const [windowHeight, setWindowHeight] = useState(0);
   const [elementTop, setElementTop] = useState(0);
 
@@ -39,17 +40,19 @@ export default function ScrollZoomImage() {
   );
 
   return (
-    <motion.img
-      id="scroll-zoom-image"
-      src={fundoImage}
-      alt="imagem de destaque na home"
-      style={{
-        scale,
-        width: '100%',
-        height: '70vh',
-        objectFit: 'cover',
-        objectPosition: 'center',
-      }}
-    />
+    <div className={styles.hero_image}>
+      <motion.img
+        id="scroll-zoom-image"
+        src={fundoImage}
+        alt="imagem de destaque na home"
+        style={{
+          scale,
+          width: '100%',
+          height: '70vh',
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
+    </div>
   );
 }

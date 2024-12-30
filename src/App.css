@@ -3,11 +3,35 @@
   background: var(--color-title-primary);
 }
 
-.image-container-single {
+.container_header{
   width: 100%;
-  height: 100%;
+  height: var(--heder-height);
+  position: fixed;
+  z-index: 3;
+  background-color: var(--terracota-darker);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.nav_frutini{
+  display: none;
+}
+
+.logo_frutini{
+  width: 174px;
+  height: 44px;
+  overflow: hidden;
+  text-indent: -1000%;
+  background: url('./assets/furtini-logo.svg') no-repeat center;
+  background-size: contain;
+}
+
+
+
+
+
 
 .tijolo {
   height: 50vh;

@@ -44,10 +44,9 @@ body::-webkit-scrollbar {
   font-family: 'Halogen';
   font-size: 2.6rem;
   color: #707070;
-  text-align: center;
   line-height: 1.2;
   margin-bottom: 20px;
-  padding: 20px 50px 0 50px;
+  /* padding: 20px 50px 0 50px; */
   width: 100%;
   flex-grow: 0.5;
   justify-content: center;
@@ -61,7 +60,17 @@ body::-webkit-scrollbar {
   font-weight: bold;
   font-style: italic;
   color: #707070;
-  
+}
+
+.hero_fase {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 3rem 4rem;
+  background: #F9F3EA url('./assets/texture.png') repeat center center;
 }
 
 p { font-size: 1.6rem;}

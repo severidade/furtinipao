@@ -7,6 +7,7 @@ import HeroImage from './components/HeroImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
 import Heder from './components/Heder/index.tsx';
+import HighlightGallery from './components/HighlightGallery/index.tsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <HeroImage />
         <HeroWelcome />
       </div>
+      <HighlightGallery />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

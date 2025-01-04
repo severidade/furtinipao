@@ -6,21 +6,13 @@ import CallUber from './components/CallUber/index.tsx';
 import HeroImage from './components/HeroImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
+import Heder from './components/Heder/index.tsx';
 
 function App() {
   return (
     <>
       <WhatsAppReserve />
-      <div className="container_header">
-        <h1 className="logo_frutini">Frutini padaria e confeitaria</h1>
-        <nav className="nav_frutini">
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </nav>
-      </div>
+      <Heder />
       <div className="container-hero">
         <HeroImage />
         <HeroWelcome />

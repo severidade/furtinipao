@@ -1,5 +1,5 @@
 .hero_image {
-  padding-top: var(--heder-height);
+  /* padding-top: var(--heder-height); */
   width: 100%;
   height: 100%;
   overflow: hidden;

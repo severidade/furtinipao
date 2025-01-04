@@ -1,6 +1,7 @@
 .container_highlight {
-  background-color: violet;
+  /* background-color: violet; */
   /* min-height: 16rem; */
+  padding-left: 10px;
   overflow: hidden;
 }
 

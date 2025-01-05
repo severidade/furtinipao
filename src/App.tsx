@@ -9,6 +9,8 @@ import HeroWelcome from './components/HeroWelcome/index.tsx';
 import Heder from './components/Heder/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
 
+import highlightItems from './data/HighlightGalleryData.tsx';
+
 function App() {
   return (
     <>
@@ -18,7 +20,7 @@ function App() {
         <HeroImage />
         <HeroWelcome />
       </div>
-      <HighlightGallery />
+      <HighlightGallery highlightItems={highlightItems} />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

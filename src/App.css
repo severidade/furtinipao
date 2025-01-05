@@ -1,5 +1,7 @@
 .container-hero {
   padding-top: calc(var(--heder-height) / 2);
+  position: relative;
+  z-index: 2;
 }
 
 .tijolo {

@@ -19,11 +19,6 @@ const SneakerList: HighlightGalleryType[] = [
     image: foto02,
   },
   {
-    id: 2,
-    altText: 'Cesta de pães artesanais com molhos variados',
-    image: foto03,
-  },
-  {
     id: 3,
     altText: 'Cesta de pães artesanais com molhos variados',
     image: foto03,

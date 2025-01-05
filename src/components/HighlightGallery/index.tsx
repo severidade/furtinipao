@@ -8,20 +8,11 @@ export default function HighlightGallery() {
   const settings = {
     dots: true,
     infinite: false,
-    speed: 500,
-    slidesToShow: 1.5, // Exibe 1 e meio slide em telas pequenas
-    slidesToScroll: 1,
+    speed: 300,
+    slidesToShow: 2.5, // Exibe 1 e meio slide em telas pequenas
+    slidesToScroll: 2,
     arrows: true,
     centerMode: false,
-    responsive: [
-      {
-        breakpoint: 768, // Ajustes para telas maiores que 768px
-        settings: {
-          slidesToShow: 2.5, // Exibe 2 e meio slides para telas médias
-          slidesToScroll: 1,
-        },
-      },
-    ],
   };
 
   return (

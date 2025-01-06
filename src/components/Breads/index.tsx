@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
+import BreadOrderButton from '../BreadOrderButton/index.tsx';
 import styles from './Breads.module.css';
 
 export default function Breads() {
@@ -19,6 +20,7 @@ export default function Breads() {
       <section className={styles.info_breads}>
         <p>Acompanhe nossa página no instagram e saiba quais são os pães da semana</p>
       </section>
+      <BreadOrderButton />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.bread_order_button {
+  background-color: var(--terracota-darker);
+  max-width: 280rem;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-medium);
+  color: var(--areia-light );
+}

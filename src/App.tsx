@@ -12,6 +12,7 @@ import Lunch from './components/Lunch/index.tsx';
 
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
+import Breads from './components/Breads/index.tsx';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       </div>
       <HighlightGallery highlightItems={highlightItems} />
       <Lunch lunchData={LunchData} />
+      <Breads />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

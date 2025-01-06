@@ -1,0 +1,58 @@
+.container_lunch {
+  position: relative;
+  min-height: 16rem;
+  padding: 2rem 0;
+  z-index: 1;
+  background: var(--areia-original);
+  padding: 2.4rem 2rem;
+  display: flex;
+  gap: var(--gap);
+  flex-direction: column;
+}
+
+.header_lunch {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--areia-darker);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-gap: var(--gap);
+}
+
+.header_lunch_title {
+  background: violet;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.header_lunch_dish_photo {
+  height: 200px;
+  width: 100%;
+  /* background-color: tomato; */
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.header_lunch_dish_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 1); */
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 1));
+}
+
+.header_lunch_hours {
+  background-color: var(--color-title-primary);
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.payment_info > p{
+  background-color: var(--color-highlight);
+  font-family: 'MacklinText';
+  font-size: 14px;
+  color: #707070;
+  line-height: 1;
+}

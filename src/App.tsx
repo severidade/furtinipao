@@ -8,8 +8,10 @@ import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
 import Heder from './components/Heder/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
+import Lunch from './components/Lunch/index.tsx';
 
 import highlightItems from './data/HighlightGalleryData.tsx';
+import LunchData from './data/LunchData.tsx';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <HeroWelcome />
       </div>
       <HighlightGallery highlightItems={highlightItems} />
+      {/* <Lunch lunchData={lunchData} /> */}
+      <Lunch lunchData={LunchData} />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

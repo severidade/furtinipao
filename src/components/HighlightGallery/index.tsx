@@ -9,7 +9,7 @@ import { HighlightGalleryType } from '../../types/HighlightGalleryType.tsx';
 // eslint-disable-next-line max-len
 export default function HighlightGallery({ highlightItems } : {highlightItems: HighlightGalleryType[]}) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 300,
     slidesToShow: 2.5, // Exibe 2 e meio

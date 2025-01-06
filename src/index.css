@@ -29,6 +29,7 @@
   --video-width-desktop: 55vw;
 
   --gap: 1.6rem;
+  --border-radius-M: 0.8rem;
 
   width: 100vw;
   max-width: 100%;

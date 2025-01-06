@@ -28,6 +28,8 @@
   --heder-height: 7.5rem;
   --video-width-desktop: 55vw;
 
+  --gap: 1.6rem;
+
   width: 100vw;
   max-width: 100%;
 }

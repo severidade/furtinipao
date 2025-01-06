@@ -1,20 +1,23 @@
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './Lunch.module.css';
+import { LunchDataType } from '../../types/LunchDataType.tsx';
 
-export default function Lunch() {
+export default function Lunch({ lunchData } : {lunchData: LunchDataType[]}) {
   return (
     <div className={styles.container_lunch}>
       <section className={styles.header_lunch}>
-        <h2 className={styles.header_lunch_title}>Almoço executivo</h2>
+        <h2 className={styles.header_lunch_title}>{lunchData[0].headerLunch.lunchTitle}</h2>
         <figure className={styles.header_lunch_dish_photo}>
-          <img src="/path/to/photo.jpg" alt="Foto do prato executivo" />
-          {/* <figcaption>Prato do dia: descrição breve do prato</figcaption> */}
+          <img src={lunchData[0].headerLunch.figure.image} alt={lunchData[0].headerLunch.figure.altText} />
         </figure>
-        <p className={styles.header_lunch_hours}>Terça a Sexta de 10 às 14h30</p>
+        <p className={styles.header_lunch_hours}>{ lunchData[0].headerLunch.lunchHours}</p>
       </section>
       <section className={styles.payment_info}>
-        <p>Aceitamos todos os cartões de refeição das bandeiras Visa e Mastercard além de Alelo, Pluxee (Sodexo) e VR.</p>
+        <p>
+          {' '}
+          { lunchData[0].paymentInfo}
+        </p>
       </section>
     </div>
   );

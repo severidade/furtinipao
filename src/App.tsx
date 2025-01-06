@@ -10,6 +10,7 @@ import Heder from './components/Heder/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
 
 import highlightItems from './data/HighlightGalleryData.tsx';
+import Lunch from './components/Lunch/index.tsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <HeroWelcome />
       </div>
       <HighlightGallery highlightItems={highlightItems} />
+      <Lunch />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

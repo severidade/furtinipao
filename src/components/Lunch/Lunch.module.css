@@ -1,0 +1,32 @@
+.container_lunch {
+  position: relative;
+  min-height: 16rem;
+  padding: 2rem 0;
+  z-index: 1;
+  background: var(--areia-original);
+}
+
+.header_lunch {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--areia-darker);
+}
+
+.header_lunch_title {
+  background: violet;
+}
+
+.header_lunch_dish_photo {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: tomato;
+}
+
+.header_lunch_hours {
+  background-color: var(--color-title-primary);
+}
+
+.payment_info {
+  background-color: var(--color-highlight);
+}

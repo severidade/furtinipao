@@ -6,6 +6,7 @@ import foto03 from '../assets/HighlightGallery/03.jpeg';
 import foto04 from '../assets/HighlightGallery/04.jpeg';
 import foto05 from '../assets/HighlightGallery/05.jpg';
 import foto06 from '../assets/HighlightGallery/06.jpeg';
+import foto07 from '../assets/HighlightGallery/07.jpeg';
 
 const HighlightGalleryData: HighlightGalleryType[] = [
   {
@@ -37,6 +38,11 @@ const HighlightGalleryData: HighlightGalleryType[] = [
     id: 6,
     altText: 'Cesta de pães artesanais com molhos variados',
     image: foto06,
+  },
+  {
+    id: 7,
+    altText: 'Cesta de pães artesanais com molhos variados',
+    image: foto07,
   },
 ];
 

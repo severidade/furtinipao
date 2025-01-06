@@ -23,7 +23,6 @@ function App() {
         <HeroWelcome />
       </div>
       <HighlightGallery highlightItems={highlightItems} />
-      {/* <Lunch lunchData={lunchData} /> */}
       <Lunch lunchData={LunchData} />
       <CallUber />
       <div className="tijolo">P</div>

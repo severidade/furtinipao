@@ -5,7 +5,14 @@
 :root {
   --font-title-primary: 'Kalnia', serif;
 
+  --spacing-0: 0; /*usando */
+  --spacing-small: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 3rem;
+  --spacing-xlarge: 4rem;
+
   --brown-darker: #453B30;
+  --brown-dark: #716656;
   --nav: #c9a785;
 
   --terracota-darker: #5C3825;
@@ -17,18 +24,15 @@
   --areia-original: #E6E0BA;
   --areia-light: #F7F5EA;
 
-  --color-title-primary: #f7c130;
-  --color-text-primary: #ffffff;
-  --color-highlight: #ff6347;
-  --color-dark: #030c1a;
-  --color-light-gray : #ffffffb3;
-  --color-medium-gray: #4B4B4B;
-  --color-hard-gray: #353535;
-
   --heder-height: 7.5rem;
-  --video-width-desktop: 55vw;
+
+  --font-size-small: 1.4rem;
+  --font-size-medium: 1.8rem;
+  --font-size-large: 2.2rem;
+  --font-size-xlarge: 2.6rem;
 
   --gap: 1.6rem;
+  --border-radius-medium: 0.8rem;
 
   width: 100vw;
   max-width: 100%;

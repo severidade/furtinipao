@@ -1,0 +1,27 @@
+.container_breads {
+  position: relative;
+  width: 100%;
+  min-height: 20vh;
+  background: var(--areia-darker);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var;
+  padding: var(--spacing-large) var(--spacing-medium);
+}
+
+.header_breads_title {
+  background-color: var(--areia-light);
+}
+
+.header_breads_subtitle {
+  background-color: var(--areia-light);
+}
+
+.slider_breads {
+  background-color: var(--areia-dark);
+}
+
+.info_breads {
+  background: var(--areia-light);
+}

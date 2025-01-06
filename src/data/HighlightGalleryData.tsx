@@ -7,7 +7,7 @@ import foto04 from '../assets/HighlightGallery/04.jpeg';
 import foto05 from '../assets/HighlightGallery/05.jpg';
 import foto06 from '../assets/HighlightGallery/06.jpeg';
 
-const SneakerList: HighlightGalleryType[] = [
+const HighlightGalleryData: HighlightGalleryType[] = [
   {
     id: 1,
     altText: 'Cesta de pães artesanais com molhos variados',
@@ -40,4 +40,4 @@ const SneakerList: HighlightGalleryType[] = [
   },
 ];
 
-export default SneakerList;
+export default HighlightGalleryData;

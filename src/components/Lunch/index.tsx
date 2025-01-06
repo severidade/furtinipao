@@ -15,10 +15,8 @@ export default function Lunch({ lunchData } : {lunchData: LunchDataType[]}) {
           <p className={styles.header_lunch_hours}>{ lunchData[0].headerLunch.lunchHours}</p>
         </section>
         <section className={styles.payment_info}>
-          <p>
-            {' '}
-            { lunchData[0].paymentInfo}
-          </p>
+          { lunchData[0].paymentInfo}
+
         </section>
       </div>
     </div>

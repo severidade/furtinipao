@@ -3,18 +3,19 @@
   min-height: 16rem;
   padding: 2rem 0;
   z-index: 1;
-  background: var(--areia-original);
   padding: 2.4rem 2rem;
+}
+
+.container_lunch_card{
+  background: var(--areia-light);
+  padding: 20px;
+  border-radius: var(--border-radius-M);
   display: flex;
-  gap: var(--gap);
   flex-direction: column;
+  gap: 3rem;
 }
 
 .header_lunch {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--areia-darker);
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
@@ -22,37 +23,47 @@
 }
 
 .header_lunch_title {
-  background: violet;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  font-family: 'Halogen';
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight:900 ;
+  color: var(--brown-darker);
 }
 
 .header_lunch_dish_photo {
-  height: 200px;
+  height: 100%;
   width: 100%;
-  /* background-color: tomato; */
   grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-row: 1 / 3;
 }
 
 .header_lunch_dish_photo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 1); */
-  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 1));
+  filter: drop-shadow(10px 10px 15px var(--terracota-darker));
 }
 
 .header_lunch_hours {
-  background-color: var(--color-title-primary);
-  grid-column: 1 / 3;
+  grid-column: 1 / 2;
   grid-row: 2 / 3;
+
+  font-family: 'Halogen';
+  font-size: 1.8rem;
+  color: var(--brown-darker);
 }
 
 .payment_info > p{
-  background-color: var(--color-highlight);
   font-family: 'MacklinText';
-  font-size: 14px;
-  color: #707070;
-  line-height: 1;
+  font-size: 1.4rem;
+  color: var(--brown-darker);
+  font-weight:500 ;
+  line-height: 1.5;
 }

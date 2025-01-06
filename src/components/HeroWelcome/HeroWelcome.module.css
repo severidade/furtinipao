@@ -1,11 +1,11 @@
 .hero_welcome {
-  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 100%;
   gap: 2.4rem;
-  padding: 3rem 4rem;
+  padding: var(--spacing-large) var(--spacing-xlarge);
   position: relative;
   background: #F9F3EA url('../../assets/texture.png') repeat center;
 }
@@ -19,7 +19,7 @@
   height: 350px;
   z-index: 1;
   background: url(../../assets/texture_new.svg) no-repeat center;
-  transform: translateY(-55%);
+  transform: translateY(-60%);
 } 
 
 .hero_welcome_title{
@@ -27,7 +27,6 @@
   font-family: 'Halogen';
   font-size: 3rem;
   color: var(--brown-darker);
-  /* color: #707070; */
   line-height: 1.2;
   width: 100%;
   flex-grow: 0.5;
@@ -37,9 +36,9 @@
 
 .hero_welcome_subtitle{
   font-family: 'MacklinText';
-  font-size: 1.7rem;
+  font-size: var(--font-size-medium);
   font-weight: bold;
   font-style: italic;
-  color: #707070;
+  color: var(--brown-darker);
   z-index: 2;
 }

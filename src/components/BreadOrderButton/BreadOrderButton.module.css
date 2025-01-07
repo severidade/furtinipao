@@ -7,4 +7,6 @@
   align-items: center;
   border-radius: var(--border-radius-medium);
   color: var(--areia-light );
+  font-family: 'Halogen';
+  text-transform: uppercase;
 }

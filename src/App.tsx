@@ -2,7 +2,7 @@
 import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
-import CallUber from './components/CallUber/index.tsx';
+// import CallUber from './components/CallUber/index.tsx';
 import HeroImage from './components/HeroImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
@@ -28,10 +28,12 @@ function App() {
       <HighlightGallery highlightItems={highlightItems} />
       <Lunch lunchData={LunchData} />
       <Breads DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
-      <CallUber />
+
+      <div className="tijolo" />
+      {/* <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>
-      <div className="tijolo">P</div>
+      <div className="tijolo">P</div> */}
     </>
   );
 }

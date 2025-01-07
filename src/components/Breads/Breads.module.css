@@ -10,6 +10,10 @@
   padding: var(--spacing-large) var(--spacing-medium);
 }
 
+.header_breads {
+  border: solid 1px tomato;
+}
+
 .header_breads_title {
   background-color: var(--areia-light);
 }
@@ -20,6 +24,37 @@
 
 .slider_breads {
   background-color: var(--areia-dark);
+  width: 100vw;
+  transform: translateX(calc(var(--spacing-medium) * -1));
+
+}
+
+.slider {
+  border: solid 1px tomato;
+  position: relative;
+  z-index: 1;
+}
+
+.slider::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--areia-light);
+  z-index: -1;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+.highlight_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider_title {
+  text-align: center;
 }
 
 .info_breads {

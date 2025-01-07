@@ -9,10 +9,12 @@ import HeroWelcome from './components/HeroWelcome/index.tsx';
 import Heder from './components/Heder/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
 import Lunch from './components/Lunch/index.tsx';
+import Breads from './components/Breads/index.tsx';
 
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
-import Breads from './components/Breads/index.tsx';
+import BreadsGalleryData from './data/BreadsGalleryData.tsx';
+import BreadsSectionData from './data/BreadsSectionData.tsx';
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
       </div>
       <HighlightGallery highlightItems={highlightItems} />
       <Lunch lunchData={LunchData} />
-      <Breads />
+      <Breads DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

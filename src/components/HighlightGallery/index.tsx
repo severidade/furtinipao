@@ -3,7 +3,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import styles from './HighlightGallery.module.css';
+import './HighlightGallery.css';
 import { HighlightGalleryType } from '../../types/HighlightGalleryType.tsx';
 
 // eslint-disable-next-line max-len
@@ -20,15 +20,15 @@ export default function HighlightGallery({ highlightItems } : {highlightItems: H
 
   return (
     <div
-      className={styles.container_highlight}
+      className="container_highlight"
     >
       <Slider {...settings}>
         {highlightItems.map((i) => (
-          <figure key={i.id} className={styles.slider}>
+          <figure key={i.id} className="slider">
             <img
               src={i.image}
               alt={i.altText}
-              className={styles.highlight_image}
+              className="highlight_image"
             />
           </figure>
         ))}

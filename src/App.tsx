@@ -9,12 +9,15 @@ import HeroWelcome from './components/HeroWelcome/index.tsx';
 import Heder from './components/Heder/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
 import Lunch from './components/Lunch/index.tsx';
+import Breads from './components/Breads/index.tsx';
 
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
-import Breads from './components/Breads/index.tsx';
+import BreadsGalleryData from './data/BreadsGalleryData.tsx';
 
 function App() {
+  const sliderGalleryItens = BreadsGalleryData;
+
   return (
     <>
       <WhatsAppReserve />
@@ -25,7 +28,7 @@ function App() {
       </div>
       <HighlightGallery highlightItems={highlightItems} />
       <Lunch lunchData={LunchData} />
-      <Breads />
+      <Breads DataSlider={sliderGalleryItens} />
       <CallUber />
       <div className="tijolo">P</div>
       <div className="tijolo">P</div>

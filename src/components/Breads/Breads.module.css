@@ -10,6 +10,10 @@
   padding: var(--spacing-large) var(--spacing-medium);
 }
 
+.header_breads {
+  border: solid 1px tomato;
+}
+
 .header_breads_title {
   background-color: var(--areia-light);
 }

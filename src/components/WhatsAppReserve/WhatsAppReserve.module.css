@@ -1,5 +1,6 @@
 .WhatsAppReserve_fixed {
   position: fixed;
+  font-family: 'Halogen';
   z-index: 4;
   bottom: 4rem;
   right: 4rem;

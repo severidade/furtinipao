@@ -50,7 +50,7 @@ export default function Breads({ DataSlider, DataSection } : BreadsProps) {
 
       </section>
       <section className="info_breads">
-        <p>{ DataSection[0].infoBreads }</p>
+        { DataSection[0].infoBreads }
       </section>
       <BreadOrderButton />
     </div>

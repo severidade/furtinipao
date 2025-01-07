@@ -40,11 +40,11 @@
 }
 
 .header_breads_title {
-    font-family: 'Halogen';
-    font-size: var(--font-size-large);
-    line-height: 1;
-    font-weight: 300;
-    color: #5c3825;
+  font-family: 'Halogen';
+  font-size: var(--font-size-xlarge);
+  line-height: 1;
+  font-weight: 300;
+  color: var(--terracota-darker);
 }
 
 .header_breads_subtitle {

@@ -1,4 +1,26 @@
 .uber {
-  background-color: var(--color-title-primary);
-  height: 70px;
+  background-color: var(--areia-dark);
+  max-width: 280rem;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-medium);
+  color: var(--areia-light );
+  font-family: 'MacklinText';
+  position: relative;
+  font-weight: 800;
+  font-size: var(--font-size-medium);
+  font-style: italic;
+  margin-top: var(--spacing-medium);
+}
+
+
+.uber::before {
+  content: "";
+  height: 44px;
+  width: 44px;
+  background: url("../../assets/icon/uber.svg") no-repeat center;
+  background-size: 70%;
+  transform: translateX(-25%);
 }

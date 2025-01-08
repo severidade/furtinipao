@@ -7,7 +7,7 @@ import CallUber from '../CallUber/index.tsx';
 export default function SectionAddress() {
   return (
     <div className={styles.container_address}>
-      <section className="header_address">
+      <section className={styles.header_address}>
         <h2 className={styles.header_address_title}>Nova Casa</h2>
         <address className={styles.address_details}>
           A  Casa Rosa do Furtini esta na Rua Carangola, 358, esquina com Rua Primavera, 21 no bairro Santo Antônio - Belo Horizonte

@@ -20,6 +20,7 @@
 .slider_breads {
   width: 100vw;
   transform: translateX(calc(var(--spacing-medium) * -1));
+  padding: var(--spacing-medium) var(--spacing-0);
 }
 
 .slider_breads .slider {

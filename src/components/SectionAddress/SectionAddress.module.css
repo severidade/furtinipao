@@ -31,4 +31,8 @@
   line-height: 1.5;
 }
 
+.address_details{
+  padding-top: var(--gap);
+}
+
 .accessibility, .pet_friendly{ padding-left: 4rem;}

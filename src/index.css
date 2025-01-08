@@ -41,16 +41,17 @@
 html {
   font-size: 62.5%;
   font-family: "Titillium Web", sans-serif;
-  color: var(--primary_color);
+  /* color: var(--primary_color);
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.7; */
 }
 
 body {
   color: var(--color-dark);
-  font-size: 1.4rem;
-  line-height: 1.4;
+  /* font-size: 1.4rem;
+  line-height: 1.4; */
   overflow-x: hidden;
+  line-height: 1.4;
 }
 
 body::-webkit-scrollbar {
@@ -59,7 +60,7 @@ body::-webkit-scrollbar {
 }
 
 
-p { font-size: 1.6rem;}
+/* p { font-size: 1.6rem;} */
 
 
 

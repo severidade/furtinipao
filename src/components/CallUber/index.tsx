@@ -29,7 +29,7 @@ export default function CallUber() {
       className={styles.uber}
       onClick={handleClick}
     >
-      Reservar pelo Uber
+      Venha de Uber
     </button>
   );
 }

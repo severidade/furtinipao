@@ -1,0 +1,28 @@
+.container_address {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-large) var(--spacing-medium);
+  width: 100%;
+  background: var(--areia-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.header_address_title {
+  font-family: 'Halogen';
+  font-size: var(--font-size-xlarge);
+  line-height: 1;
+  font-weight: 300;
+  color: var(--terracota-darker);
+}
+
+.address_details, .accessibility, .pet_friendly{
+  font-family: 'MacklinText';
+  font-size: var(--font-size-small);
+  color: var(--brown-darker);
+  font-weight:500 ;
+  line-height: 1.5;
+}
+
+.accessibility, .pet_friendly{ padding-left: 4rem;}

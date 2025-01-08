@@ -6,7 +6,13 @@
   background: var(--areia-light);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-medium);
+  gap: var(--gap);
+}
+
+.header_address{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
 .header_address_title {

@@ -6,7 +6,8 @@ export type LunchDataType = {
       image: string,
       altText?: string
     }
-    lunchHours: string,
+    lunchSubTitle: string,
   }
+  lunchHours: string,
   paymentInfo: string,
 };

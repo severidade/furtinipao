@@ -12,11 +12,15 @@ export default function Lunch({ lunchData } : {lunchData: LunchDataType[]}) {
           <figure className={styles.header_lunch_dish_photo}>
             <img src={lunchData[0].headerLunch.figure.image} alt={lunchData[0].headerLunch.figure.altText} />
           </figure>
-          <p className={styles.header_lunch_hours}>{ lunchData[0].headerLunch.lunchHours}</p>
+          <p className={styles.header_lunch_hours}>{ lunchData[0].headerLunch.lunchSubTitle}</p>
         </section>
-        <section className={styles.payment_info}>
-          { lunchData[0].paymentInfo}
-
+        <section className={styles.lunch_footer}>
+          <div className={styles.lunch_hours}>
+            { lunchData[0].lunchHours}
+          </div>
+          {/* <div className={styles.payment_info}>
+            { lunchData[0].paymentInfo}
+          </div> */}
         </section>
       </div>
     </div>

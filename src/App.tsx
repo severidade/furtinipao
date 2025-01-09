@@ -15,6 +15,7 @@ import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
 import BreadsGalleryData from './data/BreadsGalleryData.tsx';
 import BreadsSectionData from './data/BreadsSectionData.tsx';
+import SectionAddressData from './data/SectionAddressData.tsx';
 import SectionAddress from './components/SectionAddress/index.tsx';
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       <HighlightGallery highlightItems={highlightItems} />
       <Lunch lunchData={LunchData} />
       <Breads DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
-      <SectionAddress />
+      <SectionAddress DataSection={SectionAddressData} />
       <div className="tijolo" />
       {/* <CallUber />
       <div className="tijolo">P</div>

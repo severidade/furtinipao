@@ -25,7 +25,7 @@ export default function SectionAddress({ DataSection } : AddressProps) {
         <h2 className={styles.header_address_title}>{addressTitle}</h2>
         <address className={styles.address_details}>{addressDetails}</address>
       </section>
-      <section className="accessibility-info">
+      <section className={styles.accessibility_info}>
         <div className={styles.accessibility}>{accessibility}</div>
         <div className={styles.pet_friendly}>{petFriendly}</div>
       </section>

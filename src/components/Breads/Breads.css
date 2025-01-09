@@ -68,7 +68,7 @@
   top: 0;
   height: 80px;
   width: 80px;
-  background: url(../../assets/selo_produto_natural.svg) no-repeat center;
+  background: url(../../assets/selo_produto_natural_areia.svg) no-repeat center;
   background-size: contain;
   transform: translateY(-40%);
 }

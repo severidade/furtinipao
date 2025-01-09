@@ -11,8 +11,9 @@ const LunchData: LunchDataType[] = [
         image: foto01,
         altText: 'Foto do prato executivo servido no Pão do Furtini',
       },
-      lunchHours: 'Terça a Sexta de 10 às 14h30',
+      lunchSubTitle: 'Que Delícia!',
     },
+    lunchHours: 'De terça a sexta, das 10h às 14h30. Aos finais de semana, serviço à la carte no mesmo horário.',
     paymentInfo: 'Aceitamos todos os cartões de refeição das bandeiras Visa e Mastercard além de Alelo, Pluxee (Sodexo) e VR.',
   },
 

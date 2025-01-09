@@ -1,0 +1,40 @@
+.container_highlight2 {
+  position: relative;
+  min-height: 16rem;
+  padding: 2rem 0;
+  z-index: 1;
+}
+/* 
+.container_highlight::before {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: #F9F3EA url('../../assets/texture.png') repeat center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(-10rem);
+  z-index: -1;
+} */
+
+.container_highlight2 .slick-track {
+  display: flex !important; 
+  flex-direction: row;
+  /* gap: 20px; */
+  margin-left: 0; 
+  margin-right: 0;
+}
+
+.container_highlight2 .slider {
+  width: 100%;
+  height: calc(100vw - 4rem);
+  background-color: var(--areia-dark);
+  overflow: hidden;
+  border-radius: var(--border-radius-medium);
+}
+
+.container_highlight2 .highlight_image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

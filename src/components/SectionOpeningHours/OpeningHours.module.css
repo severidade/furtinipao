@@ -3,11 +3,14 @@
   z-index: 1;
   padding: var(--spacing-0) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
   overflow: hidden;
+  display: flexbox;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .header_address{
@@ -28,11 +31,26 @@
 
 
 .opening_hours_card{
+
+  
   display: flex;
   flex-direction: column;
   gap: var(--spacing-large);
   background: var(--areia-light);
   padding: var(--spacing-medium);
   border-radius: var(--border-radius-medium);
-  margin-top: 30vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* .opening_hours_card {
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+} */

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import VideoBg from '../VideoBg/index.tsx';
 import styles from './OpeningHours.module.css';
+import OpeningHoursButton from '../OpeningHoursButton/index.tsx';
 
 export default function OpeningHours() {
   const containerRef = useRef(null);
@@ -53,8 +54,26 @@ export default function OpeningHours() {
         }}
       >
         <h2 className={styles.opening_hours_title}>Horário de funcionamento</h2>
-        <p>Aqui entra as infromações do horário de funcionamento</p>
-        <p>também terá um botão para fazer reservas</p>
+        <section className={styles.timetable}>
+          <p>
+            <strong>Terça a Sexta:</strong>
+            10 às 20h
+          </p>
+          <p>
+            <strong>Sábado:</strong>
+            9 às 20h
+          </p>
+          <p>
+            <strong>Domingo:</strong>
+            9 às 14h
+          </p>
+          <p>
+            <strong>Feriados:</strong>
+            9 às 19h30
+          </p>
+        </section>
+
+        <OpeningHoursButton />
       </motion.div>
     </div>
   );

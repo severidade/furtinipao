@@ -1,0 +1,25 @@
+.opening_hours_button_button {
+  background-color: var(--terracota-darker);
+  max-width: 280rem;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-medium);
+  color: var(--areia-light );
+  font-family: 'MacklinText';
+  position: relative;
+  font-weight: 800;
+  font-size: var(--font-size-medium);
+  font-style: italic;
+  /* margin-top: var(--spacing-medium); */
+}
+
+.opening_hours_button_button::before {
+  content: "";
+  height: 44px;
+  width: 44px;
+  background: url("../../assets/icon/restaurant 2.png") no-repeat center;
+  background-size: 70%;
+  transform: translateX(-25%);
+}

@@ -31,8 +31,6 @@
 
 
 .opening_hours_card{
-
-  
   display: flex;
   flex-direction: column;
   gap: var(--spacing-large);
@@ -54,3 +52,15 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 } */
+
+.timetable p {
+  font-family: 'MacklinText';
+  font-size: var(--font-size-small);
+  color: var(--brown-darker);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.timetable p strong {
+ font-weight: 900;
+}

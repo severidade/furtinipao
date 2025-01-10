@@ -64,3 +64,8 @@
 .timetable p strong {
  font-weight: 900;
 }
+
+.destaque {
+  margin-bottom: var(--spacing-medium);
+  background-color: lime;
+}

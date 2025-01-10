@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import styles from './BreadOrderButton.module.css';
+import styles from './OpeningHoursButton.module.css';
 
 export default function OpeningHoursButton() {
   const phoneNumber = '5531992456878';
@@ -9,10 +9,10 @@ export default function OpeningHoursButton() {
   return (
     <button
       type="button"
-      className={styles.bread_order_button}
+      className={styles.opening_hours_button_button}
       onClick={() => window.open(whatsappLink, '_blank')}
     >
-      Faça seus pedidos
+      Faça sua reserva
     </button>
   );
 }

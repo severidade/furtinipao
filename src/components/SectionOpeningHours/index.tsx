@@ -31,28 +31,29 @@ const getScheduleStatus = () => {
     const nextDay = (dayOfWeek + 1) % 7;
     const nextSchedule = schedules[nextDay];
     const nextOpen = nextSchedule?.open || 'Fechado';
-    return `Fechado. Abre amanhã às ${nextOpen}h.`;
+    return { status: 'Fechado ', message: `Abre amanhã às ${nextOpen}h.` };
   }
 
   const { open, close } = todaySchedule;
 
   if (currentTime >= open && currentTime < close) {
-    return `Aberto. Fecha às ${close}h.`;
+    return { status: 'Aberto ', message: `Fecha às ${close}h.` };
   }
   if (currentTime < open) {
-    return `Fechado. Abre hoje às ${open}h.`;
+    return { status: 'Fechado ', message: `Abre hoje às ${open}h.` };
   }
 
   const nextDay = (dayOfWeek + 1) % 7;
   const nextSchedule = schedules[nextDay];
   const nextOpen = nextSchedule?.open || 'Fechado';
-  return `Fechado. Abre amanhã às ${nextOpen}h.`;
+  return { status: 'Fechado ', message: `Abre amanhã às ${nextOpen}h.` };
 };
 
 export default function OpeningHours() {
   const containerRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
+  const [status, setStatus] = useState('');
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -73,7 +74,9 @@ export default function OpeningHours() {
   }, [scrollYProgress, hasAnimated]);
 
   useEffect(() => {
-    setStatusMessage(getScheduleStatus());
+    const { status: currentStatus, message } = getScheduleStatus();
+    setStatus(currentStatus);
+    setStatusMessage(message);
   }, []);
 
   const animatedX = hasAnimated ? '0%' : x;
@@ -88,34 +91,35 @@ export default function OpeningHours() {
       >
         <h2 className={styles.opening_hours_title}>Horário de funcionamento</h2>
         <section
-          className={styles.timetable}
+          className={styles.schedule_table}
           aria-live="polite"
         >
-          <p>
-            <strong className={styles.destaque}>Status:</strong>
-            {' '}
+          <div className={styles.schedule_status}>
+            <strong className={`${styles.status} ${status === 'Aberto ' ? styles.open : styles.closed}`}>
+              {status}
+            </strong>
             {statusMessage}
-          </p>
-          <p>
-            <strong>Terça a Sexta:</strong>
-            {' '}
+          </div>
+          <div className={styles.schedule_row}>
+            <strong>Terça a Sexta</strong>
+            <div className={styles.dots} />
             10 às 20h
-          </p>
-          <p>
+          </div>
+          <div className={styles.schedule_row}>
             <strong>Sábado:</strong>
-            {' '}
+            <div className={styles.dots} />
             9 às 20h
-          </p>
-          <p>
+          </div>
+          <div className={styles.schedule_row}>
             <strong>Domingo:</strong>
-            {' '}
+            <div className={styles.dots} />
             9 às 14h
-          </p>
-          <p>
+          </div>
+          <div className={styles.schedule_row}>
             <strong>Feriados:</strong>
-            {' '}
+            <div className={styles.dots} />
             9 às 19h30
-          </p>
+          </div>
         </section>
         <OpeningHoursButton />
       </motion.div>

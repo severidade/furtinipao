@@ -8,7 +8,7 @@ const SectionAddressData: SectionAddressDataType[] = [
     id: 1,
     headerAddress: {
       addressTitle: 'Nova Casa',
-      addressDetails: 'A  Casa Rosa do Furtini esta na Rua Carangola, 358, esquina com Rua Primavera, 21 no bairro Santo Antônio - Belo Horizonte',
+      addressDetails: 'A  Casa Rosa do Furtini está na Rua Carangola, 358, esquina com Rua Primavera, 21 no bairro Santo Antônio - Belo Horizonte',
     },
     accessibility: 'O espaço foi projetado para ser acessível a pessoas com deficiência (PCD), garantindo conforto e segurança para todos.',
     petFriendly: 'O ambiente é pet friendly, permitindo a presença de animais de estimação e garantindo conforto e bem-estar para todos.',

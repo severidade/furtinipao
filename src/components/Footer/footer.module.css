@@ -1,0 +1,134 @@
+.container_footer {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-medium) var(--spacing-large);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  overflow: hidden;
+  background: var(--terracota-darker);
+}
+
+.menu_social {
+  display: flex;
+  gap: var(--gap);
+  flex-direction: row;
+  justify-content: center;
+  /* padding: 2rem 0; */
+  list-style-type: none;
+  /* background-color: var(--areia-dark); */
+}
+
+.social_facebook, .social_instagram, .social_tiktok, .social_youtube {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  text-indent: -1000%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.social_facebook {
+  background-image: url("./icons/facebook.svg");
+}
+
+.social_instagram {
+  background-image: url("./icons/instagram.svg");
+  background-size: 60%;
+}
+
+.social_youtube {
+  background-image: url("./icons/youtube.svg");
+  background-size: 70%;
+}
+
+.social_tiktok {
+  background-image: url("./icons/tiktok.svg");
+  background-size: 50%;
+}
+
+.contact, .opening_hours {
+  padding:0 var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+.contact_title, .opening_hours_title{
+  font-family: "Titillium Web", sans-serif;
+  font-size: var(--font-size-small);
+  color: white;
+  font-weight: 700;
+}
+
+.email, .telefone_list{
+  padding-left: var(--spacing-xlarge);
+  font-size: var(--font-size-small);
+  color: white;
+  margin-bottom: var(--spacing-small);
+  position: relative;
+}
+
+.telefone_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.email::before, .telefone_list::before{
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  width: 30px;
+  height: 30px;
+  background-image: url("./icons/email.svg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.email::before, .telefone_list::before{
+  content: "";
+  background-image: url("./icons/email.svg");
+}
+
+.telefone_list::before{
+  content: "";
+  background-image: url("./icons/phone.svg");
+}
+
+.label {
+  padding-left: 0.4rem;
+}
+
+.label::before {
+  content: "- ";
+}
+
+.opening_hours_footer{
+  position: relative;
+}
+
+.opening_hours_footer_info {
+  padding-left: var(--spacing-xlarge);
+  font-size: var(--font-size-small);
+  color: white;
+  margin-bottom: var(--spacing-small);
+  position: relative;
+}
+
+.opening_hours_footer::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  width: 30px;
+  height: 30px;
+  background-image: url("./icons/clock.svg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

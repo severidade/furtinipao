@@ -18,6 +18,7 @@ import BreadsSectionData from './data/BreadsSectionData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import SectionAddress from './components/SectionAddress/index.tsx';
 import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
+import Footer from './components/Footer/index.tsx';
 
 function App() {
   return (
@@ -33,11 +34,7 @@ function App() {
       <Breads DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
       <SectionAddress DataSection={SectionAddressData} />
       <SectionOpeningHours />
-      <div className="tijolo" />
-      {/* <CallUber />
-      <div className="tijolo">P</div>
-      <div className="tijolo">P</div>
-      <div className="tijolo">P</div> */}
+      <Footer />
     </>
   );
 }

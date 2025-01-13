@@ -1,11 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './BreadOrderButton.module.css';
 
-export default function OpeningHoursButton() {
-  const phoneNumber = '5531992456878';
-  const message = 'Olá! Gostaria de fazer uma reserva.';
+export default function BreadOrderButton() {
+  const phoneNumber = '5531984738820';
+  const message = 'Olá! Gostaria de fazer um pedido de pão.';
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
   return (
     <button
       type="button"

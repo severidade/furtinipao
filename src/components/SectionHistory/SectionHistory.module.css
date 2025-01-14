@@ -1,0 +1,102 @@
+.container_history {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-0) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  overflow: hidden;
+  padding-top: var(--gap);
+}
+
+.header_history{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: 0 var(--spacing-medium);
+  z-index: 2;
+}
+
+.header_history_title {
+  font-family: 'Halogen';
+  font-size: var(--font-size-xlarge);
+  line-height: 1;
+  font-weight: 300;
+  color: var(--terracota-darker);
+}
+
+.history_info {
+  padding: 0 var(--spacing-medium);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  padding-top: var(--spacing-medium);
+}
+
+.history {
+  font-family: 'MacklinText';
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--brown-darker);
+  line-height: 1.5;
+}
+
+.container_history_img{
+  height: calc(100vw - 4rem);
+  background-color: var(--areia-dark);
+  overflow: hidden;
+}
+
+.container_history_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
+.container_address::before {
+  content: "";
+  background-color: var(--areia-light);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(50%);
+}
+
+
+
+.header_address_title {
+  font-family: 'Halogen';
+  font-size: var(--font-size-xlarge);
+  line-height: 1;
+  font-weight: 300;
+  color: var(--terracota-darker);
+  
+}
+
+.accessibility_info {
+  padding: 0 var(--spacing-medium);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  padding-top: var(--spacing-medium);
+}
+
+.address_details, .accessibility, .pet_friendly{
+  font-family: 'MacklinText';
+  font-size: var(--font-size-small);
+  color: var(--brown-darker);
+  font-weight:500 ;
+  line-height: 1.5;
+}
+
+.address_details{
+  padding-top: var(--gap);
+}
+
+.accessibility, .pet_friendly{ padding-left: 4rem;} */

@@ -1,5 +1,5 @@
 .container-hero {
-  padding-top: calc(var(--heder-height) / 2);
+  padding-top: 7.5rem;
   position: relative;
   z-index: 2;
 }

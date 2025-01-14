@@ -31,7 +31,7 @@ const getScheduleStatus = () => {
     const nextDay = (dayOfWeek + 1) % 7;
     const nextSchedule = schedules[nextDay];
     const nextOpen = nextSchedule?.open || 'Fechado';
-    return { status: 'Fechado ', message: `Abre amanhã às ${nextOpen}h.` };
+    return { status: 'Fechado Agora ', message: `Abre amanhã às ${nextOpen}h.` };
   }
 
   const { open, close } = todaySchedule;
@@ -40,7 +40,7 @@ const getScheduleStatus = () => {
     return { status: 'Aberto ', message: `Fecha às ${close}h.` };
   }
   if (currentTime < open) {
-    return { status: 'Fechado ', message: `Abre hoje às ${open}h.` };
+    return { status: 'Fechado Agora ', message: `Abre hoje às ${open}h.` };
   }
 
   const nextDay = (dayOfWeek + 1) % 7;

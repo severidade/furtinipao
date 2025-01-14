@@ -13,9 +13,13 @@ export default function Heder() {
       </h1>
       <nav className={styles.nav_frutini}>
         <ul>
-          <li>Item</li>
-          <li>Item</li>
-          <li>Item</li>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#highlights">Destaques</a></li>
+          <li><a href="#lunch">Almoço</a></li>
+          <li><a href="#breads">Pães</a></li>
+          <li><a href="#address">Endereço</a></li>
+          <li><a href="#opening-hours">Horários</a></li>
+          <li><a href="#history">História</a></li>
         </ul>
       </nav>
     </div>

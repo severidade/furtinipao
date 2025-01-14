@@ -19,6 +19,7 @@ import SectionAddressData from './data/SectionAddressData.tsx';
 import SectionAddress from './components/SectionAddress/index.tsx';
 import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
+import SectionHistory from './components/SectionHistory/index.tsx';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Breads DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
       <SectionAddress DataSection={SectionAddressData} />
       <SectionOpeningHours />
+      <SectionHistory />
       <Footer />
     </>
   );

@@ -64,7 +64,7 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
     offset: ['start end', 'end start'],
   });
 
-  const x = useTransform(scrollYProgress, [0.3, 0.5], ['110%', '0%']);
+  const x = useTransform(scrollYProgress, [0.2, 0.4], ['100%', '0%']);
 
   useEffect(() => {
     if (!hasAnimated) {

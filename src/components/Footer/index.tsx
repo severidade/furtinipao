@@ -90,8 +90,21 @@ export default function Footer() {
           <p className={styles.opening_hours_footer_info}>Terça a Sexta - 10 às 20h</p>
           <p className={styles.opening_hours_footer_info}>Sábado - 9 às 20h</p>
           <p className={styles.opening_hours_footer_info}>Domingo - 9 às 14h</p>
-          <p className={styles.opening_hours_footer_info}>Feriados -9 às 19h30</p>
+          <p className={styles.opening_hours_footer_info}>Feriados - 9 às 19h30</p>
         </div>
+      </section>
+
+      <section className={styles.developed}>
+        <p>
+          Desenvolvido por
+          <a
+            className={`${styles.developer} link`}
+            href="https://severidade.com.br/"
+            rel="noreferrer"
+          >
+            Marco Severo
+          </a>
+        </p>
       </section>
     </div>
   );

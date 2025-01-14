@@ -49,7 +49,7 @@
   background-size: 50%;
 }
 
-.contact, .opening_hours {
+.contact, .opening_hours, .developed {
   padding:0 var(--spacing-medium);
   display: flex;
   flex-direction: column;
@@ -131,4 +131,19 @@
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.developed {
+  border-top: 0.1rem dotted #ffffff6b;
+  padding-top: var(--gap);
+  text-align: center;
+
+  font-family: "Titillium Web", sans-serif;
+  font-size: var(--font-size-small);
+  color: white;
+}
+
+.developer {
+  padding-left: 0.6rem;
+  font-weight: 600;
 }

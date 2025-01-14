@@ -26,16 +26,16 @@ function App() {
     <>
       <WhatsAppReserve />
       <Heder />
-      <div className="container-hero">
+      <div id="hero" className="container-hero">
         <HeroImage />
         <HeroWelcome />
       </div>
-      <HighlightGallery highlightItems={highlightItems} />
-      <Lunch lunchData={LunchData} />
-      <Breads DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
-      <SectionAddress DataSection={SectionAddressData} />
-      <SectionOpeningHours />
-      <SectionHistory />
+      <HighlightGallery id="highlights" highlightItems={highlightItems} />
+      <Lunch id="lunch" lunchData={LunchData} />
+      <Breads id="breads" DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
+      <SectionAddress id="address" DataSection={SectionAddressData} />
+      <SectionOpeningHours id="opening-hours" />
+      <SectionHistory id="history" />
       <Footer />
     </>
   );

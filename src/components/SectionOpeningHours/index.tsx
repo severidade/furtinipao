@@ -8,6 +8,10 @@ import VideoBg from '../VideoBg/index.tsx';
 import styles from './OpeningHours.module.css';
 import OpeningHoursButton from '../OpeningHoursButton/index.tsx';
 
+type OpeningHoursProps = {
+  id: string;
+}
+
 // Função auxiliar para obter o status do horário
 const getScheduleStatus = () => {
   const now = new Date();
@@ -49,7 +53,7 @@ const getScheduleStatus = () => {
   return { status: 'Fechado ', message: `Abre amanhã às ${nextOpen}h.` };
 };
 
-export default function OpeningHours() {
+export default function OpeningHours({ id } : OpeningHoursProps) {
   const containerRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
@@ -82,7 +86,7 @@ export default function OpeningHours() {
   const animatedX = hasAnimated ? '0%' : x;
 
   return (
-    <div ref={containerRef} className={styles.container_opening_hours}>
+    <section id={id} ref={containerRef} className={styles.container_opening_hours}>
       <VideoBg />
       <motion.div
         className={styles.opening_hours_card}
@@ -123,6 +127,6 @@ export default function OpeningHours() {
         </section>
         <OpeningHoursButton />
       </motion.div>
-    </div>
+    </section>
   );
 }

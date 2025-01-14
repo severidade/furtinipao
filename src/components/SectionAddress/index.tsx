@@ -7,10 +7,11 @@ import { SectionAddressDataType } from '../../types/SectionAddressDataType.tsx';
 import HighlightGalleryAddress from '../HighlightGalleryAddress/index.tsx';
 
 type AddressProps = {
+  id: string;
   DataSection: SectionAddressDataType[];
 };
 
-export default function SectionAddress({ DataSection } : AddressProps) {
+export default function SectionAddress({ id, DataSection } : AddressProps) {
   const {
     headerAddress: { addressTitle, addressDetails },
     accessibility,
@@ -19,7 +20,7 @@ export default function SectionAddress({ DataSection } : AddressProps) {
   } = DataSection[0];
 
   return (
-    <div className={styles.container_address}>
+    <section id={id} className={styles.container_address}>
       <HighlightGalleryAddress highlightItems={slider} />
       <section className={styles.header_address}>
         <h2 className={styles.header_address_title}>{addressTitle}</h2>
@@ -30,6 +31,6 @@ export default function SectionAddress({ DataSection } : AddressProps) {
         <div className={styles.pet_friendly}>{petFriendly}</div>
       </section>
       <CallUber />
-    </div>
+    </section>
   );
 }

@@ -6,8 +6,13 @@ import Slider from 'react-slick';
 import './HighlightGallery.css';
 import { HighlightGalleryType } from '../../types/HighlightGalleryType.tsx';
 
+type HighlightGalleryProps = {
+  id: string;
+  highlightItems: HighlightGalleryType[];
+};
+
 // eslint-disable-next-line max-len
-export default function HighlightGallery({ highlightItems } : {highlightItems: HighlightGalleryType[]}) {
+export default function HighlightGallery({ id, highlightItems } : HighlightGalleryProps) {
   const settings = {
     dots: false,
     infinite: false,
@@ -19,7 +24,8 @@ export default function HighlightGallery({ highlightItems } : {highlightItems: H
   };
 
   return (
-    <div
+    <section
+      id={id}
       className="container_highlight"
     >
       <Slider {...settings}>
@@ -33,6 +39,6 @@ export default function HighlightGallery({ highlightItems } : {highlightItems: H
           </figure>
         ))}
       </Slider>
-    </div>
+    </section>
   );
 }

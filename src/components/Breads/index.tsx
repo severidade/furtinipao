@@ -11,11 +11,12 @@ import { BreadsGalleryDataType } from '../../types/BreadsGalleryDataType.tsx';
 import { BreadsSectionDataType } from '../../types/BreadsSectionDataType.tsx';
 
 type BreadsProps = {
+  id: string;
   DataSlider: BreadsGalleryDataType[];
   DataSection: BreadsSectionDataType[];
 };
 
-export default function Breads({ DataSlider, DataSection } : BreadsProps) {
+export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
   const settings = {
     dots: false,
     infinite: false,
@@ -27,12 +28,12 @@ export default function Breads({ DataSlider, DataSection } : BreadsProps) {
   };
 
   return (
-    <div className="container_breads">
-      <section className="header_breads">
+    <section id={id} className="container_breads">
+      <div className="header_breads">
         <h2 className="header_breads_title">{ DataSection[0].headerBreads.breadsTitle }</h2>
         <p className="header_breads_subtitle">{ DataSection[0].headerBreads.breadsSubtitle }</p>
-      </section>
-      <section className="slider_breads">
+      </div>
+      <div className="slider_breads">
         <Slider {...settings}>
           {DataSlider.map((i) => (
             <div key={i.id}>
@@ -48,11 +49,11 @@ export default function Breads({ DataSlider, DataSection } : BreadsProps) {
           ))}
         </Slider>
 
-      </section>
-      <section className="info_breads">
+      </div>
+      <div className="info_breads">
         { DataSection[0].infoBreads }
-      </section>
+      </div>
       <BreadOrderButton />
-    </div>
+    </section>
   );
 }

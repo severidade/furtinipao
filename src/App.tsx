@@ -1,8 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { useState, useEffect } from 'react';
 import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
 // import CallUber from './components/CallUber/index.tsx';
+import { p } from 'framer-motion/client';
 import HeroImage from './components/HeroImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
@@ -21,8 +23,41 @@ import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import SectionHistory from './components/SectionHistory/index.tsx';
 import SectionEvents from './components/SectionEvents/index.tsx';
+import Preloading from './components/PreLoading/index.tsx';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkImagesLoaded = async () => {
+      // procura todas as imagens no documento
+      const images = document.querySelectorAll('img');
+
+      // Cria um array de promises que resolve quando cada imagem carrega
+      const imagePromises = Array.from(images).map((img) => {
+        if (img.complete) return Promise.resolve();
+        return new Promise((resolve) => {
+          img.addEventListener('load', resolve);
+          img.addEventListener('error', resolve); // Handle error cases as well
+        });
+      });
+
+      // Espera todas as imagens
+      await Promise.all(imagePromises);
+
+      // transição suave com delay
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    };
+
+    checkImagesLoaded();
+  }, []);
+
+  if (loading) {
+    return <Preloading />;
+  }
+
   return (
     <>
       <WhatsAppReserve />

@@ -20,6 +20,7 @@ import SectionAddress from './components/SectionAddress/index.tsx';
 import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import SectionHistory from './components/SectionHistory/index.tsx';
+import SectionEvents from './components/SectionEvents/index.tsx';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <SectionAddress id="address" DataSection={SectionAddressData} />
       <SectionOpeningHours id="opening-hours" />
       <SectionHistory id="history" />
+      <SectionEvents id="events" />
       <Footer />
     </>
   );

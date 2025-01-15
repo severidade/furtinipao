@@ -70,6 +70,7 @@ export default function Header() {
           <li><a className={styles.menu_item} href="#address" onClick={(e) => handleClick(e, 'address')}>Localização</a></li>
           <li><a className={styles.menu_item} href="#opening-hours" onClick={(e) => handleClick(e, 'opening-hours')}>Horários</a></li>
           <li><a className={styles.menu_item} href="#history" onClick={(e) => handleClick(e, 'history')}>História</a></li>
+          <li><a className={styles.menu_item} href="#events" onClick={(e) => handleClick(e, 'events')}>Eventos</a></li>
         </ul>
       </div>
     </nav>

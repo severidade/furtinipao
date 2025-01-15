@@ -14,6 +14,7 @@
   flex-direction: column;
   gap: var(--spacing-large);
   background: var(--areia-light);
+  /* background: linear-gradient(180deg, var(--areia-light) 0%, #f7e5d4 100%); */
   padding: var(--spacing-medium);
   border-radius: var(--border-radius-medium);
 }

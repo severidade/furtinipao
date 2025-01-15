@@ -5,7 +5,7 @@ import styles from './preloading.module.css';
 export default function Preloading() {
   return (
     <div className={styles.preloading}>
-      <div className={styles.preloading_img}>Imagem de pré carregamento do site</div>
+      <div className={styles.preloading_img}>Imagem de pré carregamento do site atual</div>
     </div>
   );
 }

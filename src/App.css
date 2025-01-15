@@ -7,3 +7,19 @@
 .tijolo {
   height: 50vh;
 }
+
+#highlights {
+  border: solid tomato;
+}
+
+#lunch {
+  border: solid violet;
+}
+
+#breads {
+  border: solid olive;
+}
+
+#history {
+  border: solid slateblue;
+}

@@ -4,9 +4,13 @@
 import styles from './SectionHistory.module.css';
 import url from '../../assets/HistorySection/history.jpeg';
 
-export default function SectionHistory() {
+type SectionHistoryProps= {
+  id: string;
+}
+
+export default function SectionHistory({ id } : SectionHistoryProps) {
   return (
-    <div className={styles.container_history}>
+    <section id={id} className={styles.container_history}>
       <figure className={styles.container_history_img}>
         <img
           src={url}
@@ -26,6 +30,6 @@ export default function SectionHistory() {
           O desejo de produzir nosso próprio alimento nos levou aos pães e à fermentação natural, iniciando uma jornada de aprendizado e evolução: criamos nosso fermento, experimentamos pães que nem sempre saíam perfeitos (mas para nós eram incríveis), enfrentamos queimaduras, erros e até dois fornos queimados.
         </p>
       </section>
-    </div>
+    </section>
   );
 }

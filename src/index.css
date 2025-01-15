@@ -10,6 +10,7 @@
   --spacing-medium: 2rem;
   --spacing-large: 3rem;
   --spacing-xlarge: 4rem;
+  --spacing-xxlarge: 5rem;
 
   --brown-darker: #453B30;
   --brown-dark: #716656;
@@ -42,6 +43,7 @@
 html {
   font-size: 62.5%;
   font-family: "Titillium Web", sans-serif;
+  scroll-behavior: smooth;
   /* color: var(--primary_color);
   font-weight: 300;
   line-height: 1.7; */

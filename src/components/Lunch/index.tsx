@@ -3,9 +3,14 @@
 import styles from './Lunch.module.css';
 import { LunchDataType } from '../../types/LunchDataType.tsx';
 
-export default function Lunch({ lunchData } : {lunchData: LunchDataType[]}) {
+type LunchProps = {
+  id: string;
+  lunchData: LunchDataType[]
+};
+
+export default function Lunch({ id, lunchData } : LunchProps) {
   return (
-    <div className={styles.container_lunch}>
+    <section id={id} className={styles.container_lunch}>
       <div className={styles.container_lunch_card}>
         <section className={styles.header_lunch}>
           <h2 className={styles.header_lunch_title}>{lunchData[0].headerLunch.lunchTitle}</h2>
@@ -23,6 +28,6 @@ export default function Lunch({ lunchData } : {lunchData: LunchDataType[]}) {
           </div> */}
         </section>
       </div>
-    </div>
+    </section>
   );
 }

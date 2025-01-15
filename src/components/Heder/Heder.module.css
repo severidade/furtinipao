@@ -89,15 +89,10 @@
 }
 
 
-
-
-
-
-
-.container_sidebar_desktop {
-  background-color: violet;
+/* .container_sidebar_desktop {
+  
   width: 100%;
-}
+} */
 
 .container_sidebar_desktop ul {
   display: flex;
@@ -116,5 +111,9 @@
 
   .nav_header {
     width: max-content;
+  }
+  
+  .container_sidebar_desktop {
+    flex-grow: 1;
   }
 }

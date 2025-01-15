@@ -1,7 +1,7 @@
 .container_address {
   position: relative;
   z-index: 1;
-  padding: var(--spacing-0) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
+  padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
   width: 100%;
   /* background: var(--areia-light); */
   display: flex;

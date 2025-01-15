@@ -16,11 +16,14 @@ export default function Header() {
   };
 
   return (
-    <div className={styles.container_header}>
-      <h1 className={styles.logo_frutini}>
-        Frutini padaria e confeitaria
-      </h1>
-      <nav className={styles.nav_frutini}>
+    <nav className={styles.container_header}>
+      <div className="nav_hader">
+        <h1 className={styles.logo_frutini}>
+          Frutini padaria e confeitaria
+        </h1>
+        <button type="button">menu hamburger</button>
+      </div>
+      <div className={styles.container_sidebar}>
         <ul>
           <li><a href="#hero" onClick={(e) => handleClick(e, 'hero')}>Início</a></li>
           <li><a href="#lunch" onClick={(e) => handleClick(e, 'lunch')}>Almoço</a></li>
@@ -29,7 +32,7 @@ export default function Header() {
           <li><a href="#opening-hours" onClick={(e) => handleClick(e, 'opening-hours')}>Horários</a></li>
           <li><a href="#history" onClick={(e) => handleClick(e, 'history')}>História</a></li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

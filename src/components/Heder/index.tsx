@@ -17,10 +17,8 @@ export default function Header() {
 
   return (
     <nav className={styles.container_header}>
-      <div className="nav_hader">
-        <h1 className={styles.logo_frutini}>
-          Frutini padaria e confeitaria
-        </h1>
+      <div className={styles.nav_header}>
+        <a className={styles.logo} href="#hero" onClick={(e) => handleClick(e, 'hero')}>Frutini padaria e confeitaria</a>
         <button type="button">menu hamburger</button>
       </div>
       <div className={styles.container_sidebar}>

@@ -1,7 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { useDeviceInfo } from '../../utils/useDeviceInfo.tsx';
 import styles from './Heder.module.css';
 
 export default function Header() {
+  const { isMobile } = useDeviceInfo();
+  // const [menuOpen, setMenuOpen] = useState(false);
+
   // Função para lidar com o clique nos links e aplicar o scroll
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -19,7 +23,15 @@ export default function Header() {
     <nav className={styles.container_header}>
       <div className={styles.nav_header}>
         <a className={styles.logo} href="#hero" onClick={(e) => handleClick(e, 'hero')}>Frutini padaria e confeitaria</a>
-        <button type="button">menu hamburger</button>
+        {/* <button className="hamburger" type="button">menu hamburger</button> */}
+        {isMobile && (
+          <button
+            className="hamburger"
+            type="button"
+          >
+            menu hamburger
+          </button>
+        )}
       </div>
       <div className={styles.container_sidebar}>
         <ul>

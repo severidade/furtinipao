@@ -18,8 +18,9 @@
 .nav_header {
   /* border: solid tomato; */
   height: 100%;
-  width: max-content;
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -30,15 +31,16 @@
   text-indent: -1000%;
   background: url('../../assets/furtini-logo2.svg') no-repeat center;
   background-size: contain;
+  flex-grow: 1;
 }
 
 /* so aparece no desktop */
 .hamburger {
   background-color: var(--brown-dark);
-  position: absolute;
+  /* position: absolute; */
   right: 20px;
   top: calc(var(--heder-height) / 2);
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   height: 50px;
   width: 50px;
   background: url(./icon/hamburger.svg) no-repeat center;
@@ -75,7 +77,7 @@
 
 /* quando a classe open é adicionada o ul desloca pra dentro  */
 .container_sidebar_mobile ul.open {
-  transform: translateX(-100%);
+  transform: translateX(-101%);
 }
 
 .menu_item {
@@ -110,5 +112,9 @@
 @media (min-width: 1024px) {
   .container_header {
     padding: 0 15vw;
+  }
+
+  .nav_header {
+    width: max-content;
   }
 }

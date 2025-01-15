@@ -1,23 +1,26 @@
 .container_header{
+  position: fixed;
   width: 100%;
   height: var(--heder-height);
-  position: fixed;
   z-index: 3;
   background-color: var(--nav);
-}
-
-.nav_header {
-  border: solid tomato;
-  width: 100%;
-  height: 100%;
+  padding: 0 20px;
+  
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  
+
+  border: solid lime;
 }
 
-.container_sidebar {
-  position: absolute;
-  right: 0;
-  top: 0;
+/* É o container do menu e da logo quando em desktop somente a logo esta aqui */
+.nav_header {
+  border: solid tomato;
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
 }
 
 .logo{
@@ -28,56 +31,40 @@
   background-size: contain;
 }
 
+/* so aparece no desktop */
+.hamburger {
+  background-color: var(--brown-dark);
+  position: absolute;
+  right: 20px;
+  top: calc(var(--heder-height) / 2);
+  transform: translateY(-50%);
+}
 
 
-
-
-
-
-
-
-/* .container_header.scrolled {
-  height: 50px;
-} */
-
-/* .nav_frutini{
-  display: none;
-} */
-
-
-
-
-
-.nav_frutini ul{
+.container_sidebar_mobile  {
   background-color: tomato;
   position: absolute;
   left: 0;
   top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 999;
-  padding: 10vh 20px;
 }
 
-
-
-/* .nav_frutini a {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav_frutini a.active {
-  color: #sua-cor-de-destaque;
-}
-
-.nav_frutini a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
+.container_sidebar_desktop {
+  background-color: violet;
   width: 100%;
-  height: 2px;
-  background-color: #sua-cor-de-destaque;
-} */
+}
+
+.container_sidebar_desktop ul {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+
+@media (min-width: 1024px) {
+  .container_header {
+    padding: 0 15vw;
+  }
+}

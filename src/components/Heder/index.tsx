@@ -23,19 +23,19 @@ export default function Header() {
     <nav className={styles.container_header}>
       <div className={styles.nav_header}>
         <a className={styles.logo} href="#hero" onClick={(e) => handleClick(e, 'hero')}>Frutini padaria e confeitaria</a>
-        {/* <button className="hamburger" type="button">menu hamburger</button> */}
         {isMobile && (
           <button
-            className="hamburger"
+            className={styles.hamburger}
             type="button"
           >
             menu hamburger
           </button>
         )}
       </div>
-      <div className={styles.container_sidebar}>
+
+      <div className={`${isMobile ? styles.container_sidebar_mobile : styles.container_sidebar_desktop}`}>
         <ul>
-          <li><a href="#hero" onClick={(e) => handleClick(e, 'hero')}>Início</a></li>
+          {/* <li><a href="#hero" onClick={(e) => handleClick(e, 'hero')}>Início</a></li> */}
           <li><a href="#lunch" onClick={(e) => handleClick(e, 'lunch')}>Almoço</a></li>
           <li><a href="#breads" onClick={(e) => handleClick(e, 'breads')}>Fornadas</a></li>
           <li><a href="#address" onClick={(e) => handleClick(e, 'address')}>Localização</a></li>

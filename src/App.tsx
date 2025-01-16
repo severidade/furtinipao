@@ -31,7 +31,7 @@ function App() {
     const checkImagesLoaded = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 3000);
     };
 
     checkImagesLoaded();

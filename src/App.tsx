@@ -29,30 +29,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const checkImagesLoaded = async () => {
-      // seleciona todas as imagens no documento
-      const images = document.querySelectorAll('img');
-
-      // cria um array de promises que resolve quando cada imagem carrega
-      const imagePromises = Array.from(images).map((img) => new Promise<void>((resolve, reject) => {
-        // Se a imagem já estiver carregada
-        if (img.complete) {
-          resolve();
-        } else {
-          // Caso contrário, adiciona listeners para quando carregar ou ocorrer erro
-          img.addEventListener('load', resolve);
-          img.addEventListener('error', reject); // pode ser útil para detectar falhas de carregamento
-        }
-      }));
-
-      // aguarda todas as imagens serem carregadas
-      try {
-        await Promise.all(imagePromises);
+    const checkImagesLoaded = () => {
+      setTimeout(() => {
         setLoading(false);
-      } catch (error) {
-        console.error('Erro ao carregar as imagens', error);
-        setLoading(false); // Também define como false, caso haja erro no carregamento das imagens
-      }
+      }, 2000);
     };
 
     checkImagesLoaded();

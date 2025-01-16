@@ -45,6 +45,7 @@ export default function HeroImage() {
         id="scroll-zoom-image"
         src={fundoImage}
         alt="imagem de destaque na home"
+        loading="lazy"
         style={{
           scale,
           width: '100%',

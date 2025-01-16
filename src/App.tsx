@@ -22,10 +22,10 @@ import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import SectionHistory from './components/SectionHistory/index.tsx';
 import SectionEvents from './components/SectionEvents/index.tsx';
-import Preloading from './components/PreLoading/index.tsx';
+// import Preloading from './components/PreLoading/index.tsx';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkImagesLoaded = () => {
@@ -34,12 +34,13 @@ function App() {
       }, 3000);
     };
 
-    checkImagesLoaded();
-  }, []);
 
-  if (loading) {
-    return <Preloading />;
-  }
+  //   checkImagesLoaded();
+  // }, []);
+
+  // if (loading) {
+  //   return <Preloading />;
+  // }
 
   return (
     <>

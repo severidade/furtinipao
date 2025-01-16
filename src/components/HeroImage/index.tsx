@@ -7,6 +7,13 @@ import fundoImage from '../../assets/cafe3.webp';
 export default function HeroImage() {
   const [windowHeight, setWindowHeight] = useState(0);
   const [elementTop, setElementTop] = useState(0);
+  const [backgroundImg, setBackgroundImg] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const background = new Image();
+    background.src = fundoImage;
+    background.onload = () => setBackgroundImg(background.src);
+  }, []);
 
   // Atualiza a altura da janela e a posição do elemento quando o componente é montado
   useEffect(() => {
@@ -43,8 +50,9 @@ export default function HeroImage() {
     <div className={styles.hero_image}>
       <motion.img
         id="scroll-zoom-image"
-        src={fundoImage}
+        src={backgroundImg || undefined}
         alt="imagem de destaque na home"
+        loading="lazy"
         style={{
           scale,
           width: '100%',

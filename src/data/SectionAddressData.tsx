@@ -1,7 +1,7 @@
 import { SectionAddressDataType } from '../types/SectionAddressDataType.tsx';
-import foto01 from '../assets/CoffeeGallery/01.png';
-import foto02 from '../assets/CoffeeGallery/02.png';
-import foto03 from '../assets/CoffeeGallery/03.png';
+import foto01 from '../assets/CoffeeGallery/01.webp';
+import foto02 from '../assets/CoffeeGallery/02.webp';
+import foto03 from '../assets/CoffeeGallery/03.webp';
 
 const SectionAddressData: SectionAddressDataType[] = [
   {

@@ -22,7 +22,7 @@ import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import SectionHistory from './components/SectionHistory/index.tsx';
 import SectionEvents from './components/SectionEvents/index.tsx';
-// import Preloading from './components/PreLoading/index.tsx';
+import Preloading from './components/PreLoading/index.tsx';
 
 function App() {
   const [loading, setLoading] = useState(true);

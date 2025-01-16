@@ -4,7 +4,6 @@ import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
 // import CallUber from './components/CallUber/index.tsx';
-import { p } from 'framer-motion/client';
 import HeroImage from './components/HeroImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';

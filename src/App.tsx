@@ -30,25 +30,9 @@ function App() {
 
   useEffect(() => {
     const checkImagesLoaded = async () => {
-      // procura todas as imagens no documento
-      const images = document.querySelectorAll('img');
-
-      // Cria um array de promises que resolve quando cada imagem carrega
-      const imagePromises = Array.from(images).map((img) => {
-        if (img.complete) return Promise.resolve();
-        return new Promise((resolve) => {
-          img.addEventListener('load', resolve);
-          img.addEventListener('error', resolve); // Handle error cases as well
-        });
-      });
-
-      // Espera todas as imagens
-      await Promise.all(imagePromises);
-
-      // transição suave com delay
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 2000);
     };
 
     checkImagesLoaded();

@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import styles from './HeroImage.module.css';
-import fundoImage from '../../assets/cafe3.jpg';
+import fundoImage from '../../assets/cafe3.webp';
 
 export default function HeroImage() {
   const [windowHeight, setWindowHeight] = useState(0);

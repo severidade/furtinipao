@@ -1,12 +1,12 @@
 import { BreadsGalleryDataType } from '../types/BreadsGalleryDataType.tsx';
 
-import foto01 from '../assets/BreadsGallery/01_pao.png';
-import foto02 from '../assets/BreadsGallery/02_pao.png';
-import foto03 from '../assets/BreadsGallery/03_pao.png';
-import foto04 from '../assets/BreadsGallery/04_pao.png';
-import foto05 from '../assets/BreadsGallery/05_pao.png';
-import foto06 from '../assets/BreadsGallery/06_pao.png';
-import foto07 from '../assets/BreadsGallery/07_pao.png';
+import foto01 from '../assets/BreadsGallery/01_pao.webp';
+import foto02 from '../assets/BreadsGallery/02_pao.webp';
+import foto03 from '../assets/BreadsGallery/03_pao.webp';
+import foto04 from '../assets/BreadsGallery/04_pao.webp';
+import foto05 from '../assets/BreadsGallery/05_pao.webp';
+import foto06 from '../assets/BreadsGallery/06_pao.webp';
+import foto07 from '../assets/BreadsGallery/07_pao.webp';
 
 const BreadsGalleryData: BreadsGalleryDataType[] = [
   {

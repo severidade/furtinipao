@@ -2,6 +2,10 @@
   width: 100%;
   overflow: hidden;
   height: 70vh;
-  background: url(../../assets/icon/pao_animado.svg) no-repeat center var(--areia-original);
+  background:
+    url('../../assets/icon/pao_animado.svg') no-repeat center, /* Primeira imagem */
+    url('../../assets/texture.png') repeat center;            /* Segunda imagem */
+  background-color: #F9F3EA; /* Cor de fundo */
+  background-size: 9rem, auto; 
   background-size: 9rem ;
 }

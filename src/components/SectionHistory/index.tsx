@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './SectionHistory.module.css';
-import url from '../../assets/HistorySection/history.jpeg';
+import url from '../../assets/HistorySection/history.jpg';
 
 type SectionHistoryProps= {
   id: string;

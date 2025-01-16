@@ -29,7 +29,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const checkImagesLoaded = async () => {
+    const checkImagesLoaded = () => {
       setTimeout(() => {
         setLoading(false);
       }, 2000);

@@ -25,21 +25,21 @@ import SectionEvents from './components/SectionEvents/index.tsx';
 // import Preloading from './components/PreLoading/index.tsx';
 
 function App() {
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const checkImagesLoaded = () => {
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 2000);
-  //   };
+  useEffect(() => {
+    const checkImagesLoaded = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    };
 
-  //   checkImagesLoaded();
-  // }, []);
+    checkImagesLoaded();
+  }, []);
 
-  // if (loading) {
-  //   return <Preloading />;
-  // }
+  if (loading) {
+    return <Preloading />;
+  }
 
   return (
     <>

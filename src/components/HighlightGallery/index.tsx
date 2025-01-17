@@ -21,6 +21,22 @@ export default function HighlightGallery({ id, highlightItems } : HighlightGalle
     slidesToScroll: 2,
     arrows: false,
     centerMode: false,
+    responsive: [
+      {
+        breakpoint: 100000, // Large breakpoint
+        settings: {
+          slidesToShow: 4.5,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1024, // Medium breakpoint
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
 
   return (

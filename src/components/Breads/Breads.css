@@ -108,3 +108,21 @@
   line-height: 1.5;
 } */
 
+@media (min-width: 1024px) {
+
+  .container_breads {
+    position: relative;
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--spacing-medium) var(--spacing-medium) var(--font-size-xxlarge) var(--spacing-medium);
+    /* background-color: tomato; */
+    /* margin-left: 40vw;
+    width: 60vw; */
+    overflow: hidden;
+    z-index: 99;
+  }
+
+}

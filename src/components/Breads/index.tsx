@@ -25,6 +25,7 @@ export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
     slidesToScroll: 2,
     arrows: false,
     centerMode: false,
+
   };
 
   return (

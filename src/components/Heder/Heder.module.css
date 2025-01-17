@@ -64,7 +64,7 @@
 .container_sidebar_mobile ul {
   width: 100%;
   height: 100%;
-  background-color: var(--terracota-darker);
+  background-color: var(--nav);
   transform: translateX(-0%);
   transition: transform 0.8s ease;
   display: flex;
@@ -83,16 +83,12 @@
 .menu_item {
   font-family: 'Halogen';
   font-size: var(--font-size-medium);
-  color: var(--terracota-light);
+  
+  color: var(--areia-light);
+  font-weight: 400;
   display: block;
   height: 5rem;
 }
-
-
-/* .container_sidebar_desktop {
-  
-  width: 100%;
-} */
 
 .container_sidebar_desktop ul {
   display: flex;
@@ -101,6 +97,11 @@
   justify-content: flex-end;
   align-items: flex-end;
   height: 100%;
+}
+
+/* Indica que o item de menu esta ativo */
+.active {
+  color: var( --terracota-darker);
 }
 
 

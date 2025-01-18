@@ -23,3 +23,14 @@
   background-size: 70%;
   transform: translateX(-25%);
 }
+
+@media (min-width: 1024px) {
+
+  .bread_order_button {
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 10vw);
+    height: 5.6rem;
+    padding: 0 5vw;
+  }
+}

@@ -13,6 +13,7 @@
   font-size: var(--font-size-medium);
   font-style: italic;
   margin-top: var(--spacing-medium);
+  z-index: 2;
 }
 
 
@@ -23,4 +24,16 @@
   background: url("../../assets/icon/uber.svg") no-repeat center;
   background-size: 70%;
   transform: translateX(-25%);
+}
+
+
+@media (min-width: 1024px) {
+
+  .uber {
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 10vw);
+    height: 5.6rem;
+    padding: 0 5vw;
+  }
 }

@@ -41,9 +41,9 @@
 
 @media (min-width: 1024px) {
   .container_highlight{
-    background-color: turquoise;
-    margin-left: 40vw;
-    width: 60vw;
+    /* background-color: turquoise; */
+    margin-left: 50vw;
+    width: 50vw;
     /* height: 50vh; */
     padding-top: calc(var(--heder-height) + var(--spacing-xlarge));
     position: relative;
@@ -54,14 +54,14 @@
   }
 
   .container_highlight  .slick-slider {
-    background-color: violet;
+    /* background-color: violet; */
     /* height: 100%; */
     position: relative;
   }
 
   .container_highlight .slider {
     width: 100%;
-    height: 35vh;
+    height: 25vh;
     background-color: var(--areia-dark);
     overflow: hidden;
     border-radius: var(--border-radius-medium);

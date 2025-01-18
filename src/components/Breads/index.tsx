@@ -25,6 +25,22 @@ export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
     slidesToScroll: 2,
     arrows: false,
     centerMode: false,
+    responsive: [
+      {
+        breakpoint: 100000, // Large breakpoint
+        settings: {
+          slidesToShow: 4.5,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1024, // Medium breakpoint
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 2,
+        },
+      },
+    ],
 
   };
 

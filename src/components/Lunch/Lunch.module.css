@@ -90,8 +90,9 @@
 
 @media (min-width: 1024px) {
   .container_lunch{
-    margin-left: 40vw;
-    width: 60vw;
+    margin-left: 50vw;
+    width: 50vw;
+    padding: var(--spacing-large) 5vw;
   }
 
   .header_lunch_dish_photo {

@@ -92,3 +92,10 @@
 }
 
 
+@media (min-width: 1024px) {
+  .container_opening_hours {
+    width: 50vw;
+    left: 50vw;
+  }
+}
+

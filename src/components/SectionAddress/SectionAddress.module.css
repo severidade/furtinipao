@@ -62,3 +62,26 @@
 }
 
 .accessibility, .pet_friendly{ padding-left: 4rem;}
+
+@media (min-width: 1024px) {
+  .container_address {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
+    width: 50vw;
+    left: 50vw;
+    /* background: var(--areia-light); */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    overflow: hidden;
+  }
+
+  .header_address{
+    padding: 0 5vw;
+  }
+
+  .accessibility_info {
+    padding: 0 5vw;
+  }
+}

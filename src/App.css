@@ -4,18 +4,12 @@
   z-index: 2;
 }
 
-/* #highlights {
-  border: solid tomato;
-}
 
-#lunch {
-  border: solid violet;
+@media only screen and (min-width: 1024px) {
+  .container-hero {
+    background-color: #ff6347;
+    width: 50vw;
+    position: fixed;
+    height: 100%;
+  }
 }
-
-#breads {
-  border: solid olive;
-}
-
-#history {
-  border: solid slateblue;
-} */

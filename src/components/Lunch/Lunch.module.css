@@ -87,3 +87,16 @@
   font-weight:600 ;
   line-height: 1.5;
 }
+
+@media (min-width: 1024px) {
+  .container_lunch{
+    margin-left: 50vw;
+    width: 50vw;
+    padding: var(--spacing-large) 5vw;
+  }
+
+  .header_lunch_dish_photo {
+    height: 15rem;
+    width: 15rem;
+  }
+}

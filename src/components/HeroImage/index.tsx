@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import styles from './HeroImage.module.css';
-import fundoImage from '../../assets/cafe3.webp';
+import fundoImage from '../../assets/cafe.webp';
 
 export default function HeroImage() {
   const [windowHeight, setWindowHeight] = useState(0);
@@ -10,23 +10,22 @@ export default function HeroImage() {
 
   // Atualiza a altura da janela e a posição do elemento quando o componente é montado
   useEffect(() => {
-    const handleResize = () => {
-      setWindowHeight(document.documentElement.clientHeight); // Usar o clientHeight
+    const handleUpdate = () => {
+      setWindowHeight(document.documentElement.clientHeight);
       const element = document.getElementById('scroll-zoom-image');
       if (element) {
         const rect = element.getBoundingClientRect();
-        setElementTop(rect.top); // Posição do topo do elemento
+        setElementTop(rect.top);
       }
     };
 
-    // Adiciona o evento de resize
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleResize); // Recalcular na rolagem também
-    handleResize(); // Chama a função logo que o componente é montado
+    window.addEventListener('resize', handleUpdate);
+    window.addEventListener('scroll', handleUpdate);
+    handleUpdate();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleResize);
+      window.removeEventListener('resize', handleUpdate);
+      window.removeEventListener('scroll', handleUpdate);
     };
   }, []);
 

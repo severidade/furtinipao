@@ -96,6 +96,7 @@
   .container_opening_hours {
     width: 50vw;
     left: 50vw;
+    padding: 0 10vw 5vw 10vw ;
   }
 }
 

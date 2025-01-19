@@ -9,3 +9,11 @@
   background-size: 9rem, auto; 
   background-size: 9rem ;
 }
+
+
+/* @media (min-width: 1024px) {
+  .hero_image {
+    width: 100%;
+    overflow: hidden;
+  }
+} */

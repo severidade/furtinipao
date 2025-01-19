@@ -11,6 +11,8 @@ export type SectionTemplateType = {
   content: string,
   callToActionBt?: {
     phoneNumber: string; // Número de telefone para a ação do botão
+    buttonTitle: string // Título que irá ficar no botão
     message: string; // Mensagem a ser enviada na ação
+    model: string // Modelo do botão
   };
 };

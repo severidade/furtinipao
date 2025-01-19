@@ -57,7 +57,11 @@
   font-size: var(--font-size-small);
   font-weight: 500;
   color: var(--brown-darker);
-  line-height: 1.5;
+  line-height: 2;
+
+  /* background: violet; */
+  width: 70ch;  /* Ajusta a largura para no máximo 75 caracteres */
+  max-width: 100%;
 }
 
 @media (min-width: 1024px) {

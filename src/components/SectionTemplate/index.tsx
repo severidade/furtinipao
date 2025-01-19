@@ -4,6 +4,7 @@
 import parse from 'html-react-parser';
 import styles from './SectionTemplate.module.css';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+import ButtonTemplate from '../ButtonTemplate/index.tsx';
 
 type SectionTemplateProps= {
   id: string;
@@ -36,7 +37,15 @@ export default function SectionTemplate({ id, dataSection } : SectionTemplatePro
             </div>
           </section>
 
-          {i.callToActionBt && <p>botão</p>}
+          {i.callToActionBt
+          && (
+            <ButtonTemplate
+              number={i.callToActionBt.phoneNumber}
+              title={i.callToActionBt.buttonTitle}
+              msg={i.callToActionBt.message}
+              model={i.callToActionBt.model}
+            />
+          )}
         </section>
       ))}
     </>

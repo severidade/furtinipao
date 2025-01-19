@@ -1,0 +1,24 @@
+.button {
+  background-color: var(--terracota-darker);
+  max-width: 280rem;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-medium);
+  color: var(--areia-light );
+  font-family: 'MacklinText';
+  position: relative;
+  font-weight: 800;
+  font-size: var(--font-size-medium);
+  font-style: italic;
+}
+
+.event::before {
+  content: "";
+  height: 44px;
+  width: 44px;
+  background: url("../../assets/icon/tada.svg") no-repeat center;
+  background-size: 70%;
+  transform: translateX(-25%);
+}

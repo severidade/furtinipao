@@ -1,4 +1,4 @@
-.container_events {
+.container {
   position: relative;
   z-index: 1;
   padding: var(--spacing-0) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
@@ -10,7 +10,20 @@
   padding-top: var(--gap);
 }
 
-.header_events{
+.container_img{
+  height: calc(100vw - 4rem);
+  background-color: var(--areia-dark);
+  overflow: hidden;
+}
+
+.container_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ /* vou tirar isso pq deve ficar no geral  */
+}
+
+.header{
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -18,7 +31,7 @@
   z-index: 2;
 }
 
-.header_events_title {
+.header_title {
   font-family: 'Halogen';
   font-size: var(--font-size-xlarge);
   line-height: 1;
@@ -26,7 +39,11 @@
   color: var(--terracota-darker);
 }
 
-.events_info {
+.header_subtitle{
+  padding-top: var(--gap);
+}
+
+.container_content {
   padding: 0 var(--spacing-medium);
   z-index: 2;
   display: flex;
@@ -35,34 +52,26 @@
   padding-top: var(--spacing-medium);
 }
 
-.events {
+.content, .header_subtitle {
   font-family: 'MacklinText';
   font-size: var(--font-size-small);
   font-weight: 500;
   color: var(--brown-darker);
-  line-height: 1.5;
-}
+  line-height: 2;
 
-.container_events_img{
-  height: calc(100vw - 4rem);
-  background-color: var(--areia-dark);
-  overflow: hidden;
-}
-
-.container_events_img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* background: violet; */
+  width: 70ch;  /* Ajusta a largura para no máximo 75 caracteres */
+  max-width: 100%;
 }
 
 @media (min-width: 1024px) {
-  .container_events  {
+  .container {
     width: 50vw;
     left: 50vw;
     padding: var(--spacing-large) 5vw; 
   }
 
-  .container_events_img {
+  .container_img {
     width: 100%;
     height: 30vh;
     object-fit: cover;

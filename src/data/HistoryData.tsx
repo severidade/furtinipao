@@ -12,7 +12,7 @@ const HistoryData: SectionTemplateType[] = [
       title: 'Nossa História',
       subtitle: 'Nossa história começou em 2018, movida pela busca por hábitos de vida mais saudáveis.',
     },
-    content: 'O desejo de produzir nosso próprio alimento nos levou aos pães e à fermentação natural, iniciando uma jornada de aprendizado e evolução: criamos nosso fermento, experimentamos pães que nem sempre saíam perfeitos (mas para nós eram incríveis), enfrentamos queimaduras, erros e até dois fornos queimados.',
+    content: '<strong>O desejo de produzir</strong> nosso próprio alimento nos levou aos pães e à fermentação natural, iniciando uma jornada de aprendizado e evolução: criamos nosso fermento, experimentamos pães que nem sempre saíam perfeitos (mas para nós eram incríveis), enfrentamos queimaduras, erros e até dois fornos queimados.',
   },
 
 ];

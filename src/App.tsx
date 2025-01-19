@@ -21,6 +21,8 @@ import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import SectionHistory from './components/SectionHistory/index.tsx';
 import SectionEvents from './components/SectionEvents/index.tsx';
+import SectionTemplate from './components/SectionTemplate/index.tsx';
+import HistoryData from './data/HistoryData.tsx';
 
 function App() {
   return (
@@ -49,6 +51,11 @@ function App() {
         DataSection={SectionAddressData}
       />
       <SectionOpeningHours id="opening-hours" />
+      <SectionTemplate
+        id="history"
+        dataSection={HistoryData}
+      />
+
       <SectionHistory id="history" />
       <SectionEvents id="events" />
       <Footer />

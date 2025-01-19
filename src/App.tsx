@@ -19,7 +19,7 @@ import SectionTemplate from './components/SectionTemplate/index.tsx';
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
 import BreadsGalleryData from './data/BreadsGalleryData.tsx';
-import BreadsSectionData from './data/BreadsSectionData.tsx';
+import BreadsData from './data/BreadsData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';
 import EventsData from './data/EventsData.tsx';
@@ -41,10 +41,18 @@ function App() {
         id="lunch"
         lunchData={LunchData}
       />
-      <Breads
+
+      {/* trabalhando aqui */}
+      {/* <Breads
         id="breads"
         DataSlider={BreadsGalleryData}
         DataSection={BreadsSectionData}
+      /> */}
+
+      <Breads
+        id="breads"
+        DataSlider={BreadsGalleryData}
+        DataSection={BreadsData}
       />
       <SectionAddress
         id="address"
@@ -66,3 +74,5 @@ function App() {
 }
 
 export default App;
+
+// https://squoosh.app/ comprimir imagens

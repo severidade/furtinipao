@@ -1,6 +1,6 @@
 export type SectionTemplateType = {
   id: number; // Identificador único da seção
-  figure: {
+  figure?: {
     url: string; // URL da imagem
     altText?: string; // Texto alternativo para acessibilidade (opcional)
   };

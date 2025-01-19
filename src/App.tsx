@@ -1,9 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useState, useEffect } from 'react';
 import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
-// import CallUber from './components/CallUber/index.tsx';
+
 import HeroImage from './components/HeroImage/index.tsx';
 import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
@@ -22,25 +21,8 @@ import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import SectionHistory from './components/SectionHistory/index.tsx';
 import SectionEvents from './components/SectionEvents/index.tsx';
-// import Preloading from './components/PreLoading/index.tsx';
 
 function App() {
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const checkImagesLoaded = () => {
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 2000);
-  //   };
-
-  //   checkImagesLoaded();
-  // }, []);
-
-  // if (loading) {
-  //   return <Preloading />;
-  // }
-
   return (
     <>
       <WhatsAppReserve />
@@ -49,10 +31,23 @@ function App() {
         <HeroImage />
         <HeroWelcome />
       </div>
-      <HighlightGallery id="highlights" highlightItems={highlightItems} />
-      <Lunch id="lunch" lunchData={LunchData} />
-      <Breads id="breads" DataSlider={BreadsGalleryData} DataSection={BreadsSectionData} />
-      <SectionAddress id="address" DataSection={SectionAddressData} />
+      <HighlightGallery
+        id="highlights"
+        highlightItems={highlightItems}
+      />
+      <Lunch
+        id="lunch"
+        lunchData={LunchData}
+      />
+      <Breads
+        id="breads"
+        DataSlider={BreadsGalleryData}
+        DataSection={BreadsSectionData}
+      />
+      <SectionAddress
+        id="address"
+        DataSection={SectionAddressData}
+      />
       <SectionOpeningHours id="opening-hours" />
       <SectionHistory id="history" />
       <SectionEvents id="events" />

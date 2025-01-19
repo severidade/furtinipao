@@ -42,13 +42,6 @@ function App() {
         lunchData={LunchData}
       />
 
-      {/* trabalhando aqui */}
-      {/* <Breads
-        id="breads"
-        DataSlider={BreadsGalleryData}
-        DataSection={BreadsSectionData}
-      /> */}
-
       <Breads
         id="breads"
         DataSlider={BreadsGalleryData}

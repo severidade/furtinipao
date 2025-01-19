@@ -33,8 +33,7 @@
 }
 
 @media (min-width: 1024px) {
-
-  .button.bread {
+  .button.breads {
     left: 50% ;
     transform: translateX(-50%);
     width: calc(100% - 10vw);

@@ -2,13 +2,11 @@
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
 import Slider from 'react-slick';
-import BreadOrderButton from '../BreadOrderButton/index.tsx';
-// import styles from './Breads.module.css';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Breads.css';
 import { BreadsGalleryDataType } from '../../types/BreadsGalleryDataType.tsx';
-// import { BreadsSectionDataType } from '../../types/BreadsSectionDataType.tsx';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import ButtonTemplate from '../ButtonTemplate/index.tsx';
 
@@ -74,17 +72,16 @@ export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
       <div className="info_breads">
         { content }
       </div>
-      <BreadOrderButton />
 
       {callToActionBt
-          && (
-            <ButtonTemplate
-              number={callToActionBt.phoneNumber}
-              title={callToActionBt.buttonTitle}
-              msg={callToActionBt.message}
-              model={callToActionBt.model}
-            />
-          )}
+        && (
+          <ButtonTemplate
+            number={callToActionBt.phoneNumber}
+            title={callToActionBt.buttonTitle}
+            msg={callToActionBt.message}
+            model={callToActionBt.model}
+          />
+        )}
     </section>
   );
 }

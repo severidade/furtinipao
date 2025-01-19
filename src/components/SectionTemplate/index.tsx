@@ -13,17 +13,19 @@ type SectionTemplateProps= {
 
 export default function SectionTemplate({ id, dataSection } : SectionTemplateProps) {
   return (
-    // <section id={id} className={styles[`container_${id}`]}>
+
     <>
       {dataSection.map((i) => (
         <section key={i.id} id={id} className={styles.container}>
           <figure className={styles.container_img}>
-            <img
-              src={i.figure.url}
-              alt={i.figure.altText}
-              loading="lazy"
-              className="highlight_image"
-            />
+            {i.figure && (
+              <img
+                src={i.figure.url}
+                alt={i.figure.altText}
+                loading="lazy"
+                className="highlight_image"
+              />
+            )}
           </figure>
 
           <section className={styles.header}>

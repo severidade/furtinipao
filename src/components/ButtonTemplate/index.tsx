@@ -5,7 +5,7 @@ type ButtonTemplateType = {
   number: string;
   title: string;
   msg: string;
-  model: 'event' | 'breads'; // Tipagem explícita para modelos possíveis
+  model: string;
 };
 
 export default function ButtonTemplate({

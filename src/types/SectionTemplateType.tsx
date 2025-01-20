@@ -19,10 +19,11 @@ export type SectionTemplateType = {
     day: string;
     hours: string;
   }[];
-  gallerySlider?: { // Horário de funcionamento e dias
+  gallerySlider?: { // Todos os Slider tem esse padrão
     id: number;
     altText: string;
     image: string;
+    breadName?: string, // somente no slider de pães tem o nome do pao
   }[];
   characteristics?: {
     id: number,

@@ -18,7 +18,6 @@ import SectionTemplate from './components/SectionTemplate/index.tsx';
 
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
-import BreadsGalleryData from './data/BreadsGalleryData.tsx';
 import BreadsData from './data/BreadsData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';
@@ -44,8 +43,7 @@ function App() {
 
       <Breads
         id="breads"
-        DataSlider={BreadsGalleryData} // fora do padrao
-        DataSection={BreadsData}
+        DataSection={BreadsData} // PADRONIZADO
       />
       <SectionAddress
         id="address"

@@ -1,4 +1,11 @@
-// import { BreadsSectionDataType } from '../types/BreadsSectionDataType.tsx';
+import foto01 from '../assets/BreadsGallery/01_pao.webp';
+import foto02 from '../assets/BreadsGallery/02_pao.webp';
+import foto03 from '../assets/BreadsGallery/03_pao.webp';
+import foto04 from '../assets/BreadsGallery/04_pao.webp';
+import foto05 from '../assets/BreadsGallery/05_pao.webp';
+import foto06 from '../assets/BreadsGallery/06_pao.webp';
+import foto07 from '../assets/BreadsGallery/07_pao.webp';
+
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 const DEFAULT_HEADER = {
@@ -15,12 +22,58 @@ const DEFAULT_CALL_TO_ACTION = {
   model: 'breads',
 };
 
+const DEFAULT_SLIDER = [
+  {
+    id: 1,
+    altText: 'Foto do Pão Integral',
+    breadName: 'Pão Integral',
+    image: foto01,
+  },
+  {
+    id: 2,
+    altText: 'Foto do Pão de Milho com Girassol',
+    breadName: 'Pão de Milho com Girassol',
+    image: foto02,
+  },
+  {
+    id: 3,
+    altText: 'Foto do Pão de Chocolate',
+    breadName: 'Pão de Chocolate',
+    image: foto03,
+  },
+  {
+    id: 4,
+    altText: 'Foto do Pão Delícia de Minas',
+    breadName: 'Pão Delícia de Minas',
+    image: foto04,
+  },
+  {
+    id: 5,
+    altText: 'Foto do Pão Australiano',
+    breadName: 'Pão Australiano',
+    image: foto05,
+  },
+  {
+    id: 6,
+    altText: 'Foto do Pão de Milho',
+    breadName: 'Pão de Milho',
+    image: foto06,
+  },
+  {
+    id: 7,
+    altText: 'Foto do Brioche',
+    breadName: 'Brioche',
+    image: foto07,
+  },
+];
+
 const BreadsSectionData: SectionTemplateType[] = [
   {
     id: 1,
     header: DEFAULT_HEADER,
     content: DEFAULT_INFO,
     callToActionBt: DEFAULT_CALL_TO_ACTION,
+    gallerySlider: DEFAULT_SLIDER,
   },
 ];
 

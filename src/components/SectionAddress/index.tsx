@@ -3,7 +3,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './SectionAddress.module.css';
 import CallUber from '../CallUber/index.tsx';
-// import { SectionAddressDataType } from '../../types/SectionAddressDataType.tsx';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import HighlightGalleryAddress from '../HighlightGalleryAddress/index.tsx';
 

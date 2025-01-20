@@ -6,18 +6,20 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Breads.css';
-import { BreadsGalleryDataType } from '../../types/BreadsGalleryDataType.tsx';
+// import { BreadsGalleryDataType } from '../../types/BreadsGalleryDataType.tsx';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import ButtonTemplate from '../ButtonTemplate/index.tsx';
 
 type BreadsProps = {
   id: string;
-  DataSlider: BreadsGalleryDataType[];
+  // DataSlider: BreadsGalleryDataType[];
   DataSection: SectionTemplateType[];
 };
 
-export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
-  const [{ header: { title, subtitle }, content, callToActionBt }] = DataSection;
+export default function Breads({ id, DataSection } : BreadsProps) {
+  const [{
+    header: { title, subtitle }, content, callToActionBt, gallerySlider,
+  }] = DataSection;
 
   const settings = {
     dots: false,
@@ -54,7 +56,7 @@ export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
       </div>
       <div className="slider_breads">
         <Slider {...settings}>
-          {DataSlider.map((i) => (
+          {gallerySlider && gallerySlider.map((i) => (
             <div key={i.id}>
               <figure className="slider">
                 <img

@@ -147,3 +147,92 @@
   padding-left: 0.6rem;
   font-weight: 600;
 }
+
+.link {
+  /* background-color: orange; */
+  padding-left: 8px;
+}
+
+@media (min-width: 1024px) {
+
+  .container_footer {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-medium) var(--spacing-large);
+    /* padding: 0 15vw; */
+    width: 100%;
+    overflow: hidden;
+    background: var(--terracota-darker);
+    z-index: 3;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+  }
+
+  .menu_social {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    justify-content: flex-start;
+    align-items: flex-end;
+    /* background-color: violet; */
+    /* transform: translateY(40px); */
+    padding-top: 0.6rem;
+  }
+
+  .contact {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .telefone_list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .opening_hours {
+    grid-column: 4 / 6;
+    grid-row: 1 / 2;
+    /* background: tomato; */
+  }
+
+  .opening_hours_footer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 0;
+    /* background: violet; */
+    width: 100%;
+  }
+
+  .opening_hours_footer_info {
+
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .contact, .opening_hours, .developed {
+    padding:0 var(--spacing-medium);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-small);
+  }
+
+  .developed {
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    justify-content: flex-end;
+  }
+
+  .developer {
+    padding-left: 0.6rem;
+    padding-top: 0.6rem;
+    font-weight: 600;
+    /* background: lightgreen; */
+  }
+
+
+}

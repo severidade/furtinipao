@@ -10,10 +10,10 @@
   background-size: 9rem ;
 }
 
+@media (min-width: 1024px) {
 
-/* @media (min-width: 1024px) {
   .hero_image {
     width: 100%;
-    overflow: hidden;
+    height: calc(100vh - 75px)
   }
-} */
+}

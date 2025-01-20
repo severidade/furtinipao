@@ -95,10 +95,10 @@ export default function Footer() {
       </section>
 
       <section className={styles.developed}>
-        <p>
+        <p className={styles.developer}>
           Desenvolvido por
           <a
-            className={`${styles.developer} link`}
+            className={styles.link}
             href="https://severidade.com.br/"
             rel="noreferrer"
           >

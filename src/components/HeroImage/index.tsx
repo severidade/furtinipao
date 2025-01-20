@@ -1,14 +1,20 @@
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/react-in-jsx-scope */
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useDeviceInfo } from '../../utils/useDeviceInfo.tsx';
 import styles from './HeroImage.module.css';
-import fundoImage from '../../assets/cafe.webp';
+import fundoImageMobile from '../../assets/cafe.webp';
+import fundoImageDesktop from '../../assets/HighlightGallery/07.jpeg';
 
 export default function HeroImage() {
+  const { isMobile } = useDeviceInfo();
+
   const [windowHeight, setWindowHeight] = useState(0);
   const [elementTop, setElementTop] = useState(0);
 
-  // Atualiza a altura da janela e a posição do elemento quando o componente é montado
+  const fundoImage = isMobile ? fundoImageMobile : fundoImageDesktop;
+
   useEffect(() => {
     const handleUpdate = () => {
       setWindowHeight(document.documentElement.clientHeight);
@@ -29,13 +35,14 @@ export default function HeroImage() {
     };
   }, []);
 
-  const { scrollY } = useScroll();
+  const scaleValues = isMobile ? [3, 1.1] : [1.3, 1];
+  // Define os valores dinamicamente com base em isMobile
 
-  // A escala vai ser calculada com base na rolagem e na altura da janela e posição do elemento
+  const { scrollY } = useScroll();
   const scale = useTransform(
     scrollY,
     [elementTop - windowHeight, elementTop + windowHeight],
-    [3, 1.1],
+    scaleValues,
   );
 
   return (
@@ -48,7 +55,6 @@ export default function HeroImage() {
         style={{
           scale,
           width: '100%',
-          height: '70vh',
           objectFit: 'cover',
           objectPosition: 'center',
         }}

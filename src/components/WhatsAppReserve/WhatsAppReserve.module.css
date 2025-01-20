@@ -13,3 +13,9 @@
   background-size: 60%;
   cursor: pointer
 }
+
+@media (min-width: 1024px) {
+  .WhatsAppReserve_fixed {
+    bottom: 7rem;
+  }
+}

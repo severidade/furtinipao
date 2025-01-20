@@ -42,3 +42,21 @@
   color: var(--brown-darker);
   z-index: 2;
 }
+
+@media (min-width: 1024px) {
+
+  .hero_welcome {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 50%;
+    /* gap: 2.4rem; */
+    /* padding: var(--spacing-large) var(--spacing-xlarge); */
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    background: #F9F3EA url('../../assets/texture.png') repeat center;
+  }
+}

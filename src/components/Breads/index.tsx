@@ -2,21 +2,23 @@
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
 import Slider from 'react-slick';
-import BreadOrderButton from '../BreadOrderButton/index.tsx';
-// import styles from './Breads.module.css';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Breads.css';
 import { BreadsGalleryDataType } from '../../types/BreadsGalleryDataType.tsx';
-import { BreadsSectionDataType } from '../../types/BreadsSectionDataType.tsx';
+import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+import ButtonTemplate from '../ButtonTemplate/index.tsx';
 
 type BreadsProps = {
   id: string;
   DataSlider: BreadsGalleryDataType[];
-  DataSection: BreadsSectionDataType[];
+  DataSection: SectionTemplateType[];
 };
 
 export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
+  const [{ header: { title, subtitle }, content, callToActionBt }] = DataSection;
+
   const settings = {
     dots: false,
     infinite: false,
@@ -47,8 +49,8 @@ export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
   return (
     <section id={id} className="container_breads">
       <div className="header_breads">
-        <h2 className="header_breads_title">{ DataSection[0].headerBreads.breadsTitle }</h2>
-        <p className="header_breads_subtitle">{ DataSection[0].headerBreads.breadsSubtitle }</p>
+        <h2 className="header_breads_title">{ title }</h2>
+        <p className="header_breads_subtitle">{ subtitle }</p>
       </div>
       <div className="slider_breads">
         <Slider {...settings}>
@@ -68,9 +70,18 @@ export default function Breads({ id, DataSlider, DataSection } : BreadsProps) {
 
       </div>
       <div className="info_breads">
-        { DataSection[0].infoBreads }
+        { content }
       </div>
-      <BreadOrderButton />
+
+      {callToActionBt
+        && (
+          <ButtonTemplate
+            number={callToActionBt.phoneNumber}
+            title={callToActionBt.buttonTitle}
+            msg={callToActionBt.message}
+            model={callToActionBt.model}
+          />
+        )}
     </section>
   );
 }

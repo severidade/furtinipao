@@ -3,32 +3,43 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './SectionAddress.module.css';
 import CallUber from '../CallUber/index.tsx';
-import { SectionAddressDataType } from '../../types/SectionAddressDataType.tsx';
+// import { SectionAddressDataType } from '../../types/SectionAddressDataType.tsx';
+import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import HighlightGalleryAddress from '../HighlightGalleryAddress/index.tsx';
 
 type AddressProps = {
   id: string;
-  DataSection: SectionAddressDataType[];
+  dataSection: SectionTemplateType[];
 };
 
-export default function SectionAddress({ id, DataSection } : AddressProps) {
+export default function SectionAddress({ id, dataSection } : AddressProps) {
   const {
-    headerAddress: { addressTitle, addressDetails },
-    accessibility,
-    petFriendly,
-    slider,
-  } = DataSection[0];
+    header: { title, subtitle },
+    characteristics,
+    gallerySlider,
+  } = dataSection[0];
 
   return (
     <section id={id} className={styles.container_address}>
-      <HighlightGalleryAddress highlightItems={slider} />
+
+      { gallerySlider && (<HighlightGalleryAddress highlightItems={gallerySlider} />) }
+
       <section className={styles.header_address}>
-        <h2 className={styles.header_address_title}>{addressTitle}</h2>
-        <address className={styles.address_details}>{addressDetails}</address>
+        <h2 className={styles.header_address_title}>{title}</h2>
+        <address className={styles.address_details}>{subtitle}</address>
       </section>
       <section className={styles.accessibility_info}>
-        <div className={styles.accessibility}>{accessibility}</div>
-        <div className={styles.pet_friendly}>{petFriendly}</div>
+        {characteristics && (
+          characteristics.map((i) => (
+            <div
+              key={i.id}
+              className={styles.characteristics}
+            >
+              {' '}
+              {i.value}
+            </div>
+          ))
+        )}
       </section>
       <CallUber />
     </section>

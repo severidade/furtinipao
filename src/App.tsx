@@ -19,7 +19,7 @@ import SectionTemplate from './components/SectionTemplate/index.tsx';
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
 import BreadsGalleryData from './data/BreadsGalleryData.tsx';
-import BreadsSectionData from './data/BreadsSectionData.tsx';
+import BreadsData from './data/BreadsData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';
 import EventsData from './data/EventsData.tsx';
@@ -35,30 +35,33 @@ function App() {
       </div>
       <HighlightGallery
         id="highlights"
-        highlightItems={highlightItems}
+        highlightItems={highlightItems} // padronizar
       />
       <Lunch
         id="lunch"
-        lunchData={LunchData}
+        lunchData={LunchData} // padronizar
       />
+
       <Breads
         id="breads"
-        DataSlider={BreadsGalleryData}
-        DataSection={BreadsSectionData}
+        DataSlider={BreadsGalleryData} // fora do padrao
+        DataSection={BreadsData}
       />
       <SectionAddress
         id="address"
-        DataSection={SectionAddressData}
+        dataSection={SectionAddressData} // PADRONIZADO
       />
+
+      {/* PADRONIZADO */}
       <SectionOpeningHours id="opening-hours" />
 
       <SectionTemplate
         id="history"
-        dataSection={HistoryData}
+        dataSection={HistoryData} // PADRONIZADO
       />
       <SectionTemplate
         id="events"
-        dataSection={EventsData}
+        dataSection={EventsData} // PADRONIZADO
       />
       <Footer />
     </>
@@ -66,3 +69,5 @@ function App() {
 }
 
 export default App;
+
+// https://squoosh.app/ comprimir imagens

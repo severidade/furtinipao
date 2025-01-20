@@ -1,36 +1,44 @@
 .button {
   background-color: var(--terracota-darker);
+  color: var(--areia-light);
+  font-family: 'MacklinText';
+  font-size: var(--font-size-medium);
+  font-style: italic;
+  font-weight: 800;
+
   max-width: 280rem;
   height: 5.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
   border-radius: var(--border-radius-medium);
-  color: var(--areia-light );
-  font-family: 'MacklinText';
   position: relative;
-  font-weight: 800;
-  font-size: var(--font-size-medium);
-  font-style: italic;
+}
+
+
+.event::before, .breads::before, .reserv::before{
+  content: "";
+  height: 44px;
+  width: 44px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  transform: translateX(-25%);
 }
 
 .event::before {
-  content: "";
-  height: 44px;
-  width: 44px;
-  background: url("../../assets/icon/tada.svg") no-repeat center;
-  background-size: 70%;
-  transform: translateX(-25%);
+  background-image: url("../../assets/icon/tada.svg");
 }
 
 .breads::before {
-  content: "";
-  height: 44px;
-  width: 44px;
-  background: url("../../assets/icon/bread.png") no-repeat center;
-  background-size: 70%;
-  transform: translateX(-25%);
+  background-image: url("../../assets/icon/bread.png");
 }
+
+.reserv::before {
+  background-image: url("../../assets/icon/restaurant 2.png");
+}
+
 
 @media (min-width: 1024px) {
   .button.breads {

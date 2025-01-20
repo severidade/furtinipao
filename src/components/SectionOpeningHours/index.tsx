@@ -6,8 +6,8 @@ import {
 } from 'react';
 import VideoBg from '../VideoBg/index.tsx';
 import styles from './OpeningHours.module.css';
-import OpeningHoursButton from '../OpeningHoursButton/index.tsx';
 import { getScheduleStatus } from '../../utils/scheduleUtils.tsx';
+import ButtonTemplate from '../ButtonTemplate/index.tsx';
 
 type OpeningHoursProps = {
   id: string;
@@ -44,6 +44,9 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
   }, []);
 
   const animatedX = hasAnimated ? '0%' : x;
+
+  const phoneNumber = '5531992456878';
+  const message = 'Olá! Gostaria de fazer uma reserva.';
 
   return (
     <section id={id} ref={containerRef} className={styles.container_opening_hours}>
@@ -85,7 +88,13 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
             9 às 19h30
           </div>
         </section>
-        <OpeningHoursButton />
+
+        <ButtonTemplate
+          number={phoneNumber}
+          title="Faça sua reserva"
+          msg={message}
+          model="reserv"
+        />
       </motion.div>
     </section>
   );

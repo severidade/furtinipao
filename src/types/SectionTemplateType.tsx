@@ -19,4 +19,13 @@ export type SectionTemplateType = {
     day: string;
     hours: string;
   }[];
+  gallerySlider?: { // Horário de funcionamento e dias
+    id: number;
+    altText: string;
+    image: string;
+  }[];
+  characteristics?: {
+    id: number,
+    value: string,
+  }[];
 };

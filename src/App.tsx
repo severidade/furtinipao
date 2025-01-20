@@ -35,31 +35,33 @@ function App() {
       </div>
       <HighlightGallery
         id="highlights"
-        highlightItems={highlightItems}
+        highlightItems={highlightItems} // padronizar
       />
       <Lunch
         id="lunch"
-        lunchData={LunchData}
+        lunchData={LunchData} // padronizar
       />
 
       <Breads
         id="breads"
-        DataSlider={BreadsGalleryData}
+        DataSlider={BreadsGalleryData} // fora do padrao
         DataSection={BreadsData}
       />
       <SectionAddress
         id="address"
-        DataSection={SectionAddressData}
+        dataSection={SectionAddressData} // PADRONIZADO
       />
+
+      {/* PADRONIZADO */}
       <SectionOpeningHours id="opening-hours" />
 
       <SectionTemplate
         id="history"
-        dataSection={HistoryData}
+        dataSection={HistoryData} // PADRONIZADO
       />
       <SectionTemplate
         id="events"
-        dataSection={EventsData}
+        dataSection={EventsData} // PADRONIZADO
       />
       <Footer />
     </>

@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/react-in-jsx-scope */
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   useRef, useState, useEffect,
@@ -8,6 +7,8 @@ import VideoBg from '../VideoBg/index.tsx';
 import styles from './OpeningHours.module.css';
 import { getScheduleStatus } from '../../utils/scheduleUtils.tsx';
 import ButtonTemplate from '../ButtonTemplate/index.tsx';
+
+import OpeningHoursData from '../../data/OpeningHoursData.tsx';
 
 type OpeningHoursProps = {
   id: string;
@@ -18,6 +19,8 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [status, setStatus] = useState('');
+
+  const [{ header: { title }, schedule, callToActionBt }] = OpeningHoursData;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -45,9 +48,6 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
 
   const animatedX = hasAnimated ? '0%' : x;
 
-  const phoneNumber = '5531992456878';
-  const message = 'Olá! Gostaria de fazer uma reserva.';
-
   return (
     <section id={id} ref={containerRef} className={styles.container_opening_hours}>
       <VideoBg />
@@ -56,7 +56,7 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
         style={{ x: animatedX }}
         transition={{ type: 'spring', stiffness: 70, damping: 20 }}
       >
-        <h2 className={styles.opening_hours_title}>Horário de funcionamento</h2>
+        <h2 className={styles.opening_hours_title}>{title}</h2>
         <section
           className={styles.schedule_table}
           aria-live="polite"
@@ -67,34 +67,27 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
             </strong>
             {statusMessage}
           </div>
-          <div className={styles.schedule_row}>
-            <strong>Terça a Sexta</strong>
-            <div className={styles.dots} />
-            10 às 20h
-          </div>
-          <div className={styles.schedule_row}>
-            <strong>Sábado:</strong>
-            <div className={styles.dots} />
-            9 às 20h
-          </div>
-          <div className={styles.schedule_row}>
-            <strong>Domingo:</strong>
-            <div className={styles.dots} />
-            9 às 14h
-          </div>
-          <div className={styles.schedule_row}>
-            <strong>Feriados:</strong>
-            <div className={styles.dots} />
-            9 às 19h30
-          </div>
+          {schedule && (schedule.map(({ day, hours }) => (
+            <div key={day} className={styles.schedule_row}>
+              <strong>
+                {day}
+                :
+              </strong>
+              <div className={styles.dots} />
+              {hours}
+            </div>
+          )))}
         </section>
 
-        <ButtonTemplate
-          number={phoneNumber}
-          title="Faça sua reserva"
-          msg={message}
-          model="reserv"
-        />
+        {callToActionBt
+        && (
+          <ButtonTemplate
+            number={callToActionBt.phoneNumber}
+            title={callToActionBt.buttonTitle}
+            msg={callToActionBt.message}
+            model={callToActionBt.model}
+          />
+        )}
       </motion.div>
     </section>
   );

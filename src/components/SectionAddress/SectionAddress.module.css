@@ -27,6 +27,7 @@
   gap: var(--gap);
   padding: 0 var(--spacing-medium);
   z-index: 2;
+  
 }
 
 .header_address_title {
@@ -49,19 +50,23 @@
   padding-top: var(--spacing-medium);
 }
 
-.address_details, .accessibility, .pet_friendly{
+.address_details, .characteristics{
   font-family: 'MacklinText';
   font-size: var(--font-size-small);
   color: var(--brown-darker);
   font-weight:500 ;
   line-height: 1.5;
+  width: 70ch;
+  max-width: 100%;
 }
 
 .address_details{
   padding-top: var(--gap);
 }
 
-.accessibility, .pet_friendly{ padding-left: 4rem;}
+.characteristics { 
+  padding-left: 5rem;
+}
 
 @media (min-width: 1024px) {
   .container_address {

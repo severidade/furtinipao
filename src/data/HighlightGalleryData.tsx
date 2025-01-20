@@ -1,5 +1,3 @@
-import { HighlightGalleryType } from '../types/HighlightGalleryType.tsx';
-
 import foto01 from '../assets/HighlightGallery/01.jpeg';
 import foto02 from '../assets/HighlightGallery/02.jpeg';
 import foto03 from '../assets/HighlightGallery/03.jpeg';
@@ -8,7 +6,9 @@ import foto05 from '../assets/HighlightGallery/05.jpg';
 import foto06 from '../assets/HighlightGallery/06.jpeg';
 import foto07 from '../assets/HighlightGallery/07.jpeg';
 
-const HighlightGalleryData: HighlightGalleryType[] = [
+import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
+
+const DEFAULT_SLIDER = [
   {
     id: 1,
     altText: 'Cesta de pães artesanais com molhos variados',
@@ -43,6 +43,12 @@ const HighlightGalleryData: HighlightGalleryType[] = [
     id: 7,
     altText: 'Cesta de pães artesanais com molhos variados',
     image: foto07,
+  },
+];
+
+const HighlightGalleryData: SectionTemplateType[] = [
+  {
+    gallerySlider: DEFAULT_SLIDER,
   },
 ];
 

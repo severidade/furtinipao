@@ -1,11 +1,11 @@
 export type SectionTemplateType = {
-  id: number; // Identificador único da seção
+  id?: number; // Identificador único da seção
   figure?: {
     url: string; // URL da imagem
     altText?: string; // Texto alternativo para acessibilidade (opcional)
   };
-  header: {
-    title: string; // Título da seção
+  header?: {
+    title?: string; // Título da seção
     subtitle?: string; // Subtítulo da seção (opcional)
   };
   content?: string,
@@ -19,7 +19,7 @@ export type SectionTemplateType = {
     day: string;
     hours: string;
   }[];
-  gallerySlider?: { // Todos os Slider tem esse padrão
+  gallerySlider: { // Todos os Slider tem esse padrão
     id: number;
     altText: string;
     image: string;

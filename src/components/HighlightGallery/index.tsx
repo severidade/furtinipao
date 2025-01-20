@@ -4,11 +4,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import './HighlightGallery.css';
-import { HighlightGalleryType } from '../../types/HighlightGalleryType.tsx';
+import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 
 type HighlightGalleryProps = {
   id: string;
-  highlightItems: HighlightGalleryType[];
+  highlightItems: SectionTemplateType[];
 };
 
 // eslint-disable-next-line max-len
@@ -45,11 +45,11 @@ export default function HighlightGallery({ id, highlightItems } : HighlightGalle
       className="container_highlight"
     >
       <Slider {...settings}>
-        {highlightItems.map((i) => (
-          <figure key={i.id} className="slider">
+        {highlightItems[0].gallerySlider.map((item) => (
+          <figure key={item.id} className="slider">
             <img
-              src={i.image}
-              alt={i.altText}
+              src={item.image}
+              alt={item.altText}
               className="highlight_image"
             />
           </figure>

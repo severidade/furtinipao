@@ -8,7 +8,7 @@ import { GallerySliderType } from '../../types/GallerySliderType.tsx';
 
 type HighlightGalleryProps = {
   id: string;
-  highlightItems: GallerySliderType[];
+  highlightItems: { gallerySlider: GallerySliderType }[];
 };
 
 // eslint-disable-next-line max-len

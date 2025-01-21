@@ -27,7 +27,7 @@ export type SectionTemplateType = {
     hours: string;
   }[];
 
-  gallerySlider?: GallerySliderType; // Opcional
+  gallerySlider?: GallerySliderType[]; // Opcional
 
   characteristics?: {
     id: number;

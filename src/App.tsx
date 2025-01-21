@@ -3,12 +3,14 @@ import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
 
+import Heder from './components/Heder/index.tsx';
 import HeroImage from './components/HeroImage/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
-import Heder from './components/Heder/index.tsx';
+
 import HighlightGallery from './components/HighlightGallery/index.tsx';
 import Lunch from './components/Lunch/index.tsx';
-import Breads from './components/Breads/index.tsx';
+
+import SectionBreads from './components/SectionBreads/index.tsx';
 import SectionAddress from './components/SectionAddress/index.tsx';
 import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
@@ -16,6 +18,7 @@ import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 
 import SectionTemplate from './components/SectionTemplate/index.tsx';
 
+// Dados que no futuro podem ser o retorno de uma api
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
 import BreadsData from './data/BreadsData.tsx';
@@ -40,10 +43,9 @@ function App() {
         lunchData={LunchData} // padronizar
       />
 
-      <Breads id="breads" DataSection={BreadsData} />
+      <SectionBreads id="bread" DataSection={BreadsData} />
       <SectionAddress id="address" dataSection={SectionAddressData} />
       <SectionOpeningHours id="opening-hours" />
-
       <SectionTemplate id="history" dataSection={HistoryData} />
       <SectionTemplate id="events" dataSection={EventsData} />
       <FixedWhatsAppButton />

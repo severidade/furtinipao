@@ -3,4 +3,4 @@ export type GallerySliderType = {
   altText: string;
   image: string;
   breadName?: string; // este campo é opcional
-}[];
+};

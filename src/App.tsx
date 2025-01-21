@@ -41,26 +41,12 @@ function App() {
         lunchData={LunchData} // padronizar
       />
 
-      <Breads
-        id="breads"
-        DataSection={BreadsData} // PADRONIZADO
-      />
-      <SectionAddress
-        id="address"
-        dataSection={SectionAddressData} // PADRONIZADO
-      />
-
-      {/* PADRONIZADO */}
+      <Breads id="breads" DataSection={BreadsData} />
+      <SectionAddress id="address" dataSection={SectionAddressData} />
       <SectionOpeningHours id="opening-hours" />
 
-      <SectionTemplate
-        id="history"
-        dataSection={HistoryData} // PADRONIZADO
-      />
-      <SectionTemplate
-        id="events"
-        dataSection={EventsData} // PADRONIZADO
-      />
+      <SectionTemplate id="history" dataSection={HistoryData} />
+      <SectionTemplate id="events" dataSection={EventsData} />
       <Footer />
     </>
   );

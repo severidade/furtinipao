@@ -1,3 +1,4 @@
+// import Slider from 'react-slick';
 import foto01 from '../assets/HighlightGallery/01.jpeg';
 import foto02 from '../assets/HighlightGallery/02.jpeg';
 import foto03 from '../assets/HighlightGallery/03.jpeg';
@@ -6,7 +7,7 @@ import foto05 from '../assets/HighlightGallery/05.jpg';
 import foto06 from '../assets/HighlightGallery/06.jpeg';
 import foto07 from '../assets/HighlightGallery/07.jpeg';
 
-import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
+import { GallerySliderType } from '../types/GallerySliderType.tsx';
 
 const DEFAULT_SLIDER = [
   {
@@ -46,10 +47,6 @@ const DEFAULT_SLIDER = [
   },
 ];
 
-const HighlightGalleryData: SectionTemplateType[] = [
-  {
-    gallerySlider: DEFAULT_SLIDER,
-  },
-];
+const HighlightGalleryData: GallerySliderType = DEFAULT_SLIDER;
 
 export default HighlightGalleryData;

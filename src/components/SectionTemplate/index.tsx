@@ -11,16 +11,6 @@ type SectionTemplateProps = {
   dataSection: SectionTemplateType[];
 }
 
-function Content({ content }: { content: string }) {
-  return (
-    <section className={styles.container_content}>
-      <div className={styles.content}>
-        {parse(content)}
-      </div>
-    </section>
-  );
-}
-
 function Figure({ figure }: { figure: { url: string, altText?: string } }) {
   const altText = figure.altText || 'Imagem destacada'; // Como não é obrigatório coloco um texto
   return (
@@ -44,6 +34,16 @@ function Header({ header }: { header: { title: string; subtitle?: string } }) {
   );
 }
 
+function Content({ content }: { content: string }) {
+  return (
+    <section className={styles.container_content}>
+      <div className={styles.content}>
+        {parse(content)}
+      </div>
+    </section>
+  );
+}
+
 export default function SectionTemplate({ id, dataSection }: SectionTemplateProps) {
   const {
     header,
@@ -59,14 +59,7 @@ export default function SectionTemplate({ id, dataSection }: SectionTemplateProp
       <Header header={header} />
       {content && <Content content={content} />}
 
-      {callToActionBt && (
-        <ButtonTemplate
-          number={callToActionBt.phoneNumber}
-          title={callToActionBt.buttonTitle}
-          msg={callToActionBt.message}
-          model={callToActionBt.model}
-        />
-      )}
+      {callToActionBt && <ButtonTemplate callToActionBt={callToActionBt} />}
     </section>
   );
 }

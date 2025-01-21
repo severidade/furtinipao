@@ -79,15 +79,7 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
           )))}
         </section>
 
-        {callToActionBt
-        && (
-          <ButtonTemplate
-            number={callToActionBt.phoneNumber}
-            title={callToActionBt.buttonTitle}
-            msg={callToActionBt.message}
-            model={callToActionBt.model}
-          />
-        )}
+        {callToActionBt && <ButtonTemplate callToActionBt={callToActionBt} />}
       </motion.div>
     </section>
   );

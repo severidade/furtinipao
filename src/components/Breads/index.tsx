@@ -75,15 +75,7 @@ export default function Breads({ id, DataSection } : BreadsProps) {
         { content }
       </div>
 
-      {callToActionBt
-        && (
-          <ButtonTemplate
-            number={callToActionBt.phoneNumber}
-            title={callToActionBt.buttonTitle}
-            msg={callToActionBt.message}
-            model={callToActionBt.model}
-          />
-        )}
+      {callToActionBt && <ButtonTemplate callToActionBt={callToActionBt} />}
     </section>
   );
 }

@@ -4,11 +4,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import './HighlightGallery.css';
-import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+import { GallerySliderType } from '../../types/GallerySliderType.tsx';
 
 type HighlightGalleryProps = {
   id: string;
-  highlightItems: SectionTemplateType[];
+  highlightItems: { gallerySlider: GallerySliderType }[];
 };
 
 // eslint-disable-next-line max-len

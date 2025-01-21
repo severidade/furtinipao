@@ -8,13 +8,16 @@ import foto07 from '../assets/BreadsGallery/07_pao.webp';
 
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
+// Definição do cabeçalho padrão
 const DEFAULT_HEADER = {
   title: 'Fornadas',
   subtitle: 'Nossos pães são feitos com base de fermentação natural. São pães integrais, lindos, elegantes e sinceros. Você pode consumi-los no café ou levá-los para casa.',
 };
 
+// Informação padrão
 const DEFAULT_INFO = 'Acompanhe nossa página no Instagram e saiba quais são os pães da semana. Faça seus pedidos por WhatsApp clicando no botão a seguir.';
 
+// Chamada para ação
 const DEFAULT_CALL_TO_ACTION = {
   phoneNumber: '5531984738820',
   buttonTitle: 'Faça seus pedidos',
@@ -22,6 +25,7 @@ const DEFAULT_CALL_TO_ACTION = {
   model: 'breads',
 };
 
+// Definição do slider de galeria
 const DEFAULT_SLIDER = [
   {
     id: 1,
@@ -67,6 +71,7 @@ const DEFAULT_SLIDER = [
   },
 ];
 
+// Dados da seção de pães
 const BreadsSectionData: SectionTemplateType[] = [
   {
     id: 1,

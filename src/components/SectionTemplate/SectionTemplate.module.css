@@ -8,6 +8,7 @@
   gap: var(--gap);
   overflow: hidden;
   padding-top: var(--gap);
+  background-color: violet;
 }
 
 .container_img{

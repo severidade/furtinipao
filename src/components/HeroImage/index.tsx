@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useDeviceInfo } from '../../utils/useDeviceInfo.tsx';
 import styles from './HeroImage.module.css';
 import fundoImageMobile from '../../assets/cafe.webp';
-import fundoImageDesktop from '../../assets/HighlightGallery/07.jpeg';
+import fundoImageDesktop from '../../assets/HighlightGallery/05.jpg';
 
 export default function HeroImage() {
   const { isMobile } = useDeviceInfo();

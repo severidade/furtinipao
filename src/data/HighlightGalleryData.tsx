@@ -1,3 +1,5 @@
+import { GallerySliderType } from '../types/GallerySliderType.tsx';
+
 import foto01 from '../assets/HighlightGallery/01.jpeg';
 import foto02 from '../assets/HighlightGallery/02.jpeg';
 import foto03 from '../assets/HighlightGallery/03.jpeg';
@@ -6,9 +8,7 @@ import foto05 from '../assets/HighlightGallery/05.jpg';
 import foto06 from '../assets/HighlightGallery/06.jpeg';
 import foto07 from '../assets/HighlightGallery/07.jpeg';
 
-import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
-
-const DEFAULT_SLIDER = [
+const DEFAULT_SLIDER: GallerySliderType = [
   {
     id: 1,
     altText: 'Cesta de pães artesanais com molhos variados',
@@ -46,7 +46,7 @@ const DEFAULT_SLIDER = [
   },
 ];
 
-const HighlightGalleryData: SectionTemplateType[] = [
+const HighlightGalleryData = [
   {
     gallerySlider: DEFAULT_SLIDER,
   },

@@ -1,25 +1,33 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './ButtonTemplate.module.css';
 
-type ButtonTemplateType = {
-  number: string;
-  title: string;
-  msg: string;
-  model: string;
+type ButtonTemplateProps = {
+  callToActionBt: {
+    phoneNumber: string;
+    buttonTitle: string;
+    message: string;
+    model: string;
+  };
 };
 
-export default function ButtonTemplate({
-  number, title, msg, model,
-}: ButtonTemplateType) {
-  const whatsappLink = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
+export default function ButtonTemplate({ callToActionBt }: ButtonTemplateProps) {
+  if (!callToActionBt || !callToActionBt.phoneNumber || !callToActionBt.buttonTitle) {
+    return null;
+  }
+
+  const {
+    phoneNumber, buttonTitle, message = '', model = 'default',
+  } = callToActionBt;
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
     <button
       type="button"
-      className={`${styles.button} ${styles[model]}`} // Aqui estamos aplicando a classe dinamicamente
+      className={`${styles.button} ${styles[model]}`}
       onClick={() => window.open(whatsappLink, '_blank')}
     >
-      {title}
+      {buttonTitle}
     </button>
   );
 }

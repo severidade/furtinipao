@@ -4,7 +4,6 @@ import './CSS/Macklinfonts.css';
 import './App.css';
 
 import HeroImage from './components/HeroImage/index.tsx';
-import WhatsAppReserve from './components/WhatsAppReserve/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
 import Heder from './components/Heder/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
@@ -13,6 +12,7 @@ import Breads from './components/Breads/index.tsx';
 import SectionAddress from './components/SectionAddress/index.tsx';
 import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
 import Footer from './components/Footer/index.tsx';
+import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 
 import SectionTemplate from './components/SectionTemplate/index.tsx';
 
@@ -26,7 +26,6 @@ import EventsData from './data/EventsData.tsx';
 function App() {
   return (
     <>
-      <WhatsAppReserve />
       <Heder />
       <div id="hero" className="container-hero">
         <HeroImage />
@@ -47,6 +46,7 @@ function App() {
 
       <SectionTemplate id="history" dataSection={HistoryData} />
       <SectionTemplate id="events" dataSection={EventsData} />
+      <FixedWhatsAppButton />
       <Footer />
     </>
   );

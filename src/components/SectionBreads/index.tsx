@@ -11,7 +11,7 @@ import HighlightGaleriaBreads from '../HighlightGaleriaBreads/index.tsx';
 
 type BreadsProps = {
   id: string;
-  DataSection: SectionTemplateType[];
+  dataSection: SectionTemplateType[];
 };
 
 function Header({ header }: { header: { title: string; subtitle?: string } }) {
@@ -33,13 +33,13 @@ function Content({ content }: { content: string }) {
   );
 }
 
-export default function SectionBreads({ id, DataSection }: BreadsProps) {
+export default function SectionBreads({ id, dataSection }: BreadsProps) {
   const {
     header,
     content,
     callToActionBt,
     gallerySlider,
-  } = DataSection[0];
+  } = dataSection[0];
 
   return (
     <section id={id} className="container_breads">

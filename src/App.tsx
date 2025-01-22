@@ -34,16 +34,20 @@ function App() {
         <HeroImage />
         <HeroWelcome />
       </div>
+
+      {/* Transformar em uma seção */}
       <HighlightGallery
         id="highlights"
         highlightItems={highlightItems} // padronizar
       />
+
+      {/* Transformar em uma seção */}
       <Lunch
         id="lunch"
-        lunchData={LunchData} // padronizar
+        lunchData={LunchData}
       />
 
-      <SectionBreads id="bread" DataSection={BreadsData} />
+      <SectionBreads id="breads" DataSection={BreadsData} />
       <SectionAddress id="address" dataSection={SectionAddressData} />
       <SectionOpeningHours id="opening-hours" />
       <SectionTemplate id="history" dataSection={HistoryData} />

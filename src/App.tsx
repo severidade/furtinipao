@@ -25,6 +25,7 @@ import BreadsData from './data/BreadsData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';
 import EventsData from './data/EventsData.tsx';
+import SectionLunch from './components/SectionLunch/index.tsx';
 
 function App() {
   return (
@@ -41,11 +42,7 @@ function App() {
         highlightItems={highlightItems} // padronizar
       />
 
-      {/* Transformar em uma seção */}
-      <Lunch
-        id="lunch"
-        lunchData={LunchData}
-      />
+      <SectionLunch id="lunch" dataSection={LunchData} />
 
       <SectionBreads id="breads" DataSection={BreadsData} />
       <SectionAddress id="address" dataSection={SectionAddressData} />

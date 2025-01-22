@@ -45,6 +45,8 @@ function Content({ content }: { content: string }) {
 }
 
 export default function SectionTemplate({ id, dataSection }: SectionTemplateProps) {
+  if (!dataSection.length) return null; // evita renderização caso seja vazio
+
   const {
     header,
     figure,
@@ -55,10 +57,8 @@ export default function SectionTemplate({ id, dataSection }: SectionTemplateProp
   return (
     <section id={id} className={styles.container}>
       {figure && <Figure figure={figure} />}
-
-      <Header header={header} />
+      {header && <Header header={header} />}
       {content && <Content content={content} />}
-
       {callToActionBt && <ButtonTemplate callToActionBt={callToActionBt} />}
     </section>
   );

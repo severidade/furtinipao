@@ -1,0 +1,102 @@
+.container_lunch {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-large) var(--spacing-medium);
+  width: 100%;
+  /*height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; */
+}
+
+.container_lunch_card{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+  background: var(--areia-light);
+  /* background: linear-gradient(180deg, var(--areia-light) 0%, #f7e5d4 100%); */
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius-medium);
+}
+
+.header_lunch {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-column-gap:var(--gap);
+  grid-row-gap: var(--spacing-small);
+}
+
+.header_lunch_title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  font-family: 'Halogen';
+  font-size: var(--font-size-large);
+  line-height: 1;
+  font-weight:900 ;
+  color: var(--brown-darker);
+}
+
+.header_lunch_dish_photo {
+  height: 100%;
+  width: 100%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.header_lunch_dish_photo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(10px 10px 15px var(--terracota-darker));
+}
+
+.header_lunch_hours {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+  font-family: 'Halogen';
+  font-size: var(--font-size-medium);
+  color: var(--brown-darker);
+}
+
+
+.lunch_footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+.lunch_hours{
+  font-family: 'MacklinText';
+  font-size: var(--font-size-small);
+  color: var(--brown-darker);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.payment_info {
+  /* font-family: 'MacklinText'; */
+  font-size: var(--font-size-small);
+  color: var(--brown-darker);
+  font-weight:600 ;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .container_lunch{
+    margin-left: 50vw;
+    width: 50vw;
+    padding: var(--spacing-large) 5vw;
+  }
+
+  .header_lunch_dish_photo {
+    height: 15rem;
+    width: 15rem;
+  }
+}

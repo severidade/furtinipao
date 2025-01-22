@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@700&family=Lato:wght@300;400;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
 :root {
-  --font-title-primary: 'Kalnia', serif;
+  /* --font-title-primary: 'Kalnia', serif; */
 
   --spacing-0: 0; /*usando */
   --spacing-small: 1rem;
@@ -44,15 +41,10 @@ html {
   font-size: 62.5%;
   font-family: "Titillium Web", sans-serif;
   scroll-behavior: smooth;
-  /* color: var(--primary_color);
-  font-weight: 300;
-  line-height: 1.7; */
 }
 
 body {
   color: var(--color-dark);
-  /* font-size: 1.4rem;
-  line-height: 1.4; */
   overflow-x: hidden;
   line-height: 1.4;
 }
@@ -62,13 +54,22 @@ body::-webkit-scrollbar {
   background: transparent; /* Esconde a barra de rolagem */
 }
 
-
-/* p { font-size: 1.6rem;} */
-
-
-
 @media only screen and (min-width: 1024px) {
   .app_title {
     font-size: 5vw;
   }
 }
+
+/* 'MacklinText'
+500
+700
+800
+italic */
+
+/* 500 italic */
+
+/* 'Halogen'
+100
+300
+400
+900 */

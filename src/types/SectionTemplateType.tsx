@@ -6,6 +6,10 @@ export type SectionTemplateType = {
   header: {
     title: string; // Título da seção
     subtitle?: string; // Subtítulo da seção (opcional)
+    figure?: {
+      url: string; // URL da imagem
+      altText?: string; // Texto alternativo para acessibilidade (opcional)
+    };
   };
 
   figure?: {

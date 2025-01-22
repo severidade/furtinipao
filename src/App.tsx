@@ -7,12 +7,13 @@ import Heder from './components/Heder/index.tsx';
 import HeroImage from './components/HeroImage/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
-import SectionBreads from './components/SectionBreads/index.tsx';
-import SectionAddress from './components/SectionAddress/index.tsx';
-import SectionOpeningHours from './components/SectionOpeningHours/index.tsx';
-import SectionTemplate from './components/SectionTemplate/index.tsx';
 import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 import Footer from './components/Footer/index.tsx';
+
+import SectionBreads from './sections/SectionBreads/index.tsx';
+import SectionAddress from './sections/SectionAddress/index.tsx';
+import SectionOpeningHours from './sections/SectionOpeningHours/index.tsx';
+import SectionTemplate from './sections/SectionTemplate/index.tsx';
 
 // Dados que no futuro podem ser o retorno de uma api
 import highlightItems from './data/HighlightGalleryData.tsx';
@@ -21,7 +22,7 @@ import BreadsData from './data/BreadsData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';
 import EventsData from './data/EventsData.tsx';
-import SectionLunch from './components/SectionLunch/index.tsx';
+import SectionLunch from './sections/SectionLunch/index.tsx';
 
 function App() {
   return (

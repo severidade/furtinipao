@@ -6,8 +6,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SectionBreads.css';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
-import ButtonTemplate from '../ButtonTemplate/index.tsx';
-import HighlightGaleriaBreads from '../HighlightGaleriaBreads/index.tsx';
+import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
+import HighlightGaleriaBreads from '../../components/HighlightGaleriaBreads/index.tsx';
 
 type BreadsProps = {
   id: string;

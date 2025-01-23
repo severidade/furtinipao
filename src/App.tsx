@@ -18,6 +18,7 @@ import SectionTemplate from './sections/SectionTemplate/index.tsx';
 // Dados que no futuro podem ser o retorno de uma api
 import highlightItems from './data/HighlightGalleryData.tsx';
 import LunchData from './data/LunchData.tsx';
+
 import BreadsData from './data/BreadsData.tsx';
 import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';

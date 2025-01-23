@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 import figureUrl from '../assets/Events/eventos.jpg';
 
@@ -11,7 +12,8 @@ const DEFAULT_HEADER = {
   subtitle: '',
 };
 
-const DEFAULT_INFO = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ligula viverra, facilisis justo at, malesuada odio. Integer interdum, erat nec tincidunt vehicula, nisl metus faucibus ligula, id cursus quam purus sed mi. Mauris ut fringilla nisl, eget posuere ligula. Fusce nec vehicula erat, ac volutpat purus. Nulla facilisi.';
+// const DEFAULT_INFO = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ligula viverra, facilisis justo at, malesuada odio. Integer interdum, erat nec tincidunt vehicula, nisl metus faucibus ligula, id cursus quam purus sed mi. Mauris ut fringilla nisl, eget posuere ligula. Fusce nec vehicula erat, ac volutpat purus. Nulla facilisi.';
+const DEFAULT_INFO = 'O salão executivo do terceiro piso está apto a receber eventos pessoais ou corporativos, seja com menu fechado ou com o próprio cardápio da casa. Com capacidade para até 40 pessoas, uma festa de aniversário, um mini casamento ou uma festa de final de ano da empresa é bem vindo no Pão do Furtini!';
 
 const DEFAULT_CALL_TO_ACTION = {
   phoneNumber: '5531992456878',

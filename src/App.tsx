@@ -24,6 +24,7 @@ import SectionAddressData from './data/SectionAddressData.tsx';
 import HistoryData from './data/HistoryData.tsx';
 import EventsData from './data/EventsData.tsx';
 import SectionLunch from './sections/SectionLunch/index.tsx';
+import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
       <SectionTemplate id="events" dataSection={EventsData} />
       <FixedWhatsAppButton />
       <Footer />
+      <OrientationDetectorDevice />
     </>
   );
 }

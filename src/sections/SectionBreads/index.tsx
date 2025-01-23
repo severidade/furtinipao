@@ -18,7 +18,7 @@ function Header({ header }: { header: { title: string; subtitle?: string } }) {
   return (
     <section className="header_breads">
       <h2 className="header_breads_title">{header.title}</h2>
-      {header.subtitle && <h3 className="header_breads_subtitle">{header.subtitle}</h3>}
+      {header.subtitle && <p>{header.subtitle}</p>}
     </section>
   );
 }
@@ -26,9 +26,7 @@ function Header({ header }: { header: { title: string; subtitle?: string } }) {
 function Content({ content }: { content: string }) {
   return (
     <section className="container_content">
-      <div className="info_breads">
-        {parse(content)}
-      </div>
+      <p>{parse(content)}</p>
     </section>
   );
 }

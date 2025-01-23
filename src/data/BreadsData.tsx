@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import foto01 from '../assets/BreadsGallery/01_pao.webp';
 import foto02 from '../assets/BreadsGallery/02_pao.webp';
 import foto03 from '../assets/BreadsGallery/03_pao.webp';

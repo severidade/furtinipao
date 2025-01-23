@@ -40,6 +40,14 @@
 
 .header_subtitle{
   padding-top: var(--gap);
+
+  font-family: 'MacklinText';
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--brown-darker);
+  line-height: 2;
+  width: 70ch;  /* Ajusta a largura para no máximo 75 caracteres */
+  max-width: 100%;
 }
 
 .container_content {
@@ -49,16 +57,6 @@
   flex-direction: column;
   gap: var(--spacing-medium);
   padding-top: var(--spacing-medium);
-}
-
-.content, .header_subtitle {
-  font-family: 'MacklinText';
-  font-size: var(--font-size-small);
-  font-weight: 500;
-  color: var(--brown-darker);
-  line-height: 2;
-  width: 70ch;  /* Ajusta a largura para no máximo 75 caracteres */
-  max-width: 100%;
 }
 
 @media (min-width: 1024px) {

@@ -37,9 +37,9 @@ function Header({ header }: { header: { title: string; subtitle?: string } }) {
 function Content({ content }: { content: string }) {
   return (
     <section className={styles.container_content}>
-      <div className={styles.content}>
+      <p className={styles.content}>
         {parse(content)}
-      </div>
+      </p>
     </section>
   );
 }

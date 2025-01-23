@@ -87,15 +87,15 @@ export default function Footer() {
         <h3 className={styles.opening_hours_title}>Atendimento</h3>
 
         <div className={styles.opening_hours_footer}>
-          <p className={styles.opening_hours_footer_info}>Terça a Sexta - 10 às 20h</p>
-          <p className={styles.opening_hours_footer_info}>Sábado - 9 às 20h</p>
-          <p className={styles.opening_hours_footer_info}>Domingo - 9 às 14h</p>
-          <p className={styles.opening_hours_footer_info}>Feriados - 9 às 19h30</p>
+          <div className={styles.opening_hours_footer_info}>Terça a Sexta - 10 às 20h</div>
+          <div className={styles.opening_hours_footer_info}>Sábado - 9 às 20h</div>
+          <div className={styles.opening_hours_footer_info}>Domingo - 9 às 14h</div>
+          <div className={styles.opening_hours_footer_info}>Feriados - 9 às 19h30</div>
         </div>
       </section>
 
       <section className={styles.developed}>
-        <p className={styles.developer}>
+        <div className={styles.developer}>
           Desenvolvido por
           <a
             className={styles.link}
@@ -104,7 +104,7 @@ export default function Footer() {
           >
             Marco Severo
           </a>
-        </p>
+        </div>
       </section>
     </div>
   );

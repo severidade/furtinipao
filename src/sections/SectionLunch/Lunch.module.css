@@ -72,21 +72,6 @@
   gap: var(--spacing-small);
 }
 
-.lunch_hours{
-  font-family: 'MacklinText';
-  font-size: var(--font-size-small);
-  color: var(--brown-darker);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.payment_info {
-  /* font-family: 'MacklinText'; */
-  font-size: var(--font-size-small);
-  color: var(--brown-darker);
-  font-weight:600 ;
-  line-height: 1.5;
-}
 
 @media (min-width: 1024px) {
   .container_lunch{

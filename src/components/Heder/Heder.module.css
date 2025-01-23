@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   height: var(--heder-height);
-  z-index: 6;
+  z-index: 10;
   background-color: var(--nav);
   padding: 0 20px;
   

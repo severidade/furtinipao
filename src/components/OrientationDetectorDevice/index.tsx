@@ -1,4 +1,6 @@
+/* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
+import { isBrowser } from 'react-device-detect';
 import { useEffect, useState } from 'react';
 import { useDeviceInfo } from '../../utils/useDeviceInfo.tsx';
 import styles from './OrientationDetectorDevice.module.css';
@@ -13,8 +15,13 @@ function OrientationDetectorDevice() {
       const largura = window.innerWidth;
       const altura = window.innerHeight;
 
-      // Detecta dispositivos móveis em orientação horizontal
-      if (isMobile && largura > altura) {
+      // Verifica se o dispositivo está em orientação horizontal no caso de dispositivos móveis reais.
+      // Verificação adicional (!isBrowser) para evitar que navegadores desktop
+      // redimensionados sejam erroneamente tratados como dispositivos móveis, mesmo quando a largura
+      // da janela é menor que 1024px. Isso garante que a lógica seja aplicada somente a dispositivos
+      // móveis reais em modo horizontal.
+
+      if (isMobile && largura > altura && !isBrowser) {
         setMobileHorizontal(true);
         document.body.style.overflow = 'hidden'; // Evita o scroll
       } else {

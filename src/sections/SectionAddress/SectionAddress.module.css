@@ -48,6 +48,7 @@
   /* background-color:
    tomato; */
   padding-top: var(--spacing-medium);
+
 }
 
 .address_details, .characteristics{
@@ -66,6 +67,20 @@
 
 .characteristics { 
   padding-left: 5rem;
+  position: relative;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.characteristics::before{
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: var(--terracota-darker);
 }
 
 @media (min-width: 1024px) {

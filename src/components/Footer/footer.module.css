@@ -182,7 +182,7 @@
   .contact {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    background-color: tomato;
+    /* background-color: tomato; */
   }
 
   .telefone_list {
@@ -192,9 +192,9 @@
   }
 
   .opening_hours {
-    grid-column: 4 / 6;
+    grid-column: 3 / 6;
     grid-row: 1 / 2;
-    background: tomato;
+    /* background: tomato; */
   }
 
   .opening_hours_footer{

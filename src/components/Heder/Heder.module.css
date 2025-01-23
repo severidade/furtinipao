@@ -79,7 +79,7 @@
 
 .menu_item {
   font-family: 'Halogen';
-  font-size: var(--font-size-medium);
+  font-size: 1.6rem;
   
   color: var(--areia-light);
   font-weight: 400;
@@ -91,9 +91,10 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   height: 100%;
+  padding-left: 5vw;
 }
 
 /* Indica que o item de menu esta ativo */
@@ -104,14 +105,16 @@
 
 @media (min-width: 1024px) {
   .container_header {
-    padding: 0 15vw;
+    padding: 0 5vw;
+    justify-content: space-between;
   }
 
   .nav_header {
-    width: max-content;
+    width: 45vw;
   }
   
   .container_sidebar_desktop {
-    flex-grow: 1;
+    width: 45vw;
+    /* background-color: tomato; */
   }
 }

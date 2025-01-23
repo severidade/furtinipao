@@ -28,7 +28,7 @@ function Header({ header }: { header: { title: string; subtitle?: string; figure
     <section className={styles.header_lunch}>
       <h2 className={styles.header_lunch_title}>{header.title}</h2>
       {header.figure && <Figure figure={header.figure} />}
-      <p className={styles.header_lunch_hours}>{header.subtitle}</p>
+      <h3 className={styles.header_lunch_hours}>{header.subtitle}</h3>
     </section>
   );
 }
@@ -36,9 +36,7 @@ function Header({ header }: { header: { title: string; subtitle?: string; figure
 function Content({ content }: { content: string }) {
   return (
     <section className={styles.lunch_footer}>
-      <div className={styles.lunch_hours}>
-        {content}
-      </div>
+      <p>{content}</p>
     </section>
   );
 }

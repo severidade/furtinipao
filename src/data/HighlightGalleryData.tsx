@@ -8,7 +8,7 @@ import foto05 from '../assets/HighlightGallery/05.jpg';
 import foto06 from '../assets/HighlightGallery/06.jpeg';
 import foto07 from '../assets/HighlightGallery/07.jpeg';
 
-const DEFAULT_SLIDER: GallerySliderType = [
+const DEFAULT_SLIDER: GallerySliderType[] = [
   {
     id: 1,
     altText: 'Cesta de pães artesanais com molhos variados',

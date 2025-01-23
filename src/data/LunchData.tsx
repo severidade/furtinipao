@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // import { LunchDataType } from '../types/LunchDataType.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
@@ -14,7 +15,8 @@ const LunchData: SectionTemplateType[] = [
         altText: 'Foto do prato executivo servido no Pão do Furtini',
       },
     },
-    content: 'De terça a sexta, das 10h às 14h30. Aos finais de semana, serviço à la carte no mesmo horário.',
+    // content: 'De terça a sexta, das 10h às 14h30. Aos finais de semana, serviço à la carte no mesmo horário.',
+    content: 'Seja para um almoço executivo de negócios durante a semana ou algo mais descontraído aos sábados, no Pão do Furtini deliciosos pratos são a garantia de um bom pedido a toda hora. Durante os dias de semana, uma reunião de trabalho pode ser mais saborosa com pratos clássicos e, aos sábados, o cardápio se transforma em algo mais elaborado que acompanhado de um espumante fecha a semana de forma prazerosa e alegre.',
   },
 
 ];

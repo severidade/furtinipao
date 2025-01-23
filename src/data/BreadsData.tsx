@@ -11,7 +11,8 @@ import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 // Definição do cabeçalho padrão
 const DEFAULT_HEADER = {
   title: 'Fornadas',
-  subtitle: 'Nossos pães são feitos com base de fermentação natural. São pães integrais, lindos, elegantes e sinceros. Você pode consumi-los no café ou levá-los para casa.',
+  subtitle: 'A padaria foi onde toda história começou e de lá saem pães de fermentação natural e quentinhos de terça a sábado. Com anos de aperfeiçoamento, Furtini elevou o mercado de panificação em Belo Horizonte para outro patamar e está hoje entre os melhores padeiros do estado de Minas Gerais.',
+  // subtitle: 'Nossos pães são feitos com base de fermentação natural. São pães integrais, lindos, elegantes e sinceros. Você pode consumi-los no café ou levá-los para casa.',
 };
 
 // Informação padrão

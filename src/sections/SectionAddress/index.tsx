@@ -3,8 +3,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './SectionAddress.module.css';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
-import HighlightGalleryAddress from '../HighlightGalleryAddress/index.tsx';
-import CallUber from '../CallUber/index.tsx';
+import HighlightGalleryAddress from '../../components/HighlightGalleryAddress/index.tsx';
+import CallUber from '../../components/CallUber/index.tsx';
 
 type AddressProps = {
   id: string;

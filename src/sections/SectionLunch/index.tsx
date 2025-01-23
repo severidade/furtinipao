@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './Lunch.module.css';
@@ -8,7 +9,7 @@ type LunchProps = {
   dataSection: SectionTemplateType[];
 };
 
-function Figure({ figure }: { figure?: { url: string; altText?: string } }) {
+function Figure({ figure = undefined }: { figure?: { url: string; altText?: string } }) {
   if (!figure) return null;
 
   return (
@@ -21,11 +22,6 @@ function Figure({ figure }: { figure?: { url: string; altText?: string } }) {
     </figure>
   );
 }
-
-// Define um valor padrão para a prop 'figure'.
-// Caso 'figure' não seja fornecida será tratada como 'undefined'
-// evitando erros e atendendo às regras do ESLint.
-Figure.defaultProps = { figure: undefined };
 
 function Header({ header }: { header: { title: string; subtitle?: string; figure?: { url: string; altText?: string } } }) {
   return (

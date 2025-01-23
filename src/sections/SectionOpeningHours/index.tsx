@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   useRef, useState, useEffect,
 } from 'react';
-import VideoBg from '../VideoBg/index.tsx';
 import styles from './OpeningHours.module.css';
 import { getScheduleStatus } from '../../utils/scheduleUtils.tsx';
-import ButtonTemplate from '../ButtonTemplate/index.tsx';
+import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
+import VideoBg from '../../components/VideoBg/index.tsx';
 
 import OpeningHoursData from '../../data/OpeningHoursData.tsx';
 

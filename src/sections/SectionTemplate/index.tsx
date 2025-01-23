@@ -4,7 +4,7 @@
 import parse from 'html-react-parser';
 import styles from './SectionTemplate.module.css';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
-import ButtonTemplate from '../ButtonTemplate/index.tsx';
+import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
 
 type SectionTemplateProps = {
   id: string;

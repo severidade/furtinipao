@@ -18,7 +18,7 @@ function Header({ header }: { header: { title: string; subtitle?: string } }) {
   return (
     <section className="header_breads">
       <h2 className="header_breads_title">{header.title}</h2>
-      {header.subtitle && <p>{header.subtitle}</p>}
+      {header.subtitle && <p className="header_breads_subtitle">{header.subtitle}</p>}
     </section>
   );
 }

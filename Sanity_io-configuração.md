@@ -44,7 +44,7 @@ REACT_APP_SANITY_DATASET=seuDataset
 REACT_APP_SANITY_API_VERSION=2025-01-01
 ```
 
-- Substitua `seuProjectId` e `seuDataset` pelos valores específicos do seu projeto Sanity.
+- Substitua `seuProjectId` e `seuDataset` pelos valores específicos do seu projeto Sanity. Por padrãoo dataset é "production"
 - Certifique-se de que o arquivo `.env` está listado no `.gitignore` para evitar expor informações sensíveis.
 
 ---

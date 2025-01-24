@@ -1,10 +1,11 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
-import { useEffect, useState } from 'react';
-import { client } from '../../sanityClient.tsx'; // Ajuste o caminho conforme sua configuração
+// import { useEffect, useState } from 'react';
+// import { client } from '../../sanityClient.tsx'; // Ajuste o caminho conforme sua configuração
+import { useFetchLunchData } from '../../CustomHooks/useFetchLunchData.tsx';
 import styles from './Lunch.module.css';
-import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+// import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 
 function Figure({ figure = undefined }: { figure?: { url: string; altText?: string } }) {
   if (!figure) return null;
@@ -39,39 +40,11 @@ function Content({ content }: { content: string }) {
 }
 
 export default function Lunch({ id }: { id: string }) {
-  const [lunchData, setLunchData] = useState<SectionTemplateType[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  // const [lunchData, setLunchData] = useState<SectionTemplateType[]>([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState<Error | null>(null);
 
-  useEffect(() => {
-    async function fetchLunchData() {
-      try {
-        const query = `*[_type == "lunch"]{
-          id,
-          header {
-            title,
-            subtitle,
-            "figure": {
-              "url": figure.asset->url,
-              "altText": figure.altText
-            }
-          },
-          content
-        }`;
-
-        const result = await client.fetch(query);
-        console.log(result); // Adicione este log para verificar o retorno
-
-        setLunchData(result);
-        setIsLoading(false);
-      } catch (err) {
-        setError(err instanceof Error ? err : new Error('Erro desconhecido'));
-        setIsLoading(false);
-      }
-    }
-
-    fetchLunchData();
-  }, []);
+  const { lunchData, isLoading, error } = useFetchLunchData();
 
   if (isLoading) return <div>Carregando...</div>;
   if (error) {

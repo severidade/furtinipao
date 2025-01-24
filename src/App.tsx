@@ -35,7 +35,7 @@ function App() {
       </div>
 
       <HighlightGallery id="highlights" highlightItems={highlightItems} />
-      <SectionLunch id="lunch" dataSection={LunchData} />
+      <SectionLunch id="lunch" />
       <SectionBreads id="breads" dataSection={BreadsData} />
       <SectionAddress id="address" dataSection={SectionAddressData} />
       <SectionOpeningHours id="opening-hours" />

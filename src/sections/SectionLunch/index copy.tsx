@@ -1,10 +1,13 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
-import { useEffect, useState } from 'react';
-import { client } from '../../sanityClient.tsx'; // Ajuste o caminho conforme sua configuração
 import styles from './Lunch.module.css';
 import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+
+type LunchProps = {
+  id: string;
+  dataSection: SectionTemplateType[];
+};
 
 function Figure({ figure = undefined }: { figure?: { url: string; altText?: string } }) {
   if (!figure) return null;
@@ -38,53 +41,10 @@ function Content({ content }: { content: string }) {
   );
 }
 
-export default function Lunch({ id }: { id: string }) {
-  const [lunchData, setLunchData] = useState<SectionTemplateType[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+export default function Lunch({ id, dataSection }: LunchProps) {
+  if (!dataSection.length) return null;
 
-  useEffect(() => {
-    async function fetchLunchData() {
-      try {
-        const query = `*[_type == "lunch"]{
-          id,
-          header {
-            title,
-            subtitle,
-            "figure": {
-              "url": figure.asset->url,
-              "altText": figure.altText
-            }
-          },
-          content
-        }`;
-
-        const result = await client.fetch(query);
-        console.log(result); // Adicione este log para verificar o retorno
-
-        setLunchData(result);
-        setIsLoading(false);
-      } catch (err) {
-        setError(err instanceof Error ? err : new Error('Erro desconhecido'));
-        setIsLoading(false);
-      }
-    }
-
-    fetchLunchData();
-  }, []);
-
-  if (isLoading) return <div>Carregando...</div>;
-  if (error) {
-    return (
-      <div>
-        Erro ao carregar:
-        {error.message}
-      </div>
-    );
-  }
-  if (!lunchData.length) return null;
-
-  const { header, content } = lunchData[0];
+  const { header, content } = dataSection[0];
 
   return (
     <section id={id} className={styles.container_lunch}>

@@ -77,7 +77,7 @@
   transform: translateX(-101%);
 }
 
-.menu_item {
+/* .menu_item {
   font-family: 'Halogen';
   font-size: 1.6rem;
   
@@ -85,6 +85,37 @@
   font-weight: 400;
   display: block;
   height: 5rem;
+} */
+
+.menu_item {
+  font-family: 'Halogen';
+  font-size: 1.6rem;
+  color: var(--areia-light);
+  font-weight: 400;
+  display: block;
+  height: 5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu_item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: var(--terracota-darker);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu_item:hover {
+  color: var(--terracota-darker);
+}
+
+.menu_item:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .container_sidebar_desktop ul {
@@ -97,9 +128,9 @@
   padding-left: 5vw;
 }
 
-.open {
+/* .open {
   border: solid 3px tomato;
-}
+} */
 
 
 /* Indica que o item de menu esta ativo */

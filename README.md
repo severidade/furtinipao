@@ -1,50 +1,151 @@
-# React + TypeScript + Vite
+# Documentação da Aplicação FurtiniPão
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sumário
 
-Currently, two official plugins are available:
+1. [Visão Geral](#vis%C3%A3o-geral)
+2. [Dependências](#depend%C3%AAncias)
+3. [Estrutura do Projeto](#estrutura-do-projeto)
+4. [Componentes Principais](#componentes-principais)
+5. [Seções](#se%C3%A7%C3%B5es)
+6. [Dados Estáticos](#dados-est%C3%A1ticos)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Visão Geral
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+O projeto **FurtiniPão** é uma aplicação desenvolvida em React com o objetivo de criar uma landing page para a Cafeteria Pão do Furtini. A aplicação inclui animações, componentes reutilizáveis e dados estáticos que, no futuro, podem ser substituídos por uma API. A aplicação é construída com Vite para otimização do fluxo de desenvolvimento e performance.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Dependências
+
+### Produção
+
+As seguintes bibliotecas são utilizadas para funcionalidades da aplicação:
+
+- **framer-motion**: Animações avançadas para os componentes.
+- **html-react-parser**: Parse de HTML dinâmico para elementos React.
+- **motion**: Integração de animações.
+- **react** e **react-dom**: Core da biblioteca React.
+- **react-device-detect**: Identificação de dispositivos e orientação.
+- **react-slick** e **slick-carousel**: Galerias e sliders estilizados.
+
+### Desenvolvimento
+
+As ferramentas utilizadas no ambiente de desenvolvimento são:
+
+- **@eslint/js** e plugins relacionados: Padronização do código.
+- **@vitejs/plugin-react-swc**: Suporte a React e otimizações via SWC.
+- **TypeScript** e **typescript-eslint**: Tipagem estática e suporte ao ESLint.
+- **Vite**: Ferramenta para desenvolvimento e build rápido.
+
+---
+
+## Estrutura do Projeto
+
+```plaintext
+src/
+├── components/
+│   ├── FixedWhatsAppButton/
+│   ├── Footer/
+│   ├── Heder/
+│   ├── HeroImage/
+│   ├── HeroWelcome/
+│   ├── HighlightGallery/
+│   └── OrientationDetectorDevice/
+├── sections/
+│   ├── SectionAddress/
+│   ├── SectionBreads/
+│   ├── SectionLunch/
+│   ├── SectionOpeningHours/
+│   └── SectionTemplate/
+├── data/
+│   ├── BreadsData.tsx
+│   ├── EventsData.tsx
+│   ├── HighlightGalleryData.tsx
+│   ├── HistoryData.tsx
+│   ├── LunchData.tsx
+│   └── SectionAddressData.tsx
+├── CSS/
+│   ├── App.css
+│   ├── Halogenfonts.css
+│   └── Macklinfonts.css
+├── App.tsx
+└── main.tsx
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Componentes Principais
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### **Heder**
+- Componente responsável pelo cabeçalho da aplicação.
+- Inclui logotipo e navegação.
+
+### **HeroImage** e **HeroWelcome**
+- Composição da seção hero.
+- Exibe uma imagem principal e uma mensagem de boas-vindas.
+
+### **HighlightGallery**
+- Galeria com itens destacados, recebendo dados via props.
+- Baseada em "react-slick" para sliders.
+
+### **FixedWhatsAppButton**
+- Botão fixo que redireciona ao WhatsApp da cafeteria.
+
+### **Footer**
+- Contém informações de rodapé, como links e direitos autorais.
+
+### **OrientationDetectorDevice**
+- Detecta orientação e tipo de dispositivo do usuário.
+- Baseado na biblioteca "react-device-detect".
+
+---
+
+## Seções
+
+### **SectionBreads**
+- Exibe os produtos de panificação da cafeteria.
+- Dados fornecidos via arquivo estático `BreadsData.tsx`.
+
+### **SectionAddress**
+- Exibe o endereço da cafeteria, com dados carregados de `SectionAddressData.tsx`.
+
+### **SectionLunch**
+- Exibe os pratos do almoço, utilizando dados do arquivo `LunchData.tsx`.
+
+### **SectionOpeningHours**
+- Informa os horários de funcionamento.
+
+### **SectionTemplate**
+- Estrutura reutilizável para exibição de conteúdo, como histórico e eventos.
+- Dados passados via props.
+
+---
+
+## Dados Estáticos
+
+Os dados atualmente utilizados na aplicação estão localizados na pasta `src/data/` e incluem:
+
+- **HighlightGalleryData.tsx**: Itens destacados para a galeria.
+- **LunchData.tsx**: Cardápio de almoço.
+- **BreadsData.tsx**: Produtos de panificação.
+- **SectionAddressData.tsx**: Endereço da cafeteria.
+- **HistoryData.tsx**: Informações históricas.
+- **EventsData.tsx**: Informações sobre eventos futuros.
+
+---
+
+## Observações
+
+- As imagens podem ser otimizadas utilizando ferramentas como [Squoosh](https://squoosh.app/).
+- O projeto está configurado para utilizar ESLint com as regras do Airbnb, garantindo a consistência do código.
+
+---
+
+## Próximos Passos
+
+1. Implementar backend para substituir os dados estáticos.
+2. Melhorar a responsividade para dispositivos móveis.
+3. Otimizar o desempenho de componentes pesados como sliders e galerias.
+

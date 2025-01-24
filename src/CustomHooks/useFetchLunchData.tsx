@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { client } from '../sanityClient.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
-export function useFetchLunchData() {
+export function useFetchLunchData(endpoint?: string) {
   const [lunchData, setLunchData] = useState<SectionTemplateType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -11,7 +11,7 @@ export function useFetchLunchData() {
   useEffect(() => {
     async function fetchLunchData() {
       try {
-        const query = `*[_type == "lunch"]{
+        const query = `*[_type == "${endpoint}"]{
           id,
           header {
             title,
@@ -34,7 +34,7 @@ export function useFetchLunchData() {
     }
 
     fetchLunchData();
-  }, []);
+  }, [endpoint]);
 
   return { lunchData, isLoading, error };
 }

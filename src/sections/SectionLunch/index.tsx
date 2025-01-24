@@ -1,11 +1,9 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
-// import { useEffect, useState } from 'react';
-// import { client } from '../../sanityClient.tsx'; // Ajuste o caminho conforme sua configuração
+
 import { useFetchLunchData } from '../../CustomHooks/useFetchLunchData.tsx';
 import styles from './Lunch.module.css';
-// import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 
 function Figure({ figure = undefined }: { figure?: { url: string; altText?: string } }) {
   if (!figure) return null;
@@ -40,11 +38,7 @@ function Content({ content }: { content: string }) {
 }
 
 export default function Lunch({ id }: { id: string }) {
-  // const [lunchData, setLunchData] = useState<SectionTemplateType[]>([]);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState<Error | null>(null);
-
-  const { lunchData, isLoading, error } = useFetchLunchData();
+  const { lunchData, isLoading, error } = useFetchLunchData(id);
 
   if (isLoading) return <div>Carregando...</div>;
   if (error) {

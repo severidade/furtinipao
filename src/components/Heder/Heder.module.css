@@ -13,7 +13,6 @@
 
 /* É o container do menu e da logo quando em desktop somente a logo esta aqui */
 .nav_header {
-  /* border: solid tomato; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -31,13 +30,11 @@
   flex-grow: 1;
 }
 
-/* so aparece no desktop */
+/* Só fica visível em dispositivos móveis */
 .hamburger {
   background-color: var(--brown-dark);
-  /* position: absolute; */
   right: 20px;
   top: calc(var(--heder-height) / 2);
-  /* transform: translateY(-50%); */
   height: 50px;
   width: 50px;
   background: url(./icon/hamburger.svg) no-repeat center;
@@ -46,9 +43,8 @@
   text-indent: -100%;
 }
 
-/* regras pra o menu no mobile */
+/* No celular posiciona menu no canto direito*/
 .container_sidebar_mobile  {
-  /* background-color: tomato; */
   position: absolute;
   right: 0;
   top: 0;
@@ -76,16 +72,6 @@
 .container_sidebar_mobile ul.open {
   transform: translateX(-101%);
 }
-
-/* .menu_item {
-  font-family: 'Halogen';
-  font-size: 1.6rem;
-  
-  color: var(--areia-light);
-  font-weight: 400;
-  display: block;
-  height: 5rem;
-} */
 
 .menu_item {
   font-family: 'Halogen';

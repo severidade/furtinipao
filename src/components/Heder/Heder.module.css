@@ -103,7 +103,28 @@
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1820px) {
+  .container_header {
+    padding: 0 5vw;
+    justify-content: space-between;
+  }
+
+  .nav_header {
+    width: max-content;
+    /* background-color: tomato; */
+  }
+  
+  .container_sidebar_desktop {
+   flex-grow: 1;
+   /* background: lightcoral; */
+  }
+
+  .container_sidebar_desktop ul {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1820px) {
   .container_header {
     padding: 0 5vw;
     justify-content: space-between;
@@ -115,6 +136,5 @@
   
   .container_sidebar_desktop {
     width: 45vw;
-    /* background-color: tomato; */
   }
 }

@@ -1,5 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useState, useEffect, useCallback } from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import {
+  useState, useEffect, useCallback, useMemo,
+} from 'react';
 import { useDeviceInfo } from '../../utils/useDeviceInfo.tsx';
 import styles from './Heder.module.css';
 
@@ -8,26 +11,28 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
-  // Function to determine which section is currently in view
-  const determineActiveSection = useCallback(() => {
-    const sections = [
-      'hero',
-      'lunch',
-      'breads',
-      'address',
-      'opening-hours',
-      'history',
-      'events',
-    ];
+  // Para atualizar menu basta alterar esse Array
+  const sections = useMemo(
+    () => [
+      { id: 'hero', label: 'Home' },
+      { id: 'lunch', label: 'Almoço' },
+      { id: 'breads', label: 'Fornadas' },
+      { id: 'address', label: 'Localização' },
+      { id: 'opening-hours', label: 'Horários' },
+      { id: 'history', label: 'História' },
+      { id: 'events', label: 'Eventos' },
+    ],
+    [],
+  );
 
-    const sectionElements = sections.map((id) => ({
+  const determineActiveSection = useCallback(() => {
+    const sectionElements = sections.map(({ id }) => ({
       id,
       element: document.getElementById(id),
     }));
 
     const scrollPosition = window.scrollY + 100;
-
-    let currentSection = sections[0];
+    let currentSection = sections[0].id;
 
     sectionElements.forEach(({ id, element }) => {
       if (element) {
@@ -41,7 +46,7 @@ export default function Header() {
     });
 
     setActiveSection(currentSection);
-  }, []);
+  }, [sections]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,8 +61,7 @@ export default function Header() {
     };
   }, [determineActiveSection]);
 
-  // Função para lidar com o clique nos links e aplicar o scroll
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string): void => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
 
@@ -67,7 +71,7 @@ export default function Header() {
 
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 75, // Desloca 75px do topo por conta do nav ser fixo
+        top: targetElement.offsetTop - 75,
         behavior: 'smooth',
       });
     }
@@ -77,20 +81,13 @@ export default function Header() {
     setMenuOpen((prevMenuOpen) => !prevMenuOpen);
   }, []);
 
-  const handleMenuClick = useCallback(() => {
-    toggleMenu();
-  }, [toggleMenu]);
-
   useEffect(() => {
-    // Fecha o menu quando a visualização muda para desktop
     if (!isMobile) {
       setMenuOpen(false);
     }
 
-    // Atualiza o overflow do body com base no estado do menu
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
 
-    // Cleanup para evitar interferências ao desmontar
     return () => {
       document.body.style.overflow = 'auto';
     };
@@ -99,75 +96,39 @@ export default function Header() {
   return (
     <nav className={styles.container_header}>
       <div className={styles.nav_header}>
-        <a className={styles.logo} href="#hero" onClick={(e) => handleClick(e, 'hero')}>Frutini padaria e confeitaria</a>
+        <a
+          className={styles.logo}
+          href="#hero"
+          onClick={(e) => handleClick(e, 'hero')}
+        >
+          Frutini padaria e confeitaria
+        </a>
         {isMobile && (
           <button
             className={styles.hamburger}
             type="button"
-            onClick={handleMenuClick}
+            onClick={toggleMenu}
           >
             Menu
           </button>
         )}
       </div>
 
-      <div className={`${isMobile ? styles.container_sidebar_mobile : styles.container_sidebar_desktop}`}>
-        <ul className={` ${menuOpen ? styles.open : ' '}`}>
-
-          <li>
-            <a
-              className={`${styles.menu_item} ${activeSection === 'lunch' ? styles.active : ''}`}
-              href="#lunch"
-              onClick={(e) => handleClick(e, 'lunch')}
-            >
-              Almoço
-            </a>
-          </li>
-          <li>
-            <a
-              className={`${styles.menu_item} ${activeSection === 'breads' ? styles.active : ''}`}
-              href="#breads"
-              onClick={(e) => handleClick(e, 'breads')}
-            >
-              Fornadas
-            </a>
-          </li>
-          <li>
-            <a
-              className={`${styles.menu_item} ${activeSection === 'address' ? styles.active : ''}`}
-              href="#address"
-              onClick={(e) => handleClick(e, 'address')}
-            >
-              Localização
-            </a>
-          </li>
-          <li>
-            <a
-              className={`${styles.menu_item} ${activeSection === 'opening-hours' ? styles.active : ''}`}
-              href="#opening-hours"
-              onClick={(e) => handleClick(e, 'opening-hours')}
-            >
-              Horários
-            </a>
-          </li>
-          <li>
-            <a
-              className={`${styles.menu_item} ${activeSection === 'history' ? styles.active : ''}`}
-              href="#history"
-              onClick={(e) => handleClick(e, 'history')}
-            >
-              História
-            </a>
-          </li>
-          <li>
-            <a
-              className={`${styles.menu_item} ${activeSection === 'events' ? styles.active : ''}`}
-              href="#events"
-              onClick={(e) => handleClick(e, 'events')}
-            >
-              Eventos
-            </a>
-          </li>
+      <div
+        className={`${isMobile ? styles.container_sidebar_mobile : styles.container_sidebar_desktop}`}
+      >
+        <ul className={`${menuOpen ? styles.open : ''}`}>
+          {sections.slice(1).map(({ id, label }) => (
+            <li key={id}>
+              <a
+                className={`${styles.menu_item} ${activeSection === id ? styles.active : ''}`}
+                href={`#${id}`}
+                onClick={(e) => handleClick(e, id)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

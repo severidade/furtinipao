@@ -97,6 +97,11 @@
   padding-left: 5vw;
 }
 
+.open {
+  border: solid 3px tomato;
+}
+
+
 /* Indica que o item de menu esta ativo */
 .active {
   color: var( --terracota-darker);

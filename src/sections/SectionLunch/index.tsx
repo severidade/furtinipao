@@ -41,6 +41,7 @@ export default function Lunch({ id }: { id: string }) {
   const { lunchData, isLoading, error } = useFetchLunchData(id);
 
   if (isLoading) return <div>Carregando...</div>;
+
   if (error) {
     return (
       <div>
@@ -49,6 +50,7 @@ export default function Lunch({ id }: { id: string }) {
       </div>
     );
   }
+
   if (!lunchData.length) return null;
 
   const { header, content } = lunchData[0];

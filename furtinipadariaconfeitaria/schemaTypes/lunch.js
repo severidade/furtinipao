@@ -1,8 +1,7 @@
 import { defineType } from 'sanity';
-
 export default defineType({
   name: 'lunch',
-  title: 'Seção - Almoço Executivo',
+  title: 'Almoço Executivo',
   type: 'document',
   fields: [
     {
@@ -20,21 +19,21 @@ export default defineType({
           title: 'Subtítulo',
           type: 'string',
         },
-      ],
-    },
-    {
-      name: 'figure',
-      title: 'Imagem de destaque na seção',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
         {
-          name: 'altText',
-          title: 'Texto Alternativo',
-          type: 'string',
-          description: 'Texto que descreve a imagem (Importante para acessibilidade e SEO',
+          name: 'figure',
+          title: 'Imagem do Prato',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'altText',
+              title: 'Texto Alternativo',
+              type: 'string', // Campo de texto simples para descrição alternativa
+              description: 'Texto que descreve a imagem para acessibilidade',
+            },
+          ],
         },
       ],
     },
@@ -46,16 +45,16 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'header.title',
-      subtitle: 'header.subtitle',
-      media: 'figure',
+      title: 'header.title',      // Seleciona o título do header
+      subtitle: 'header.subtitle', // Seleciona o subtítulo
+      media: 'header.figure',     // Seleciona a imagem do prato
     },
     prepare(selection) {
       const { title, subtitle, media } = selection;
       return {
         title: title || 'Sem título', 
         subtitle: subtitle || 'Sem subtítulo',
-        media: media,
+        media: media, // Aqui você define a imagem de preview
       };
     },
   },

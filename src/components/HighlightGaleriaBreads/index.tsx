@@ -43,11 +43,11 @@ export default function HighlightGaleriaBreads({ gallerySlider }: HighlightGaler
     <div className="slider_breads">
       <Slider {...settings}>
         {gallerySlider && gallerySlider.map((i) => (
-          <div key={i.id}>
+          <div key={i.breadName}>
             <figure className="slider">
               <img
-                src={i.image}
-                alt={i.altText}
+                src={i.image.url}
+                alt={i.image.altText}
                 className="bread_highlight_image"
               />
             </figure>

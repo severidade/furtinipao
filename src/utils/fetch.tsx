@@ -29,6 +29,7 @@ export async function fetchLunchData(endpoint: string): Promise<SectionTemplateT
         "altText": figure.altText
       }
     },
+    
     content
   }`;
 
@@ -52,13 +53,11 @@ export async function fetchBreadsData(endpoint: string): Promise<SectionTemplate
       phoneNumber,
       message
     },
-    gallerySlider {
+    "gallerySlider": gallerySlider[]{
       breadName,
-      image {
-        asset -> {
-          url
-        },
-        altText
+      "image": {
+        "url": image.asset->url,
+        "altText": image.altText
       }
     }
   }`;

@@ -65,3 +65,24 @@ export async function fetchBreadsData(endpoint: string): Promise<SectionTemplate
   const errorMessage = 'Ocorreu um erro ao buscar os dados do almoço:';
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
+
+export async function fetchHistoryData(endpoint: string): Promise<SectionTemplateType[]> {
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+
+  const query = `*[_type == "${endpoint}"]{
+    "figure": {
+      "url": figure.asset->url,
+      "altText": figure.altText
+    },
+    header {
+      title,
+      subtitle
+    },
+    content
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados da seção História:';
+  return fetchData<SectionTemplateType[]>(query, errorMessage);
+}

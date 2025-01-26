@@ -35,3 +35,34 @@ export async function fetchLunchData(endpoint: string): Promise<SectionTemplateT
   const errorMessage = 'Ocorreu um erro ao buscar os dados do almoço:';
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
+
+export async function fetchBreadsData(endpoint: string): Promise<SectionTemplateType[]> {
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+  const query = `*[_type == "${endpoint}"]{
+    header {
+      title,
+      subtitle
+    },
+    content,
+    callToActionBt {
+      model,
+      buttonTitle,
+      phoneNumber,
+      message
+    },
+    gallerySlider {
+      breadName,
+      image {
+        asset -> {
+          url
+        },
+        altText
+      }
+    }
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados do almoço:';
+  return fetchData<SectionTemplateType[]>(query, errorMessage);
+}

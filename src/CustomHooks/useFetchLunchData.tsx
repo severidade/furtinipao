@@ -9,11 +9,11 @@ export function useFetchLunchData(endpoint: string) {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    if (!endpoint) {
-      setIsLoading(false);
-      setError(new Error('Endpoint não fornecido'));
-      return;
-    }
+    // if (!endpoint) {
+    //   setIsLoading(false);
+    //   setError(new Error('Endpoint não fornecido'));
+    //   return;
+    // }
 
     async function fetchData() {
       try {

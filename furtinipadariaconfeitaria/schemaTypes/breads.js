@@ -3,7 +3,7 @@ import { defineType } from 'sanity';
 
 export default defineType({
   name: 'breads',
-  title: 'Pães',
+  title: 'Seção - Fornadas',
   type: 'document',
   fields: [
     {
@@ -25,8 +25,8 @@ export default defineType({
     },
     {
       name: 'content',
-      title: 'Informação',
-      type: 'blockContent', // Changed to blockContent
+      title: 'Detalhes adicionais sobre os pães',
+      type: 'string', // Changed to blockContent
     },
     {
       name: 'callToActionBt',
@@ -34,9 +34,16 @@ export default defineType({
       type: 'object',
       fields: [
         {
-          name: 'phoneNumber',
-          title: 'Número de Telefone',
+          name: 'model',
+          title: 'Modelo de botão',
           type: 'string',
+          options: {
+            list: [
+              { title: 'Eventos', value: 'event' },
+              { title: 'Pães', value: 'breads' },
+              { title: 'Reserva', value: 'reserv' },
+            ],
+          },
         },
         {
           name: 'buttonTitle',
@@ -44,15 +51,18 @@ export default defineType({
           type: 'string',
         },
         {
-          name: 'message',
-          title: 'Mensagem Padrão',
-          type: 'text',
+          name: 'phoneNumber',
+          title: 'Número de Telefone',
+          type: 'string',
+          description: 'Insira o número de telefone no formato internacional, incluindo o código do país e o DDD. Exemplo: 5531xxxxxxxxx',
         },
+
         {
-          name: 'model',
-          title: 'Modelo',
+          name: 'message',
+          title: 'Mensagem padrão exibida automaticamente ao iniciar uma conversa no WhatsApp.',
           type: 'string',
         },
+
       ],
     },
     {

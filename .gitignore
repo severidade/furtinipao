@@ -31,3 +31,6 @@ test-results.json
 # Cobertura de testes
 coverage/
 *.lcov
+
+#Variáveis de Ambiente
+.env

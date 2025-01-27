@@ -59,6 +59,10 @@
   padding-top: var(--spacing-medium);
 }
 
+.content {
+  display: block;
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 50vw;

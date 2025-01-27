@@ -42,7 +42,7 @@ export default defineType({
     {
       name: 'content',
       title: 'Conteúdo',
-      type: 'blockContent', // Use 'blockContent' caso queira suportar rich text
+      type: 'text', // Use 'blockContent' caso queira suportar rich text
       description: 'O texto principal da seção de história.',
     },
   ],

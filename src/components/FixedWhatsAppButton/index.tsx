@@ -12,7 +12,7 @@ export default function FixedWhatsAppButton() {
       className={styles.WhatsAppReserve_fixed}
       onClick={() => window.open(whatsappLink, '_blank')}
     >
-      Reservar pelo WhatsApp
+      WhatsApp
     </button>
   );
 }

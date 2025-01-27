@@ -86,3 +86,30 @@ export async function fetchHistoryData(endpoint: string): Promise<SectionTemplat
   const errorMessage = 'Ocorreu um erro ao buscar os dados da seção História:';
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
+
+export async function fetchEventsData(endpoint: string): Promise<SectionTemplateType[]> {
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+
+  const query = `*[_type == "${endpoint}"]{
+    "figure": {
+      "url": figure.asset->url,
+      "altText": figure.altText
+    },
+    header {
+      title,
+      subtitle
+    },
+    content,
+    callToActionBt{
+      phoneNumber,
+      buttonTitle,
+      message,
+      model
+    }
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados da seção Eventos:';
+  return fetchData<SectionTemplateType[]>(query, errorMessage);
+}

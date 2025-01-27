@@ -113,3 +113,13 @@ export async function fetchEventsData(endpoint: string): Promise<SectionTemplate
   const errorMessage = 'Ocorreu um erro ao buscar os dados da seção Eventos:';
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
+
+export async function fetchWhatsAppButtonData(): Promise<{ phoneNumber: string; message: string }> {
+  const query = `*[_type == "whatsAppButton"]{
+    phoneNumber,
+    message
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados do botão WhatsApp:';
+  return fetchData<{ phoneNumber: string; message: string }>(query, errorMessage);
+}

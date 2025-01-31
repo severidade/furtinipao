@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 // utils/fetch.tsx
-import { client } from '../sanityClient.tsx';
+// import { client } from '../sanityClient.tsx';
+import client from '../sanityClient.tsx';
+
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 // Função genérica para buscar dados no Sanity

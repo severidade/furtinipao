@@ -1,21 +1,18 @@
-import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import { createClient, SanityClient } from '@sanity/client';
+import { SanityConfig } from './types/SanityConfig.tsx';
 
-// Verificando as variáveis de ambiente
-if (!import.meta.env.VITE_SANITY_PROJECT_ID || !import.meta.env.VITE_SANITY_DATASET) {
-  throw new Error('As variáveis de ambiente do Sanity não foram configuradas corretamente.');
-}
-
-export const client = createClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID, // Usando as variáveis com o prefixo VITE_
-  dataset: import.meta.env.VITE_SANITY_DATASET, // Usando as variáveis com o prefixo VITE_
+const sanityConfig: SanityConfig = {
+  projectId: 'henuw5g0',
+  dataset: 'production',
+  apiVersion: '2024-01-30', // usando a data atual
   useCdn: true,
-  apiVersion: import.meta.env.VITE_SANITY_API_VERSION || '2023-01-24', // Valor padrão para apiVersion
-});
+  // Opcional: adicione token se precisar de acesso a conteúdo privado
+  // token: 'seu-token-aqui'
+};
 
-// Configurando o builder de URLs para imagens
-const builder = imageUrlBuilder(client);
-export const urlFor = (source) => builder.image(source);
+const client: SanityClient = createClient(sanityConfig);
 
-// Caso precise exportar o cliente diretamente:
-// export default client;
+export default client;
+
+// Se precisar exportar o tipo
+export type { SanityConfig };

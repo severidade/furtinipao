@@ -68,6 +68,35 @@ export async function fetchBreadsData(endpoint: string): Promise<SectionTemplate
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
 
+export async function fetchAddressData(endpoint: string): Promise<SectionTemplateType[]> {
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+  const query = `*[_type == "${endpoint}"]{
+    header {
+      title,
+      subtitle
+    },
+    content[] {
+      ..., 
+      markDefs,
+      children[] {
+        text
+      }
+    },
+    "gallerySlider": gallerySlider[]{
+      "image": {
+        "_id": _key, 
+        "url": image.asset->url,
+        "altText": image.altText
+      }
+    }
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados sobre os pães';
+  return fetchData<SectionTemplateType[]>(query, errorMessage);
+}
+
 export async function fetchHistoryData(endpoint: string): Promise<SectionTemplateType[]> {
   if (!endpoint) {
     throw new Error('Endpoint inválido ou não fornecido');
@@ -116,16 +145,6 @@ export async function fetchEventsData(endpoint: string): Promise<SectionTemplate
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
 
-export async function fetchWhatsAppButtonData(): Promise<{ phoneNumber: string; message: string }> {
-  const query = `*[_type == "whatsAppButton"]{
-    phoneNumber,
-    message
-  }`;
-
-  const errorMessage = 'Ocorreu um erro ao buscar os dados do botão WhatsApp:';
-  return fetchData<{ phoneNumber: string; message: string }>(query, errorMessage);
-}
-
 export async function fetchHighlightGalleryData(endpoint: string): Promise<SectionTemplateType[]> {
   if (!endpoint) {
     throw new Error('Endpoint inválido ou não fornecido');
@@ -142,4 +161,14 @@ export async function fetchHighlightGalleryData(endpoint: string): Promise<Secti
 
   const errorMessage = 'Ocorreu um erro ao buscar os dados da Galeria de Imagens:';
   return fetchData<SectionTemplateType[]>(query, errorMessage);
+}
+
+export async function fetchWhatsAppButtonData(): Promise<{ phoneNumber: string; message: string }> {
+  const query = `*[_type == "whatsAppButton"]{
+    phoneNumber,
+    message
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados do botão WhatsApp:';
+  return fetchData<{ phoneNumber: string; message: string }>(query, errorMessage);
 }

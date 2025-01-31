@@ -12,14 +12,12 @@ import Footer from './components/Footer/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
 
 import SectionBreads from './sections/SectionBreads/index.tsx';
+import SectionLunch from './sections/SectionLunch/index.tsx';
 import SectionAddress from './sections/SectionAddress/index.tsx';
 import SectionOpeningHours from './sections/SectionOpeningHours/index.tsx';
 import SectionTemplate from './sections/SectionTemplate/index.tsx';
 
 // Dados que no futuro podem ser o retorno de uma api
-import highlightItems from './data/HighlightGalleryData.tsx';
-import SectionAddressData from './data/SectionAddressData.tsx';
-import SectionLunch from './sections/SectionLunch/index.tsx';
 
 function App() {
   return (
@@ -34,10 +32,8 @@ function App() {
 
       <SectionLunch id="lunch" />
       <SectionBreads id="breads" />
-
-      <SectionAddress id="address" dataSection={SectionAddressData} />
+      <SectionAddress id="sectionAddress" />
       <SectionOpeningHours id="opening-hours" />
-
       <SectionTemplate id="history" />
       <SectionTemplate id="events" />
       <FixedWhatsAppButton />

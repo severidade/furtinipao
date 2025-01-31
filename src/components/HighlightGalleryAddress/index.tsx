@@ -9,7 +9,7 @@ import { HighlightGalleryType } from '../../types/HighlightGalleryType.tsx';
 // eslint-disable-next-line max-len
 export default function HighlightGalleryAddress({ highlightItems } : {highlightItems: HighlightGalleryType[]}) {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true, // Loop infinito para um carrossel contínuo
     speed: 1000, // Velocidade da transição em milissegundos
     slidesToShow: 1, // Mostra uma imagem por vez
@@ -26,10 +26,10 @@ export default function HighlightGalleryAddress({ highlightItems } : {highlightI
     >
       <Slider {...settings}>
         {highlightItems.map((i) => (
-          <figure key={i.id} className="slider">
+          <figure key={i.image._id} className="slider">
             <img
-              src={i.image}
-              alt={i.altText}
+              src={i.image.url}
+              alt={i.image.altText}
               className="highlight_image"
             />
           </figure>

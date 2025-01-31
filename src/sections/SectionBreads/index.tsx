@@ -62,7 +62,7 @@ export default function SectionBreads({ id }: { id: string }) {
     gallerySlider,
   } = breadsData[0];
 
-  console.log('gallerySlider:', breadsData); // Adicione esta linha
+  // console.log('gallerySlider:', breadsData); // Adicione esta linha
 
   return (
     <section id={id} className="container_breads">

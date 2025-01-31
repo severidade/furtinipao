@@ -123,3 +123,21 @@ export async function fetchWhatsAppButtonData(): Promise<{ phoneNumber: string; 
   const errorMessage = 'Ocorreu um erro ao buscar os dados do botão WhatsApp:';
   return fetchData<{ phoneNumber: string; message: string }>(query, errorMessage);
 }
+
+export async function fetchHighlightGalleryData(endpoint: string): Promise<SectionTemplateType[]> {
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+
+  const query = `*[_type == "${endpoint}"]{
+    "gallerySlider": gallerySlider[]{
+      "_id": _key, 
+      "url": image.asset->url,
+      "altText": altText,
+      "title": title
+    }
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados da Galeria de Imagens:';
+  return fetchData<SectionTemplateType[]>(query, errorMessage);
+}

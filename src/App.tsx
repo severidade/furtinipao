@@ -30,7 +30,7 @@ function App() {
         <HeroWelcome />
       </div>
 
-      <HighlightGallery id="highlights" highlightItems={highlightItems} />
+      <HighlightGallery id="highlightGallery" />
 
       <SectionLunch id="lunch" />
       <SectionBreads id="breads" />

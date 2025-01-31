@@ -4,5 +4,6 @@ import breads from './breads'
 import history from './history'
 import events from './events'
 import whatsAppButton from './whatsAppButton'
+import highlightGallery from './highlightGallery'
 
-export const schemaTypes = [blockContent, lunch, breads, history, events, whatsAppButton]
+export const schemaTypes = [highlightGallery, blockContent, lunch, breads, history, events, whatsAppButton]

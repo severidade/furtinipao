@@ -64,7 +64,7 @@ export async function fetchBreadsData(endpoint: string): Promise<SectionTemplate
     }
   }`;
 
-  const errorMessage = 'Ocorreu um erro ao buscar os dados do almoço:';
+  const errorMessage = 'Ocorreu um erro ao buscar os dados sobre os pães';
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
 

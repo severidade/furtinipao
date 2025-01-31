@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
+import { PortableText } from '@portabletext/react';
 import styles from './SectionAddress.module.css';
 // import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import HighlightGalleryAddress from '../../components/HighlightGalleryAddress/index.tsx';
@@ -22,15 +23,29 @@ function Header({ title, subtitle }: { title: string; subtitle?: string }) {
   );
 }
 
+const portableTextComponents = {
+  types: {
+    block: ({ value }: { value: any }) => <p>{value.children.map((child: any) => child.text).join(' ')}</p>,
+  },
+  list: {
+    bullet: ({ children }: { children: React.ReactNode }) => <ul>{children}</ul>,
+    number: ({ children }: { children: React.ReactNode }) => <ol>{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }: { children: React.ReactNode }) => <li>{children}</li>,
+    number: ({ children }: { children: React.ReactNode }) => <li>{children}</li>,
+  },
+  marks: {
+    strong: ({ children }: { children: React.ReactNode }) => <strong>{children}</strong>,
+  },
+};
+
 // Subcomponente para as características
-function Characteristics({ characteristics }: { characteristics: { id: string; value: string }[] }) {
+function Characteristics({ content }: { content: any[] }) {
+  console.log(content);
   return (
     <section className={styles.accessibility_info}>
-      {characteristics.map((item) => (
-        <div key={item._id} className={styles.characteristics}>
-          {item.value}
-        </div>
-      ))}
+      <PortableText value={content} components={portableTextComponents} />
     </section>
   );
 }
@@ -69,7 +84,8 @@ export default function SectionAddress({ id }: AddressProps) {
     <section id={id} className={styles.container_address}>
       {gallerySlider && <Gallery gallerySlider={gallerySlider} />}
       <Header title={title} subtitle={subtitle} />
-      {content && <Characteristics characteristics={content} />}
+      {/* {content && <Characteristics characteristics={content} />} */}
+      {content && <Characteristics content={content} />}
       <CallUber />
     </section>
   );

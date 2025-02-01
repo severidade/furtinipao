@@ -25,7 +25,14 @@ function Header({ title, subtitle }: { title: string; subtitle?: string }) {
 
 const portableTextComponents = {
   types: {
-    block: ({ value }: { value: any }) => <p>{value.children.map((child: any) => child.text).join(' ')}</p>,
+    block: ({ value }: { value: any }) => {
+      switch (value.style) {
+        case 'normal':
+          return <p>{value.children.map((child: any) => child.text).join(' ')}</p>;
+        default:
+          return <p>{value.children.map((child: any) => child.text).join(' ')}</p>;
+      }
+    },
   },
   list: {
     bullet: ({ children }: { children: React.ReactNode }) => <ul>{children}</ul>,
@@ -42,7 +49,6 @@ const portableTextComponents = {
 
 // Subcomponente para as características
 function Characteristics({ content }: { content: any[] }) {
-  console.log(content);
   return (
     <section className={styles.accessibility_info}>
       <PortableText value={content} components={portableTextComponents} />
@@ -77,9 +83,8 @@ export default function SectionAddress({ id }: AddressProps) {
 
   // console.log('Este é o objeto inteiro:', addressData[0]);
 
-  // console.log('Este é o conteúdo que precisa de block content:', content);
+  console.log('Este é o conteúdo que precisa de block content:', content);
 
-  // import BlockContent from '@sanity/block-content-to-react';
   return (
     <section id={id} className={styles.container_address}>
       {gallerySlider && <Gallery gallerySlider={gallerySlider} />}

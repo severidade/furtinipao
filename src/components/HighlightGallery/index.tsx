@@ -53,7 +53,7 @@ export default function HighlightGallery({ id } : HighlightGalleryProps) {
 
   if (!highlightGalleryData.length) return null;
 
-  console.log('Esta é a galeria:', highlightGalleryData[0]);
+  // console.log('Esta é a galeria:', highlightGalleryData[0]);
   return (
     <section
       id={id}

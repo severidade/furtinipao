@@ -51,7 +51,7 @@
 
 }
 
-.address_details, .characteristics{
+.address_details, .characteristics {
   font-family: 'MacklinText';
   font-size: var(--font-size-small);
   color: var(--brown-darker);
@@ -65,14 +65,14 @@
   padding-top: var(--gap);
 }
 
-.characteristics { 
+.accessibility_info p { 
   padding-left: 5rem;
   position: relative;
   font-size: 1.6rem;
   line-height: 1.6;
 }
 
-.characteristics::before{
+.accessibility_info p::before{
   content: "";
   position: absolute;
   left: 34px;

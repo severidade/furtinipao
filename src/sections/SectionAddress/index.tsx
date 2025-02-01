@@ -10,7 +10,6 @@ import { useFetchAddressData } from '../../CustomHooks/useFetchAddressData.tsx';
 
 type AddressProps = {
   id: string;
-  // dataSection: SectionTemplateType[];
 };
 
 // Subcomponente para o título e subtítulo

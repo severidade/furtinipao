@@ -71,14 +71,14 @@ export default defineType({
   preview: {
     select: {
       title: 'header.title',
-      subtitle: 'header.subtitle',
+      subtitle: 'header.subtitle'
     },
     prepare(selection) {
-      const { title, media } = selection;
+      const { title, subtitle } = selection;
       return {
         title: title || 'Sem descrição',
-        media: media,
+        subtitle: subtitle
       };
     },
-  },
+  }
 });

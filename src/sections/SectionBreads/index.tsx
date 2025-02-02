@@ -1,19 +1,13 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
-/* eslint-disable react/react-in-jsx-scope */
 import parse from 'html-react-parser';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SectionBreads.css';
-// import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
 import HighlightGaleriaBreads from '../../components/HighlightGaleriaBreads/index.tsx';
 import { useFetchBreadsData } from '../../CustomHooks/useFetchBreadsData.tsx';
-
-// type BreadsProps = {
-//   id: string;
-//   dataSection: SectionTemplateType[];
-// };
 
 function Header({ header }: { header: { title: string; subtitle?: string } }) {
   return (
@@ -34,13 +28,6 @@ function Content({ content }: { content: string }) {
 
 export default function SectionBreads({ id }: { id: string }) {
   const { breadsData, isLoading, error } = useFetchBreadsData(id);
-
-  // const {
-  //   header,
-  //   content,
-  //   callToActionBt,
-  //   gallerySlider,
-  // } = dataSection[0];
 
   if (isLoading) return <div>Carregando...</div>;
 

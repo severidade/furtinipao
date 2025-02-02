@@ -3,11 +3,10 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { PortableText } from '@portabletext/react';
 import { getPortableTextComponents } from '../../utils/getPortableTextComponents.tsx';
-import styles from './SectionAddress.module.css';
-// import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+import { useFetchAddressData } from '../../CustomHooks/useFetchAddressData.tsx';
 import HighlightGalleryAddress from '../../components/HighlightGalleryAddress/index.tsx';
 import CallUber from '../../components/CallUber/index.tsx';
-import { useFetchAddressData } from '../../CustomHooks/useFetchAddressData.tsx';
+import styles from './SectionAddress.module.css';
 
 type AddressProps = {
   id: string;
@@ -58,10 +57,6 @@ export default function SectionAddress({ id }: AddressProps) {
     content,
     gallerySlider,
   } = addressData[0];
-
-  // console.log('Este é o objeto inteiro:', addressData[0]);
-
-  console.log('Este é o conteúdo que precisa de block content:', content);
 
   return (
     <section id={id} className={styles.container_address}>

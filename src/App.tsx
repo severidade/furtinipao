@@ -17,8 +17,6 @@ import SectionAddress from './sections/SectionAddress/index.tsx';
 import SectionOpeningHours from './sections/SectionOpeningHours/index.tsx';
 import SectionTemplate from './sections/SectionTemplate/index.tsx';
 
-// Dados que no futuro podem ser o retorno de uma api
-
 function App() {
   return (
     <>
@@ -27,9 +25,7 @@ function App() {
         <HeroImage />
         <HeroWelcome />
       </div>
-
       <HighlightGallery id="highlightGallery" />
-
       <SectionLunch id="lunch" />
       <SectionBreads id="breads" />
       <SectionAddress id="sectionAddress" />

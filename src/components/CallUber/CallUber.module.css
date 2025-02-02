@@ -16,16 +16,14 @@
   z-index: 2;
 }
 
-
 .uber::before {
   content: "";
   height: 44px;
   width: 44px;
-  background: url("../../assets/icon/uber.svg") no-repeat center;
+  background: url("./assets/uber_icon.svg") no-repeat center;
   background-size: 70%;
   transform: translateX(-25%);
 }
-
 
 @media (min-width: 1024px) {
 

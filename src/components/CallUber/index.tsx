@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/react-in-jsx-scope */
+
 import styles from './CallUber.module.css';
 
 export default function CallUber() {

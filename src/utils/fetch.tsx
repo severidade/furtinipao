@@ -118,6 +118,36 @@ export async function fetchHistoryData(endpoint: string): Promise<SectionTemplat
   return fetchData<SectionTemplateType[]>(query, errorMessage);
 }
 
+export async function fetchOpeningHoursData(endpoint: string): Promise<SectionTemplateType[]> {
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+
+  const query = `*[_type == "${endpoint}"]{
+    header {
+      title,
+      subtitle
+    },
+    content,
+    videoSection {
+      "videoUrl": videoFile.asset->url,
+      "poster": {
+        "url": posterImage.asset->url,
+        "altText": posterImage.altText
+      }
+    },
+    callToActionBt {
+      phoneNumber,
+      buttonTitle,
+      message,
+      model
+    }
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados da seção de Horários de Funcionamento:';
+  return fetchData<SectionTemplateType[]>(query, errorMessage);
+}
+
 export async function fetchEventsData(endpoint: string): Promise<SectionTemplateType[]> {
   if (!endpoint) {
     throw new Error('Endpoint inválido ou não fornecido');

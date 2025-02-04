@@ -72,7 +72,8 @@
 
   .container_img {
     width: 100%;
-    height: 30vh;
+    /* height: 30vh; */
+    height: calc(30vw - 6rem);
     object-fit: cover;
   }
 }

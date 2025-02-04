@@ -8,7 +8,7 @@ const DEFAULT_SCHEDULE = [
   { day: 'Terça a Sexta', hours: '10h às 20h' },
   { day: 'Sábado', hours: '9h às 20h' },
   { day: 'Domingo', hours: '9h às 14h' },
-  { day: 'Feriados', hours: '9h às 19h30' },
+  { day: 'Feriados', hours: '9h às 20h' },
 ];
 
 const DEFAULT_CALL_TO_ACTION = {

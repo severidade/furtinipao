@@ -90,7 +90,7 @@ export default function Footer() {
           <div className={styles.opening_hours_footer_info}>Terça a Sexta - 10 às 20h</div>
           <div className={styles.opening_hours_footer_info}>Sábado - 9 às 20h</div>
           <div className={styles.opening_hours_footer_info}>Domingo - 9 às 14h</div>
-          <div className={styles.opening_hours_footer_info}>Feriados - 9 às 19h30</div>
+          <div className={styles.opening_hours_footer_info}>Feriados - 9 às 20h</div>
         </div>
       </section>
 

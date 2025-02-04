@@ -9,6 +9,7 @@ import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
 import VideoBg from '../../components/VideoBg/index.tsx';
 
 import OpeningHoursData from '../../data/OpeningHoursData.tsx';
+import { useFetchOpeningHours } from '../../CustomHooks/useFetchOpeningHours.tsx';
 
 type OpeningHoursProps = {
   id: string;
@@ -19,6 +20,8 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [status, setStatus] = useState('');
+
+  const { openingHours, isLoading, error } = useFetchOpeningHours(id);
 
   const [{ header: { title }, schedule, callToActionBt }] = OpeningHoursData;
 
@@ -47,6 +50,21 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
   }, []);
 
   const animatedX = hasAnimated ? '0%' : x;
+
+  if (isLoading) return <div>Carregando...</div>;
+
+  if (error) {
+    return (
+      <div>
+        Erro ao carregar:
+        {error.message}
+      </div>
+    );
+  }
+
+  if (!openingHours.length) return null;
+
+  console.log('Dados retornados dentro da secao:', openingHours);
 
   return (
     <section id={id} ref={containerRef} className={styles.container_opening_hours}>

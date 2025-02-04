@@ -123,6 +123,8 @@ export async function fetchOpeningHoursData(endpoint: string): Promise<SectionTe
     throw new Error('Endpoint inválido ou não fornecido');
   }
 
+  // console.log('Endpoint recebido:', endpoint);
+
   const query = `*[_type == "${endpoint}"]{
     header {
       title,
@@ -143,6 +145,8 @@ export async function fetchOpeningHoursData(endpoint: string): Promise<SectionTe
       model
     }
   }`;
+
+  // console.log('Query executada:', query);
 
   const errorMessage = 'Ocorreu um erro ao buscar os dados da seção de Horários de Funcionamento:';
   return fetchData<SectionTemplateType[]>(query, errorMessage);

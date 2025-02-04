@@ -18,7 +18,7 @@ export default function Header() {
       { id: 'lunch', label: 'Almoço' },
       { id: 'breads', label: 'Fornadas' },
       { id: 'sectionAddress', label: 'Localização' },
-      { id: 'opening-hours', label: 'Horários' },
+      { id: 'openingHours', label: 'Horários' },
       { id: 'history', label: 'História' },
       { id: 'events', label: 'Eventos' },
     ],

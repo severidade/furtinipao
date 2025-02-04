@@ -29,7 +29,7 @@ function App() {
       <SectionLunch id="lunch" />
       <SectionBreads id="breads" />
       <SectionAddress id="sectionAddress" />
-      <SectionOpeningHours id="opening-hours" />
+      <SectionOpeningHours id="openingHours" />
       <SectionTemplate id="history" />
       <SectionTemplate id="events" />
       <FixedWhatsAppButton />

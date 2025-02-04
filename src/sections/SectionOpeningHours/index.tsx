@@ -23,7 +23,7 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
 
   const { openingHours, isLoading, error } = useFetchOpeningHours(id);
 
-  const [{ header: { title }, schedule, callToActionBt }] = OpeningHoursData;
+  const [{ header: { title }, schedule }] = OpeningHoursData;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -64,17 +64,24 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
 
   if (!openingHours.length) return null;
 
-  console.log('Dados retornados dentro da secao:', openingHours);
+  const {
+    header,
+    callToActionBt,
+    videoSection,
+  } = openingHours[0];
+
+  // console.log('Dados retornados dentro do cta:', videoSection);
 
   return (
     <section id={id} ref={containerRef} className={styles.container_opening_hours}>
-      <VideoBg />
+      {/* <VideoBg /> */}
+      {videoSection && <VideoBg data={videoSection} />}
       <motion.div
         className={styles.opening_hours_card}
         style={{ x: animatedX }}
         transition={{ type: 'spring', stiffness: 70, damping: 20 }}
       >
-        <h2 className={styles.opening_hours_title}>{title}</h2>
+        <h2 className={styles.opening_hours_title}>{header.title}</h2>
         <section
           className={styles.schedule_table}
           aria-live="polite"

@@ -5,14 +5,26 @@ import styles from './VideoBg.module.css';
 import videoSrc from '../../assets/videos/video_lunch.mp4';
 import posterImage from '../../assets/videos/video_lunch.png';
 
-export default function VideoBg() {
+type VideoBgProps = {
+  data: {
+    videoUrl: string;
+    poster: {
+      url: string;
+      altText?: string;
+    };
+  };
+};
+
+export default function VideoBg({ data }: VideoBgProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Usa os dados recebidos do sanity.io ou os valores padrão
   const media = {
-    video: videoSrc,
-    poster: posterImage,
+    video: data?.videoUrl || videoSrc,
+    poster: data?.poster?.url || posterImage,
   };
 
+  console.log('Dados retornados dentro do cta:', media.video);
   useEffect(() => {
     const reproduzirVideo = () => {
       if (videoRef.current) {

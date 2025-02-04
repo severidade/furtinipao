@@ -6,9 +6,16 @@ export default defineType({
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Título',
-      type: 'string',
+      name: 'header',
+      title: 'Cabeçalho',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Título',
+          type: 'string',
+        },
+      ],
     },
     {
       name: 'videoSection',
@@ -81,7 +88,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'header.title', // Agora acessando o título corretamente
       media: 'videoSection.posterImage',
     },
     prepare(selection) {

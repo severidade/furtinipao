@@ -126,10 +126,8 @@ export async function fetchOpeningHoursData(endpoint: string): Promise<SectionTe
   // console.log('Endpoint recebido:', endpoint);
 
   const query = `*[_type == "${endpoint}"]{
-    header {
-      title,
-      subtitle
-    },
+    "header": header,
+    subtitle,
     content,
     videoSection {
       "videoUrl": videoFile.asset->url,

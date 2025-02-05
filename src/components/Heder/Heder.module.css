@@ -72,12 +72,14 @@
 
 .close_menu {
   position: absolute;
-  top: 3rem;
-  left: 3rem;
-  padding: 2rem;
+  top: 0rem;
+  left: 0rem;
+  padding: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.2rem;
+  background-color: var(--terracota-darker);
+  color: var(--areia-original);
 }
 
 .container_sidebar_mobile ul.open {

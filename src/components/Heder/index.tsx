@@ -118,6 +118,15 @@ export default function Header() {
         className={`${isMobile ? styles.container_sidebar_mobile : styles.container_sidebar_desktop}`}
       >
         <ul className={`${menuOpen ? styles.open : ''}`}>
+          {isMobile && (
+          <button
+            className={styles.close_menu}
+            type="button"
+            onClick={toggleMenu}
+          >
+            Fechar
+          </button>
+          )}
           {sections.slice(1).map(({ id, label }) => (
             <li key={id}>
               <a

@@ -17,6 +17,9 @@ async function fetchData<T>(query: string, errorMessage: string): Promise<T> {
 }
 
 // Função específica para buscar os dados do na tabela Lunch
+
+// https://henuw5g0.api.sanity.io/v2021-10-21/data/query/production?query=*[_type=="openingHours"]
+
 export async function fetchLunchData(endpoint: string): Promise<SectionTemplateType[]> {
   if (!endpoint) {
     throw new Error('Endpoint inválido ou não fornecido');

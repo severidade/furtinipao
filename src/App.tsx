@@ -7,15 +7,14 @@ import Heder from './components/Heder/index.tsx';
 import HeroImage from './components/HeroImage/index.tsx';
 import HeroWelcome from './components/HeroWelcome/index.tsx';
 import HighlightGallery from './components/HighlightGallery/index.tsx';
-import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
-import Footer from './components/Footer/index.tsx';
-import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
-
-import SectionBreads from './sections/SectionBreads/index.tsx';
 import SectionLunch from './sections/SectionLunch/index.tsx';
+import SectionBreads from './sections/SectionBreads/index.tsx';
 import SectionAddress from './sections/SectionAddress/index.tsx';
 import SectionOpeningHours from './sections/SectionOpeningHours/index.tsx';
 import SectionTemplate from './sections/SectionTemplate/index.tsx';
+import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
+import Footer from './components/Footer/index.tsx';
+import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
 
 function App() {
   return (

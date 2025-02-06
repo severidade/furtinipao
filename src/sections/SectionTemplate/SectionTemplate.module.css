@@ -12,7 +12,9 @@
 
 .container_img{
   height: calc(100vw - 4rem);
-  background-color: var(--areia-dark);
+  /* background: var(--areia-dark); */
+  background: var(--areia-dark) url(./assets/camera.svg) no-repeat center;
+  background-size: 4rem;
   overflow: hidden;
 }
 

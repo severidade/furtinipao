@@ -28,9 +28,11 @@
 .container_highlight .slider {
   width: 100%;
   height: 160px;
-  background-color: var(--areia-dark);
+  background: var(--areia-dark) url(./assets/camera.svg) no-repeat center;
+  background-size: 20%;
   overflow: hidden;
   border-radius: var(--border-radius-medium);
+  /* #F9F3EA url(/src/assets/texture.png) repeat center; */
 }
 
 .container_highlight .highlight_image{

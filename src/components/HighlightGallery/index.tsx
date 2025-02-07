@@ -64,7 +64,7 @@ export default function HighlightGallery({ id } : HighlightGalleryProps) {
           <figure key={item._id} className="slider">
             <img
               src={item.url} // Acesso direto à propriedade 'url'
-              alt={item.altText || 'Imagem sem descrição'} // Acesso direto à propriedade 'altText'
+              alt={item.altText || '📷 - Imagem sem descrição'} // Acesso direto à propriedade 'altText'
               className="highlight_image"
             />
           </figure>

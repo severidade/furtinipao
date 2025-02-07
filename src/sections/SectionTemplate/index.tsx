@@ -15,7 +15,8 @@ function Figure({ figure }: { figure: { url: string, altText?: string } }) {
     <figure className={styles.container_img}>
       <img
         src={figure.url}
-        alt={altText}
+        // alt={altText}
+        alt={altText || '📷 - Imagem sem descrição'}
         loading="lazy"
         className="highlight_image"
       />

@@ -29,7 +29,8 @@ export default function HighlightGalleryAddress({ highlightItems } : {highlightI
           <figure key={i.image._id} className="slider">
             <img
               src={i.image.url}
-              alt={i.image.altText}
+              // alt={i.image.altText}
+              alt={i.image.altText || '📷 - Imagem sem descrição'}
               className="highlight_image"
             />
           </figure>

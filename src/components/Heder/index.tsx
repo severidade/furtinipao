@@ -117,7 +117,7 @@ export default function Header() {
       <div
         className={`${isMobile ? styles.container_sidebar_mobile : styles.container_sidebar_desktop}`}
       >
-        <ul className={`${menuOpen ? styles.open : ''}`}>
+        <div className={`${menuOpen ? styles.open : ''}`}>
           {isMobile && (
           <button
             className={styles.close_menu}
@@ -127,18 +127,20 @@ export default function Header() {
             Fechar
           </button>
           )}
-          {sections.slice(1).map(({ id, label }) => (
-            <li key={id}>
-              <a
-                className={`${styles.menu_item} ${activeSection === id ? styles.active : ''}`}
-                href={`#${id}`}
-                onClick={(e) => handleClick(e, id)}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className={styles.container_menu_itens}>
+            {sections.slice(1).map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  className={`${styles.menu_item} ${activeSection === id ? styles.active : ''}`}
+                  href={`#${id}`}
+                  onClick={(e) => handleClick(e, id)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

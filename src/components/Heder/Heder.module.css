@@ -54,7 +54,7 @@
 }
 
 
-.container_sidebar_mobile ul {
+.container_sidebar_mobile div {
   width: 100%;
   height: 100%;
   background-color: var(--nav);
@@ -69,7 +69,6 @@
 }
 
 /* quando a classe open é adicionada o ul desloca pra dentro  */
-
 .close_menu {
   position: absolute;
   top: 0rem;
@@ -82,7 +81,7 @@
   color: var(--areia-original);
 }
 
-.container_sidebar_mobile ul.open {
+.container_sidebar_mobile div.open {
   transform: translateX(-101%);
 }
 
@@ -95,6 +94,15 @@
   height: 5rem;
   position: relative;
   transition: color 0.3s ease;
+}
+
+.container_menu_itens {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .menu_item::after {
@@ -117,7 +125,7 @@
   left: 0;
 }
 
-.container_sidebar_desktop ul {
+.container_sidebar_desktop div {
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -146,16 +154,24 @@
 
   .nav_header {
     width: max-content;
-    /* background-color: tomato; */
   }
   
   .container_sidebar_desktop {
    flex-grow: 1;
-   /* background: lightcoral; */
   }
 
-  .container_sidebar_desktop ul {
+  .container_sidebar_desktop div {
     justify-content: flex-end;
+  }
+
+  .container_menu_itens {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: end;
+    gap: 5rem;
   }
 }
 
@@ -171,5 +187,14 @@
   
   .container_sidebar_desktop {
     width: 45vw;
+  }
+
+  .container_menu_itens {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
   }
 }

@@ -4,7 +4,8 @@ import './CSS/Macklinfonts.css';
 import './App.css';
 
 import Heder from './components/Heder/index.tsx';
-import HighlightGallery from './components/HighlightGallery/index.tsx';
+import SectionHeroWelcome from './sections/SectionHero/index.tsx';
+import SectionHighlightGallery from './sections/SectionHighlightGallery/index.tsx';
 import SectionLunch from './sections/SectionLunch/index.tsx';
 import SectionBreads from './sections/SectionBreads/index.tsx';
 import SectionAddress from './sections/SectionAddress/index.tsx';
@@ -13,14 +14,13 @@ import SectionTemplate from './sections/SectionTemplate/index.tsx';
 import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
-import SectionHeroWelcome from './sections/SectionHero/index.tsx';
 
 function App() {
   return (
     <>
       <Heder />
       <SectionHeroWelcome id="hero" />
-      <HighlightGallery id="highlightGallery" />
+      <SectionHighlightGallery id="highlightGallery" />
       <SectionLunch id="lunch" />
       <SectionBreads id="breads" />
       <SectionAddress id="sectionAddress" />

@@ -3,7 +3,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import './HighlightGallery.css';
+import './SectionHighlightGallery.css';
 import { useFetchHighlightGalleryData } from '../../CustomHooks/useFetchHighlightGalleryData.tsx';
 
 type HighlightGalleryProps = {
@@ -11,7 +11,7 @@ type HighlightGalleryProps = {
 };
 
 // eslint-disable-next-line max-len
-export default function HighlightGallery({ id } : HighlightGalleryProps) {
+export default function SectionHighlightGallery({ id } : HighlightGalleryProps) {
   const { highlightGalleryData, isLoading, error } = useFetchHighlightGalleryData(id);
 
   const settings = {

@@ -56,6 +56,13 @@ export default function VideoBg({ data }: VideoBgProps) {
       >
         <source src={media.video} type="video/mp4" />
       </video>
+      <track
+        kind="captions"
+        src="./subtitle/aviso.tsx"
+        srcLang="pt"
+        label="Português"
+        default
+      />
     </div>
   );
 }

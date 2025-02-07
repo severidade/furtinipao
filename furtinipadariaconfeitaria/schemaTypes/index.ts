@@ -7,5 +7,6 @@ import history from './history'
 import events from './events'
 import whatsAppButton from './whatsAppButton'
 import highlightGallery from './highlightGallery'
+import sectionHeroWelcome from './sectionHeroWelcome'
 
-export const schemaTypes = [highlightGallery, blockContent, lunch, breads, sectionAddress, openingHours, history, events, whatsAppButton]
+export const schemaTypes = [sectionHeroWelcome, highlightGallery, blockContent, lunch, breads, sectionAddress, openingHours, history, events, whatsAppButton]

@@ -1,6 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-// utils/fetch.tsx
-// import { client } from '../sanityClient.tsx';
 import client from '../sanityClient.tsx';
 
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
@@ -15,10 +13,6 @@ async function fetchData<T>(query: string, errorMessage: string): Promise<T> {
     throw error;
   }
 }
-
-// Função específica para buscar os dados do na tabela Lunch
-
-// https://henuw5g0.api.sanity.io/v2021-10-21/data/query/production?query=*[_type=="openingHours"]
 
 export async function fetchLunchData(endpoint: string): Promise<SectionTemplateType[]> {
   if (!endpoint) {

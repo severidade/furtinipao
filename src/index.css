@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
 :root {
-  /* --font-title-primary: 'Kalnia', serif; */
-
   --spacing-0: 0; /*usando */
   --spacing-small: 1rem;
   --spacing-medium: 2rem;
@@ -35,8 +33,6 @@
 
   width: 100vw;
   max-width: 100%;
-  /* position: 
-  ; */
 }
 
 html {

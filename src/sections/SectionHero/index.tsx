@@ -20,11 +20,12 @@ export default function SectionHeroWelcome({ id }: { id: string }) {
   const {
     title,
     subtitle,
+    backgroundImage,
   } = heroWelcomeData[0];
 
   return (
     <section id={id} className={styles.container_hero}>
-      <HeroImage />
+      <HeroImage backgroundImage={backgroundImage} />
       <div className={styles.hero_welcome}>
         <h1 className={styles.hero_welcome_title}>
           {title}

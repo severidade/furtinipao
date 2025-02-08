@@ -1,19 +1,25 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/react-in-jsx-scope */
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useDeviceInfo } from '../../utils/useDeviceInfo.tsx';
 import styles from './HeroImage.module.css';
-import fundoImageMobile from '../../assets/cafe.webp';
-import fundoImageDesktop from '../../assets/HighlightGallery/05.jpg';
+import { SectionHeroWelcomeType } from '../../types/HeroWelcomeType.tsx';
 
-export default function HeroImage() {
+interface HeroImageProps {
+  backgroundImage: SectionHeroWelcomeType['backgroundImage'];
+}
+
+export default function HeroImage({ backgroundImage } : HeroImageProps) {
   const { isMobile } = useDeviceInfo();
-
   const [windowHeight, setWindowHeight] = useState(0);
   const [elementTop, setElementTop] = useState(0);
 
-  const fundoImage = isMobile ? fundoImageMobile : fundoImageDesktop;
+  const fundoImage = isMobile
+    ? backgroundImage.imagemMobile.url
+    : backgroundImage.imagemDesktop.url;
+  const altText = isMobile
+    ? backgroundImage.imagemMobile.altText
+    : backgroundImage.imagemDesktop.altText;
 
   useEffect(() => {
     const handleUpdate = () => {
@@ -36,7 +42,6 @@ export default function HeroImage() {
   }, []);
 
   const scaleValues = isMobile ? [3, 1.1] : [1.3, 1];
-  // Define os valores dinamicamente com base em isMobile
 
   const { scrollY } = useScroll();
   const scale = useTransform(
@@ -50,7 +55,7 @@ export default function HeroImage() {
       <motion.img
         id="scroll-zoom-image"
         src={fundoImage}
-        alt="imagem de destaque na home"
+        alt={altText || '📷 - Imagem de destaque'}
         loading="eager"
         style={{
           scale,

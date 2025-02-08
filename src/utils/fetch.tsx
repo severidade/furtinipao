@@ -24,7 +24,7 @@ export async function fetchHeroWelcomeData(endpoint: string): Promise<SectionHer
     _id,
     title,
     subtitle,
-    imagemDeFundo {
+    backgroundImage {
       imagemMobile {
         "url": image.asset->url,
         "altText": altText

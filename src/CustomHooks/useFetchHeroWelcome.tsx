@@ -14,7 +14,7 @@ export default function useFetchHeroWelcome(endpoint: string) {
     async function fetchData() {
       try {
         const data = await fetchHeroWelcomeData(endpoint);
-        // console.log('Dados retornados diretamente do Sanity:', data);
+        console.log('Dados retornados diretamente do Sanity:', data);
         setHeroWelcomeData(data);
         setIsLoading(false);
       } catch (err) {

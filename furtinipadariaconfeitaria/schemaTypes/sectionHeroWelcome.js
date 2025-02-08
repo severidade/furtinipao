@@ -16,7 +16,7 @@ export default {
       validation: (Rule) => Rule.required().min(10).max(150),
     },
     {
-      name: "imagemDeFundo",
+      name: "backgroundImage",
       title: "Imagem de Fundo",
       type: "object",
       fields: [
@@ -65,8 +65,8 @@ export default {
   preview: {
     select: {
       title: "title",
-      desktopImage: "imagemDeFundo.imagemDesktop.image.asset.url",
-      mobileImage: "imagemDeFundo.imagemMobile.image.asset.url",
+      desktopImage: "backgroundImage.imagemDesktop.image.asset.url",
+      mobileImage: "backgroundImage.imagemMobile.image.asset.url",
     },
     prepare({ title, desktopImage, mobileImage }) {
       return {

@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Heder />
-      <SectionHeroWelcome id="hero" />
+      <SectionHeroWelcome id="sectionHeroWelcome" />
       <SectionHighlightGallery id="highlightGallery" />
       <SectionLunch id="lunch" />
       <SectionBreads id="breads" />

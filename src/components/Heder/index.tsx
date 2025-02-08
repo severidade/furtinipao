@@ -14,7 +14,7 @@ export default function Header() {
   // Para atualizar menu basta alterar esse Array
   const sections = useMemo(
     () => [
-      { id: 'hero', label: 'Home' },
+      { id: 'sectionHeroWelcome', label: 'Home' },
       { id: 'lunch', label: 'Almoço' },
       { id: 'breads', label: 'Fornadas' },
       { id: 'sectionAddress', label: 'Localização' },
@@ -98,8 +98,8 @@ export default function Header() {
       <div className={styles.nav_header}>
         <a
           className={styles.logo}
-          href="#hero"
-          onClick={(e) => handleClick(e, 'hero')}
+          href="#sectionHeroWelcome"
+          onClick={(e) => handleClick(e, 'sectionHeroWelcome')}
         >
           Frutini padaria e confeitaria
         </a>

@@ -2,6 +2,7 @@
 import client from '../sanityClient.tsx';
 
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
+import { SectionHeroWelcomeType } from '../types/HeroWelcomeType.tsx';
 
 // Função genérica para buscar dados no Sanity
 async function fetchData<T>(query: string, errorMessage: string): Promise<T> {
@@ -12,6 +13,31 @@ async function fetchData<T>(query: string, errorMessage: string): Promise<T> {
     console.error(errorMessage, error);
     throw error;
   }
+}
+
+export async function fetchHeroWelcomeData(endpoint: string): Promise<SectionHeroWelcomeType[]> {
+  // const query = `*[_type == "sectionHeroWelcome"]{
+  if (!endpoint) {
+    throw new Error('Endpoint inválido ou não fornecido');
+  }
+  const query = `*[_type == "${endpoint}"]{
+    _id,
+    title,
+    subtitle,
+    imagemDeFundo {
+      imagemMobile {
+        "url": image.asset->url,
+        "altText": altText
+      },
+      imagemDesktop {
+        "url": image.asset->url,
+        "altText": altText
+      }
+    }
+  }`;
+
+  const errorMessage = 'Ocorreu um erro ao buscar os dados do Hero Welcome:';
+  return fetchData<SectionHeroWelcomeType[]>(query, errorMessage);
 }
 
 export async function fetchLunchData(endpoint: string): Promise<SectionTemplateType[]> {

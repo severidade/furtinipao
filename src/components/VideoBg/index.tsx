@@ -24,7 +24,7 @@ export default function VideoBg({ data }: VideoBgProps) {
     poster: data?.poster?.url || posterImage,
   };
 
-  console.log('Dados retornados dentro do cta:', media.video);
+  // console.log('Dados retornados dentro do cta:', media.video);
   useEffect(() => {
     const reproduzirVideo = () => {
       if (videoRef.current) {

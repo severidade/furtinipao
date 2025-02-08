@@ -1,15 +1,36 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HeroImage from '../../components/HeroImage/index.tsx';
 import styles from './SectionHero.module.css';
+import useFetchSectionHeroWelcome from '../../CustomHooks/useFetchHeroWelcome.tsx';
 
 export default function SectionHeroWelcome({ id }: { id: string }) {
+  const { heroWelcomeData, isLoading, error } = useFetchSectionHeroWelcome(id);
+
+  if (isLoading) return <div>Carregando...</div>;
+
+  if (error) {
+    return (
+      <div>
+        Erro ao carregar:
+        {error.message}
+      </div>
+    );
+  }
+
+  const {
+    title,
+    subtitle,
+  } = heroWelcomeData[0];
+
   return (
     <section id={id} className={styles.container_hero}>
       <HeroImage />
       <div className={styles.hero_welcome}>
-        <h1 className={styles.hero_welcome_title}>O pão é de verdade e o café de coração</h1>
+        <h1 className={styles.hero_welcome_title}>
+          {title}
+        </h1>
         <p className={styles.hero_welcome_subtitle}>
-          Arte, gastronomia e conforto esperam por você aqui.
+          {subtitle}
         </p>
       </div>
     </section>

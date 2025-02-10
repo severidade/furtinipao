@@ -68,7 +68,6 @@ export default defineType({
     {
       name: 'gallerySlider',
       title: 'Galeria de Pães',
-      description: 'O formato da imagem é 93 × 120 px (largura × altura).',
       type: 'array',
       of: [
         {
@@ -83,6 +82,7 @@ export default defineType({
               name: 'image',
               title: 'Imagem',
               type: 'image',
+              description: 'O Tamanho da imagem é 93 × 120 px (largura × altura) e o formato sugerido é WebP.',
               options: {
                 hotspot: true,
               },

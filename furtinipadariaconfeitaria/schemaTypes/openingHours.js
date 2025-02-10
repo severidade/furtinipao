@@ -34,7 +34,7 @@ export default defineType({
           name: 'posterImage',
           title: 'Imagem de Garantia',
           type: 'image',
-          description: 'Esta imagem é exibida enquanto o vídeo não carrega.',
+          description: 'Esta imagem é exibida enquanto o vídeo não carrega. O Tamanho da imagem é 527 × 938 px (largura × altura) e o formato sugerido é WebP. ',
           options: {
             hotspot: true,
           },

@@ -6,6 +6,7 @@ export default {
     {
       name: 'gallerySlider',
       title: 'Seleção de imagens que constam na galeria principal',
+      description: 'O formato da imagem é 200 × 300 px (largura × altura).',
       type: 'array',
       of: [
         {

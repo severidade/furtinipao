@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { useState, useEffect } from 'react';
-import { fetchHighlightGalleryData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 export function useFetchHighlightGalleryData(endpoint: string) {
@@ -11,8 +11,8 @@ export function useFetchHighlightGalleryData(endpoint: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchHighlightGalleryData(endpoint);
-        setHighlightGalleryData(data);
+        const data = await fetchSanityData(endpoint);
+        setHighlightGalleryData(data as SectionTemplateType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));

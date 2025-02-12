@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { useState, useEffect } from 'react';
-import { fetchLunchData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 export function useFetchLunchData(endpoint: string) {
@@ -9,16 +9,10 @@ export function useFetchLunchData(endpoint: string) {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    // if (!endpoint) {
-    //   setIsLoading(false);
-    //   setError(new Error('Endpoint não fornecido'));
-    //   return;
-    // }
-
     async function fetchData() {
       try {
-        const data = await fetchLunchData(endpoint);
-        setLunchData(data);
+        const data = await fetchSanityData(endpoint);
+        setLunchData(data as SectionTemplateType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));

@@ -52,14 +52,13 @@
 .header_lunch_dish_photo img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   filter: drop-shadow(10px 10px 15px var(--terracota-darker));
 }
 
 .header_lunch_hours {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-
   font-family: 'Halogen';
   font-size: var(--font-size-medium);
   color: var(--brown-darker);
@@ -82,6 +81,6 @@
 
   .header_lunch_dish_photo {
     height: 20vh;
-    width: 20vh;
+    width: 100%;
   }
 }

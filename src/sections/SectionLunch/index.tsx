@@ -5,8 +5,8 @@
 import { useFetchLunchData } from '../../CustomHooks/useFetchLunchData.tsx';
 import styles from './Lunch.module.css';
 
-function Figure({ figure = undefined }: { figure?: { url: string; altText?: string } }) {
-  if (!figure) return null;
+function Figure({ figure }: { figure?: { url: string; altText?: string } }) {
+  if (!figure?.url) return null; // Se não houver `url`, retorna `null`
 
   return (
     <figure className={styles.header_lunch_dish_photo}>
@@ -54,6 +54,8 @@ export default function Lunch({ id }: { id: string }) {
   if (!lunchData.length) return null;
 
   const { header, content } = lunchData[0];
+
+  console.log(header);
 
   return (
     <section id={id} className={styles.container_lunch}>

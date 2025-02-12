@@ -1,17 +1,19 @@
 /* eslint-disable max-len */
 /* eslint-disable import/prefer-default-export */
 import { useState, useEffect } from 'react';
-import { fetchWhatsAppButtonData } from '../utils/fetch.tsx';
+// import { fetchWhatsAppButtonData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 
 export function useFetchWhatsAppButton() {
-  const [data, setData] = useState<{ phoneNumber: string; message: string } | null>(null); // Renomeado para 'data'
+  const [data, setData] = useState<{ phoneNumber: string; message: string } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
+  const endpoint = 'whatsAppButton';
   useEffect(() => {
     async function fetchData() {
       try {
-        const fetchedData = await fetchWhatsAppButtonData(); // Retira o endpoint
+        const fetchedData = await fetchSanityData(endpoint); // Retira o endpoint
         setData(fetchedData);
         setIsLoading(false);
       } catch (err) {
@@ -23,5 +25,5 @@ export function useFetchWhatsAppButton() {
     fetchData();
   }, []);
 
-  return { data, isLoading, error }; // Renomeado para 'data'
+  return { data, isLoading, error };
 }

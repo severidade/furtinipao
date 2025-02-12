@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable import/prefer-default-export */
 import { useState, useEffect } from 'react';
-// import { fetchWhatsAppButtonData } from '../utils/fetch.tsx';
 import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 
 export function useFetchWhatsAppButton() {
@@ -13,7 +12,7 @@ export function useFetchWhatsAppButton() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const fetchedData = await fetchSanityData(endpoint); // Retira o endpoint
+        const fetchedData = await fetchSanityData(endpoint);
         setData(fetchedData);
         setIsLoading(false);
       } catch (err) {

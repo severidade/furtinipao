@@ -1,19 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable import/prefer-default-export */
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
-import { fetchHistoryData, fetchEventsData } from '../utils/fetch.tsx';
 
-type FetchDataMap = {
-  [key: string]: (endpoint: string) => Promise<SectionTemplateType[]>;
-};
-
-// Mapeia o ID para a função de fetch correspondente
-const fetchDataMap: FetchDataMap = {
-  history: fetchHistoryData,
-  events: fetchEventsData,
-};
-
-export function useFetchSectionTemplate(id: string) {
+export function useFetchSectionTemplate(endpoint: string) {
   const [data, setData] = useState<SectionTemplateType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -21,13 +12,8 @@ export function useFetchSectionTemplate(id: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const fetchFunction = fetchDataMap[id];
-        if (!fetchFunction) {
-          throw new Error(`Nenhuma função de fetch disponível para o ID: ${id}`);
-        }
-
-        const fetchedData = await fetchFunction(id); // Busca os dados com base no ID
-        setData(fetchedData);
+        const sectionData = await fetchSanityData(endpoint);
+        setData(sectionData as SectionTemplateType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));
@@ -36,7 +22,7 @@ export function useFetchSectionTemplate(id: string) {
     }
 
     fetchData();
-  }, [id]);
+  }, [endpoint]);
 
   return { data, isLoading, error };
 }

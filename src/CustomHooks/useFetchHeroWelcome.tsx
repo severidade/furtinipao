@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 
 import { useEffect, useState } from 'react';
-import { fetchHeroWelcomeData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionHeroWelcomeType } from '../types/HeroWelcomeType.tsx';
 
 export default function useFetchHeroWelcome(endpoint: string) {
@@ -13,9 +13,8 @@ export default function useFetchHeroWelcome(endpoint: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchHeroWelcomeData(endpoint);
-        console.log('Dados retornados diretamente do Sanity:', data);
-        setHeroWelcomeData(data);
+        const data = await fetchSanityData(endpoint);
+        setHeroWelcomeData(data as SectionHeroWelcomeType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));

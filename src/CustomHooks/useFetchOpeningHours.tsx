@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 
 import { useEffect, useState } from 'react';
-import { fetchOpeningHoursData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 export function useFetchOpeningHours(endpoint: string) {
@@ -13,9 +13,8 @@ export function useFetchOpeningHours(endpoint: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchOpeningHoursData(endpoint);
-        // console.log('Dados retornados diretamente do Sanity:', data);
-        setOpeningHours(data);
+        const data = await fetchSanityData(endpoint);
+        setOpeningHours(data as SectionTemplateType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));

@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { useState, useEffect } from 'react';
-import { fetchAddressData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 export function useFetchAddressData(endpoint: string) {
@@ -11,8 +11,8 @@ export function useFetchAddressData(endpoint: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchAddressData(endpoint);
-        setAddressData(data);
+        const data = await fetchSanityData(endpoint);
+        setAddressData(data as SectionTemplateType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));

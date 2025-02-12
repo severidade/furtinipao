@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { useState, useEffect } from 'react';
-import { fetchBreadsData } from '../utils/fetch.tsx';
+import { fetchSanityData } from '../utils/FetchSanityData.tsx';
 import { SectionTemplateType } from '../types/SectionTemplateType.tsx';
 
 export function useFetchBreadsData(endpoint: string) {
@@ -11,8 +11,8 @@ export function useFetchBreadsData(endpoint: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchBreadsData(endpoint);
-        setBreadsData(data);
+        const data = await fetchSanityData(endpoint);
+        setBreadsData(data as SectionTemplateType[]);
         setIsLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Erro desconhecido'));

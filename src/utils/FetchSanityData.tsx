@@ -14,12 +14,12 @@ const queries: Record<string, string> = {
       imagemDesktop { "url": image.asset->url, "altText": altText }
     }
   }`,
-  sectionLunch: `*[_type == "sectionLunch"]{
+  lunch: `*[_type == "lunch"]{
     id,
     header { title, subtitle, "figure": { "url": figure.asset->url, "altText": figure.altText } },
     content
   }`,
-  sectionBreads: `*[_type == "sectionBreads"]{
+  breads: `*[_type == "breads"]{
     header { title, subtitle },
     content,
     callToActionBt { model, buttonTitle, phoneNumber, message },
@@ -30,19 +30,19 @@ const queries: Record<string, string> = {
     content[] { ..., markDefs, children[] { text } },
     "gallerySlider": gallerySlider[]{ "image": { "_id": _key, "url": image.asset->url, "altText": image.altText } }
   }`,
-  sectionHistory: `*[_type == "sectionHistory"]{
+  history: `*[_type == "history"]{
     "figure": { "url": figure.asset->url, "altText": figure.altText },
     header { title, subtitle },
     content
   }`,
-  sectionOpeningHours: `*[_type == "sectionOpeningHours"]{
+  openingHours: `*[_type == "openingHours"]{
     "header": header,
     subtitle,
     content,
     videoSection { "videoUrl": videoFile.asset->url, "poster": { "url": posterImage.asset->url, "altText": posterImage.altText } },
     callToActionBt { phoneNumber, buttonTitle, message, model }
   }`,
-  sectionEvents: `*[_type == "sectionEvents"]{
+  events: `*[_type == "events"]{
     "figure": { "url": figure.asset->url, "altText": figure.altText },
     header { title, subtitle },
     content,

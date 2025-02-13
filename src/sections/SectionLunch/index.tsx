@@ -1,9 +1,13 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
-
-import { useFetchLunchData } from '../../CustomHooks/useFetchLunchData.tsx';
+import { LunchType } from '../../types/PageDataType.tsx';
 import styles from './Lunch.module.css';
+
+interface SectionLunchProps {
+  id: string;
+  data: LunchType[];
+}
 
 function Figure({ figure }: { figure?: { url: string; altText?: string } }) {
   if (!figure?.url) return null; // Se não houver `url`, retorna `null`
@@ -37,25 +41,11 @@ function Content({ content }: { content: string }) {
   );
 }
 
-export default function Lunch({ id }: { id: string }) {
-  const { lunchData, isLoading, error } = useFetchLunchData(id);
-
-  if (isLoading) return <div>Carregando...</div>;
-
-  if (error) {
-    return (
-      <div>
-        Erro ao carregar:
-        {error.message}
-      </div>
-    );
-  }
-
-  if (!lunchData.length) return null;
-
-  const { header, content } = lunchData[0];
-
-  console.log(header);
+export default function Lunch({ id, data }: SectionLunchProps) {
+  const {
+    header,
+    content,
+  } = data[0];
 
   return (
     <section id={id} className={styles.container_lunch}>

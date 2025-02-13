@@ -3,19 +3,21 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { PortableText } from '@portabletext/react';
 import { getPortableTextComponents } from '../../utils/getPortableTextComponents.tsx';
-import { useFetchAddressData } from '../../CustomHooks/useFetchAddressData.tsx';
 import HighlightGalleryAddress from '../../components/HighlightGalleryAddress/index.tsx';
 import CallUber from '../../components/CallUber/index.tsx';
 import styles from './SectionAddress.module.css';
 
+import { AddressType } from '../../types/PageDataType.tsx';
+
 type AddressProps = {
   id: string;
+  data: AddressType;
 };
 
 const portableTextComponents = getPortableTextComponents();
 
 // Subcomponente para o título e subtítulo
-function Header({ title, subtitle }: { title: string; subtitle?: string }) {
+function Header({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <section className={styles.header_address}>
       <h2 className={styles.header_address_title}>{title}</h2>
@@ -38,31 +40,17 @@ function Gallery({ gallerySlider }: { gallerySlider: any[] }) {
   return <HighlightGalleryAddress highlightItems={gallerySlider} />;
 }
 
-export default function SectionAddress({ id }: AddressProps) {
-  const { addressData, isLoading, error } = useFetchAddressData(id);
-
-  if (isLoading) return <div>Carregando...</div>;
-
-  if (error) {
-    return (
-      <div>
-        Erro ao carregar:
-        {error.message}
-      </div>
-    );
-  }
-
+export default function SectionAddress({ id, data }: AddressProps) {
   const {
-    header: { title, subtitle },
-    content,
+    header,
     gallerySlider,
-  } = addressData[0];
+    content,
+  } = data[0];
 
   return (
     <section id={id} className={styles.container_address}>
       {gallerySlider && <Gallery gallerySlider={gallerySlider} />}
-      <Header title={title} subtitle={subtitle} />
-      {/* {content && <Characteristics characteristics={content} />} */}
+      <Header title={header.title} subtitle={header.subtitle} />
       {content && <Characteristics content={content} />}
       <CallUber />
     </section>

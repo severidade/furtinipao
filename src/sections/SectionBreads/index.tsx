@@ -1,13 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable max-len */
+
 import parse from 'html-react-parser';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SectionBreads.css';
 import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
 import HighlightGaleriaBreads from '../../components/HighlightGaleriaBreads/index.tsx';
-import { useFetchBreadsData } from '../../CustomHooks/useFetchBreadsData.tsx';
+import { BreadsType } from '../../types/PageDataType.tsx';
+
+interface SectionBreadsProps {
+  id: string;
+  data: BreadsType[];
+}
 
 function Header({ header }: { header: { title: string; subtitle?: string } }) {
   return (
@@ -26,40 +30,19 @@ function Content({ content }: { content: string }) {
   );
 }
 
-export default function SectionBreads({ id }: { id: string }) {
-  const { breadsData, isLoading, error } = useFetchBreadsData(id);
-
-  if (isLoading) return <div>Carregando...</div>;
-
-  if (error) {
-    return (
-      <div>
-        Erro ao carregar:
-        {error.message}
-      </div>
-    );
-  }
-
-  if (!breadsData.length) return null;
-
+export default function SectionBreads({ id, data }: SectionBreadsProps) {
   const {
     header,
     content,
     callToActionBt,
     gallerySlider,
-  } = breadsData[0];
-
-  // console.log('gallerySlider:', breadsData); // Adicione esta linha
+  } = data[0];
 
   return (
     <section id={id} className="container_breads">
-
       <Header header={header} />
-
       {gallerySlider && <HighlightGaleriaBreads gallerySlider={gallerySlider} />}
-
       {content && <Content content={content} />}
-
       {callToActionBt && <ButtonTemplate callToActionBt={callToActionBt} />}
     </section>
   );

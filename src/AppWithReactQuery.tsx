@@ -3,6 +3,7 @@
 import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
+import usePageData from './CustomHooks/usePageData.tsx';
 
 import Heder from './components/Heder/index.tsx';
 import {
@@ -13,14 +14,33 @@ import Footer from './components/Footer/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
 
 function App() {
+  const { data, isLoading, error } = usePageData();
+
+  // if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <div>Carregando...</div>;
+  if (error) {
+    return (
+      <div className="container_error">
+        <div className="alert_error">
+          Erro ao carregar dados:
+          {' '}
+          {error.message}
+        </div>
+      </div>
+    );
+  }
+  if (!data) return null;
+
+  console.log(data);
+
   return (
     <>
       <Heder />
-      <SectionHeroWelcome id="sectionHeroWelcome" />
-      <SectionHighlightGallery id="highlightGallery" />
-      <SectionLunch id="lunch" />
-      <SectionBreads id="breads" />
-      <SectionAddress id="sectionAddress" />
+      <SectionHeroWelcome id="sectionHeroWelcome" data={data.heroWelcome} />
+      <SectionHighlightGallery id="highlightGallery" data={data.highlightGallery} />
+      <SectionLunch id="lunch" data={data.lunch} />
+      <SectionBreads id="breads" data={data.breads} />
+      <SectionAddress id="sectionAddress" data={data.address} />
       <SectionOpeningHours id="openingHours" />
       <SectionTemplate id="history" />
       <SectionTemplate id="events" />
@@ -32,5 +52,3 @@ function App() {
 }
 
 export default App;
-
-// https://squoosh.app/ comprimir imagens

@@ -1,27 +1,20 @@
 /* eslint-disable react/react-in-jsx-scope */
 import HeroImage from '../../components/HeroImage/index.tsx';
 import styles from './SectionHero.module.css';
-import useFetchSectionHeroWelcome from '../../CustomHooks/useFetchHeroWelcome.tsx';
+import { SectionHeroWelcomeType } from '../../types/PageDataType.tsx';
+// import useFetchSectionHeroWelcome from '../../CustomHooks/useFetchHeroWelcome.tsx';
 
-export default function SectionHeroWelcome({ id }: { id: string }) {
-  const { heroWelcomeData, isLoading, error } = useFetchSectionHeroWelcome(id);
+interface SectionHeroWelcomeProps {
+  id: string;
+  data: SectionHeroWelcomeType[];
+}
 
-  if (isLoading) return <div>Carregando...</div>;
-
-  if (error) {
-    return (
-      <div>
-        Erro ao carregar:
-        {error.message}
-      </div>
-    );
-  }
-
+export default function SectionHeroWelcome({ id, data }: SectionHeroWelcomeProps) {
   const {
     title,
     subtitle,
     backgroundImage,
-  } = heroWelcomeData[0];
+  } = data[0];
 
   return (
     <section id={id} className={styles.container_hero}>

@@ -20,7 +20,7 @@ export default function Header() {
       { id: 'sectionAddress', label: 'Localização' },
       { id: 'openingHours', label: 'Horários' },
       { id: 'history', label: 'História' },
-      { id: 'events', label: 'Eventos' },
+      { id: 'events', label: 'Reservas' },
     ],
     [],
   );

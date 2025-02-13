@@ -42,8 +42,8 @@ function App() {
       <SectionBreads id="breads" data={data.breads} />
       <SectionAddress id="sectionAddress" data={data.address} />
       <SectionOpeningHours id="openingHours" data={data.openingHours} />
-      <SectionTemplate id="history" />
-      <SectionTemplate id="events" />
+      <SectionTemplate id="history" data={data.history} />
+      <SectionTemplate id="events" data={data.events} />
       <FixedWhatsAppButton />
       <Footer />
       <OrientationDetectorDevice />

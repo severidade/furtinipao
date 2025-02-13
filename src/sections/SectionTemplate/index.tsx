@@ -3,11 +3,31 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './SectionTemplate.module.css';
 import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
-import { useFetchSectionTemplate } from '../../CustomHooks/useFetchSectionTemplate.tsx';
 
 type SectionTemplateProps = {
   id: string;
-}
+  data: {
+    figure: {
+      url: string | null;
+      altText: string | null;
+    };
+    header: {
+      title: string;
+      subtitle?: string | null;
+      figure?: {
+        url: string | null;
+        altText: string | null;
+      };
+    };
+    content: string;
+    callToActionBt?: {
+      model?: string;
+      buttonTitle: string;
+      phoneNumber: string;
+      message: string;
+    };
+  };
+};
 
 function Figure({ figure }: { figure: { url: string, altText?: string } }) {
   const altText = figure.altText || 'Imagem destacada'; // Como não é obrigatório coloco um texto
@@ -45,19 +65,8 @@ function Content({ content }: { content: string }) {
   );
 }
 
-export default function SectionTemplate({ id }: SectionTemplateProps) {
-  const { data, isLoading, error } = useFetchSectionTemplate(id);
-
-  if (isLoading) return <p>Carregando...</p>;
-  if (error) {
-    return (
-      <p>
-        Erro:
-        {error.message}
-      </p>
-    );
-  }
-  if (!data || !data.length) return null;
+export default function SectionTemplate({ id, data }: SectionTemplateProps) {
+  console.log(data);
 
   const {
     header, figure, content, callToActionBt,

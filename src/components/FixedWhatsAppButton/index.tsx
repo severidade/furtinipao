@@ -1,23 +1,16 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useFetchWhatsAppButton } from '../../CustomHooks/useFetchWhatsAppButton.tsx';
+// import { data } from 'framer-motion/client';
+// import { useFetchWhatsAppButton } from '../../CustomHooks/useFetchWhatsAppButton.tsx';
 
 import styles from './FixedWhatsAppButton.module.css';
 
-export default function FixedWhatsAppButton() {
-  const { data, isLoading, error } = useFetchWhatsAppButton();
+import { WhatsAppButtonType } from '../../types/PageDataType.tsx';
 
-  if (isLoading) {
-    return <button type="button" className={styles.WhatsAppReserve_fixed} disabled>Carregando...</button>;
-  }
+type FixedWhatsAppButtonProps ={
+  data : WhatsAppButtonType[],
+}
 
-  if (error) {
-    return <button type="button" className={styles.WhatsAppReserve_fixed} disabled>Erro ao carregar</button>;
-  }
-
-  if (!data) {
-    return <button type="button" className={styles.WhatsAppReserve_fixed} disabled>Dados não encontrados</button>;
-  }
-
+export default function FixedWhatsAppButton({ data } : FixedWhatsAppButtonProps) {
   const { phoneNumber, message } = data[0];
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

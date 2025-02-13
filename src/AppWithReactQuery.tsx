@@ -44,7 +44,7 @@ function App() {
       <SectionOpeningHours id="openingHours" data={data.openingHours} />
       <SectionTemplate id="history" data={data.history} />
       <SectionTemplate id="events" data={data.events} />
-      <FixedWhatsAppButton />
+      <FixedWhatsAppButton data={data.whatsAppButton} />
       <Footer />
       <OrientationDetectorDevice />
     </>

@@ -9,21 +9,24 @@ import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
 import VideoBg from '../../components/VideoBg/index.tsx';
 
 import OpeningHoursData from '../../data/OpeningHoursData.tsx';
-import { useFetchOpeningHours } from '../../CustomHooks/useFetchOpeningHours.tsx';
+// import { useFetchOpeningHours } from '../../CustomHooks/useFetchOpeningHours.tsx';
 
-type OpeningHoursProps = {
+import { OpeningHoursType } from '../../types/PageDataType.tsx';
+
+type SectionOpeningHoursProps = {
   id: string;
+  data: OpeningHoursType[];
 }
 
-export default function OpeningHours({ id } : OpeningHoursProps) {
+export default function OpeningHours({ id, data } : SectionOpeningHoursProps) {
   const containerRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [status, setStatus] = useState('');
 
-  const { openingHours, isLoading, error } = useFetchOpeningHours(id);
+  // const { openingHours, isLoading, error } = useFetchOpeningHours(id);
 
-  const [{ header: { title }, schedule }] = OpeningHoursData;
+  const [{ schedule }] = OpeningHoursData;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -51,26 +54,11 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
 
   const animatedX = hasAnimated ? '0%' : x;
 
-  if (isLoading) return <div>Carregando...</div>;
-
-  if (error) {
-    return (
-      <div>
-        Erro ao carregar:
-        {error.message}
-      </div>
-    );
-  }
-
-  if (!openingHours.length) return null;
-
   const {
     header,
     callToActionBt,
     videoSection,
-  } = openingHours[0];
-
-  // console.log('Dados retornados dentro do cta:', videoSection);
+  } = data[0];
 
   return (
     <section id={id} ref={containerRef} className={styles.container_opening_hours}>

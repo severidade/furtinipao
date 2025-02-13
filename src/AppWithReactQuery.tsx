@@ -41,7 +41,7 @@ function App() {
       <SectionLunch id="lunch" data={data.lunch} />
       <SectionBreads id="breads" data={data.breads} />
       <SectionAddress id="sectionAddress" data={data.address} />
-      <SectionOpeningHours id="openingHours" />
+      <SectionOpeningHours id="openingHours" data={data.openingHours} />
       <SectionTemplate id="history" />
       <SectionTemplate id="events" />
       <FixedWhatsAppButton />

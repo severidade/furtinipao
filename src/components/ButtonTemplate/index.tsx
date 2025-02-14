@@ -1,13 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './ButtonTemplate.module.css';
+import { CallToActionBt } from '../../types/PageDataType.tsx';
 
 type ButtonTemplateProps = {
-  callToActionBt: {
-    phoneNumber: string;
-    buttonTitle: string;
-    message: string;
-    model: string;
-  };
+  callToActionBt: CallToActionBt
 };
 
 export default function ButtonTemplate({ callToActionBt }: ButtonTemplateProps) {

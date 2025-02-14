@@ -3,39 +3,19 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styles from './SectionTemplate.module.css';
 import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
+import { SectionTemplateType, Figure as FigureType, Header as HeaderType } from '../../types/PageDataType.tsx';
 
 type SectionTemplateProps = {
   id: string;
-  data: {
-    figure: {
-      url: string | null;
-      altText: string | null;
-    };
-    header: {
-      title: string;
-      subtitle?: string | null;
-      figure?: {
-        url: string | null;
-        altText: string | null;
-      };
-    };
-    content: string;
-    callToActionBt?: {
-      model?: string;
-      buttonTitle: string;
-      phoneNumber: string;
-      message: string;
-    };
-  };
+  data: SectionTemplateType[]
 };
 
-function Figure({ figure }: { figure: { url: string, altText?: string } }) {
-  const altText = figure.altText || 'Imagem destacada'; // Como não é obrigatório coloco um texto
+function Figure({ figure }: { figure: FigureType}) {
+  const altText = figure.altText || 'Imagem destacada';
   return (
     <figure className={styles.container_img}>
       <img
-        src={figure.url}
-        // alt={altText}
+        src={figure.url ?? undefined}
         alt={altText || '📷 - Imagem sem descrição'}
         loading="lazy"
         className="highlight_image"
@@ -44,7 +24,7 @@ function Figure({ figure }: { figure: { url: string, altText?: string } }) {
   );
 }
 
-function Header({ header }: { header: { title: string; subtitle?: string } }) {
+function Header({ header }: { header: HeaderType }) {
   return (
     <section className={styles.header}>
       <h2 className={styles.header_title}>{header.title}</h2>
@@ -66,8 +46,6 @@ function Content({ content }: { content: string }) {
 }
 
 export default function SectionTemplate({ id, data }: SectionTemplateProps) {
-  console.log(data);
-
   const {
     header, figure, content, callToActionBt,
   } = data[0];

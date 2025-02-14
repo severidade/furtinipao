@@ -31,8 +31,6 @@ function App() {
   }
   if (!data) return null;
 
-  console.log(data);
-
   return (
     <>
       <Heder />

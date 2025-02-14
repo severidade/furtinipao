@@ -1,18 +1,17 @@
 // src/types/PageDataTypes.ts
 
 // Interfaces comuns reutilizáveis
-interface Figure {
+export interface Figure {
   url: string | null;
   altText: string | null;
 }
-
-interface Header {
+export interface Header {
   title: string;
   subtitle?: string | null;
   figure?: Figure | null;
 }
 
-interface CallToActionBt {
+export interface CallToActionBt {
   model?: string;
   buttonTitle: string;
   phoneNumber: string;
@@ -83,7 +82,6 @@ export interface OpeningHoursType {
   };
   callToActionBt: CallToActionBt;
 }
-
 export interface HistoryType {
   figure: Figure;
   header: Header;
@@ -95,6 +93,13 @@ export interface EventsType {
   header: Header;
   content: string;
   callToActionBt: CallToActionBt;
+}
+
+export interface SectionTemplateType {
+  figure: Figure;
+  header: Header;
+  content: string;
+  callToActionBt?: CallToActionBt;
 }
 
 export interface HighlightGalleryType {
@@ -121,4 +126,5 @@ export interface PageData {
   events: EventsType[];
   highlightGallery: HighlightGalleryType[];
   whatsAppButton: WhatsAppButtonType[];
+  sectionTemplateType: SectionTemplateType[];
 }

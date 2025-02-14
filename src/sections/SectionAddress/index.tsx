@@ -11,7 +11,7 @@ import { AddressType } from '../../types/PageDataType.tsx';
 
 type AddressProps = {
   id: string;
-  data: AddressType;
+  data: AddressType[];
 };
 
 const portableTextComponents = getPortableTextComponents();

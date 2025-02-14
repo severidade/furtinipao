@@ -1,7 +1,18 @@
 /* eslint-disable import/prefer-default-export */
 import { useQuery } from '@tanstack/react-query';
 import { fetchSanityData } from '../utils/FetchSanityData.tsx';
-import { PageData } from '../types/PageDataType.tsx';
+import {
+  PageData,
+  SectionHeroWelcomeType,
+  LunchType,
+  BreadsType,
+  AddressType,
+  OpeningHoursType,
+  HistoryType,
+  EventsType,
+  HighlightGalleryType,
+  WhatsAppButtonType,
+} from '../types/PageDataType.tsx';
 
 export default function usePageData() {
   return useQuery<PageData>({
@@ -19,15 +30,15 @@ export default function usePageData() {
           highlightGallery,
           whatsAppButton,
         ] = await Promise.all([
-          fetchSanityData('sectionHeroWelcome'),
-          fetchSanityData('lunch'),
-          fetchSanityData('breads'),
-          fetchSanityData('sectionAddress'),
-          fetchSanityData('openingHours'),
-          fetchSanityData('history'),
-          fetchSanityData('events'),
-          fetchSanityData('highlightGallery'),
-          fetchSanityData('whatsAppButton'),
+          fetchSanityData<SectionHeroWelcomeType>('sectionHeroWelcome'),
+          fetchSanityData<LunchType>('lunch'),
+          fetchSanityData<BreadsType>('breads'),
+          fetchSanityData<AddressType>('sectionAddress'),
+          fetchSanityData<OpeningHoursType>('openingHours'),
+          fetchSanityData<HistoryType>('history'),
+          fetchSanityData<EventsType>('events'),
+          fetchSanityData<HighlightGalleryType>('highlightGallery'),
+          fetchSanityData<WhatsAppButtonType>('whatsAppButton'),
         ]);
 
         return {
@@ -50,6 +61,6 @@ export default function usePageData() {
       }
     },
     staleTime: 1000 * 60 * 5, // Dados considerados fresh por 5 minutos
-    cacheTime: 1000 * 60 * 30, // Cache mantido por 30 minutos
+    gcTime: 1000 * 60 * 30, // Cache mantido por 30 minutos
   });
 }

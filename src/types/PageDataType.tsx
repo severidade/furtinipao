@@ -84,7 +84,7 @@ export interface OpeningHoursType {
   callToActionBt: CallToActionBt;
 }
 
-interface HistoryType {
+export interface HistoryType {
   figure: Figure;
   header: Header;
   content: string;

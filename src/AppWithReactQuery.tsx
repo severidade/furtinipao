@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable max-len */
+import { useState, useEffect } from 'react';
 import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
 import './App.css';
@@ -12,12 +13,26 @@ import {
 import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
+import LoadingSpinner from './components/LoadingSpinner/index.tsx';
 
 function App() {
   const { data, isLoading, error } = usePageData();
+  const [progress, setProgress] = useState(0);
 
-  // if (isLoading) return <LoadingSpinner />;
-  if (isLoading) return <div>Carregando...</div>;
+  useEffect(() => {
+    if (isLoading) {
+      setProgress(0);
+      const interval = setInterval(() => {
+        setProgress((prev) => (prev < 100 ? prev + 10 : 100));
+      }, 500);
+
+      return () => clearInterval(interval);
+    }
+    return undefined;
+  }, [isLoading]);
+
+  if (isLoading) return <LoadingSpinner progress={progress} />;
+
   if (error) {
     return (
       <div className="container_error">

@@ -149,3 +149,4 @@ Os dados atualmente utilizados na aplicação estão localizados na pasta `src/d
 2. Melhorar a responsividade para dispositivos móveis.
 3. Otimizar o desempenho de componentes pesados como sliders e galerias.
 
+teste

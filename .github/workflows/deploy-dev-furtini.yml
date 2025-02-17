@@ -1,4 +1,4 @@
-name: CI -> Deploy to My Dev Environment
+name: CI -> Deploy to Furtin Dev Environment
 on:
   push:
     branches: [ deploy/dev_furtini ]
@@ -13,7 +13,7 @@ jobs:
       - name: Setup node 
         uses: actions/setup-node@v3
         with:
-          node-version: v20.10.0
+          node-version: v20
       - run: npm install
       - run: npm run build
       - run: cp .htaccess ./dist
@@ -25,6 +25,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: ${{ secrets.FTP_LOCAL_DIR }}
+          local_dir: ./dist  # Corrigido para apontar para dist
           remote_dir: ${{ secrets.FTP_REMOTE_DIR }}
           delete: "false"

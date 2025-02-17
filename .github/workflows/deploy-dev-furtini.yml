@@ -25,6 +25,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: ./dist  # Corrigido para apontar para dist
           remote_dir: ${{ secrets.FTP_REMOTE_DIR }}
           delete: "false"

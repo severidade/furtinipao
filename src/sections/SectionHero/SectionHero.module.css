@@ -51,16 +51,19 @@
   .container_hero {
     background-color: #ff6347;
     width: 50vw;
-    position: fixed;
+    margin-left: 50vw;
+    /* position: fixed; */
     height: 100%;
   }
 
   .hero_welcome {
-    width: 50%;
-    position: absolute;
-    bottom: 90px;
-    left: 50%;
-    transform: translate(-50%, -50% );
+    width: 100%;
+    height: auto;
+    /* position: absolute; */
+    /* bottom: 90px; */
+    /* left: 50%;
+    transform: translate(-50%, -50% ); */
+    padding: var(--spacing-medium) 5vw;
     background: #F9F3EA url('../../assets/texture.png') repeat center;
   }
 }

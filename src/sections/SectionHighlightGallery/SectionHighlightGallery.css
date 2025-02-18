@@ -47,7 +47,8 @@
     margin-left: 50vw;
     width: 50vw;
     /* height: 50vh; */
-    padding-top: calc(var(--heder-height) + var(--spacing-xlarge));
+    /* padding-top: calc(var(--heder-height) + var(--spacing-xlarge)); */
+    padding-top: var(--spacing-xlarge);
     position: relative;
   }
 

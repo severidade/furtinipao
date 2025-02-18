@@ -34,3 +34,5 @@ coverage/
 
 #Variáveis de Ambiente
 .env
+
+senhas.md

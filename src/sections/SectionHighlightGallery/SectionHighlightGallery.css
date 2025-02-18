@@ -53,7 +53,7 @@
   }
 
   .container_highlight::before {
-    display: none;
+    transform: translateY(-15%);
   }
 
   .container_highlight  .slick-slider {

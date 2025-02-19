@@ -47,12 +47,13 @@
     margin-left: 50vw;
     width: 50vw;
     /* height: 50vh; */
-    padding-top: calc(var(--heder-height) + var(--spacing-xlarge));
+    /* padding-top: calc(var(--heder-height) + var(--spacing-xlarge)); */
+    padding-top: var(--spacing-xlarge);
     position: relative;
   }
 
   .container_highlight::before {
-    display: none;
+    transform: translateY(-15%);
   }
 
   .container_highlight  .slick-slider {

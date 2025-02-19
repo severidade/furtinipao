@@ -51,16 +51,23 @@
   .container_hero {
     background-color: #ff6347;
     width: 50vw;
-    position: fixed;
+    margin-left: 50vw;
+    background: #F9F3EA url('../../assets/texture.png') repeat center;
+    /* position: fixed; */
     height: 100%;
   }
 
   .hero_welcome {
-    width: 50%;
-    position: absolute;
-    bottom: 90px;
-    left: 50%;
-    transform: translate(-50%, -50% );
-    background: #F9F3EA url('../../assets/texture.png') repeat center;
+    width: 100%;
+    height: auto;
+    width: 120ch;
+    max-width: 100%;
+    /* position: absolute; */
+    /* bottom: 90px; */
+    /* left: 50%;
+    transform: translate(-50%, -50% ); */
+    padding-top: var(--spacing-medium) ;
+    padding-left: calc(5vw + 20px);
+    
   }
 }

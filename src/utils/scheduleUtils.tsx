@@ -33,7 +33,7 @@ interface Holidays {
 }
 
 const holidays: Holidays = {
-  '2025-02-25': { name: 'teste como feriado', isHolidayOpen: true },
+  '2025-02-25': { name: 'teste como feriado', isHolidayOpen: false },
   '2025-02-26': { name: 'Quarta Feira de Cinzas', isHolidayOpen: true },
 
   '2025-01-01': { name: 'Confraternização Universal', isHolidayOpen: true },

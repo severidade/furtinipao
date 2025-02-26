@@ -140,30 +140,43 @@ const getDayName = (dayIndex: number): string => {
 export const getScheduleStatus = (): ScheduleStatus => {
   const now = new Date();
   const dayOfWeek = now.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
-  const fullDate = now.toISOString().split('T')[0]; // Retorna data formatada com yyyy-mm-dd
+  const fullDate = now.toISOString().split('T')[0]; // Data no formato yyyy-mm-dd
   const currentHour = now.getHours();
   const currentMinutes = now.getMinutes();
   const currentTime = currentHour + currentMinutes / 60;
 
+  // Verifica se hoje é um feriado e se está aberto
   const isHoliday = holidays[fullDate] !== undefined;
   const isHolidayOpen = holidays[fullDate]?.isHolidayOpen || false;
-  const operatingHoursToday = operatingHoursByDay[dayOfWeek];
 
-  let operatingHours: OperatingHours | false = operatingHoursToday;
+  // Obtém o horário de funcionamento do dia normal
+  let operatingHours: OperatingHours | false = operatingHoursByDay[dayOfWeek];
+
+  // Se for feriado, ajusta o horário conforme a configuração
   if (isHoliday) {
     operatingHours = isHolidayOpen ? operatingHoursByHoliday : false;
   }
 
-  console.log(`Horário de funcionamento sem considerar feriado: ${JSON.stringify(operatingHoursToday)}`);
-  console.log(`Verifica se no dia é feriado: ${isHoliday}, está aberto: ${isHolidayOpen}`);
-  console.log(`Hoje é ${getDayName(dayOfWeek)} e o horário de funcionamento é de ${JSON.stringify(operatingHours?.open)} às ${JSON.stringify(operatingHours?.close)}`);
+  console.log(`Hoje é ${getDayName(dayOfWeek)}.`);
+  console.log(`Feriado: ${isHoliday}, Aberto no feriado: ${isHolidayOpen}`);
+  console.log(`Horário de funcionamento: ${JSON.stringify(operatingHours)}`);
 
-  if (!operatingHours || (operatingHours !== false && currentTime >= operatingHours.close)) {
+  // Se ainda não abriu, informa o horário de abertura
+  if (operatingHours && currentTime < operatingHours.open) {
+    return {
+      status: 'Fechado ',
+      message: `Abrirá hoje às ${operatingHours.open}h.`,
+    };
+  }
+
+  // Se já fechou ou não há horário de funcionamento, busca o próximo dia aberto
+  if (!operatingHours || currentTime >= operatingHours.close) {
     let nextOpenDay = (dayOfWeek + 1) % 7;
     const nextDate = new Date(now);
     nextDate.setDate(now.getDate() + 1);
     let nextFullDate = nextDate.toISOString().split('T')[0];
 
+    // Procura o próximo dia útil (ignora feriados fechados e dias sem funcionamento)
     while (
       operatingHoursByDay[nextOpenDay] === false
       || (holidays[nextFullDate] && !holidays[nextFullDate]?.isHolidayOpen)
@@ -173,6 +186,7 @@ export const getScheduleStatus = (): ScheduleStatus => {
       nextFullDate = nextDate.toISOString().split('T')[0];
     }
 
+    // Define o horário de abertura para o próximo dia aberto
     const nextOperatingHours = holidays[nextFullDate]?.isHolidayOpen
       ? operatingHoursByHoliday
       : operatingHoursByDay[nextOpenDay];
@@ -183,6 +197,7 @@ export const getScheduleStatus = (): ScheduleStatus => {
     };
   }
 
+  // Caso esteja aberto no horário atual
   return {
     status: 'Aberto ',
     message: `Estamos funcionando até às ${operatingHours?.close}h.`,

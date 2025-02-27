@@ -21,8 +21,8 @@ type SectionOpeningHoursProps = {
 export default function OpeningHours({ id, data } : SectionOpeningHoursProps) {
   const containerRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  // const [statusMessage, setStatusMessage] = useState('');
-  // const [status, setStatus] = useState('');
+  const [statusMessage, setStatusMessage] = useState('');
+  const [status, setStatus] = useState('');
 
   // const { openingHours, isLoading, error } = useFetchOpeningHours(id);
 
@@ -46,11 +46,11 @@ export default function OpeningHours({ id, data } : SectionOpeningHoursProps) {
     }
   }, [scrollYProgress, hasAnimated]);
 
-  // useEffect(() => {
-  //   const { status: currentStatus, message } = getScheduleStatus();
-  //   setStatus(currentStatus);
-  //   setStatusMessage(message);
-  // }, []);
+  useEffect(() => {
+    const { status: currentStatus, message } = getScheduleStatus();
+    setStatus(currentStatus);
+    setStatusMessage(message);
+  }, []);
 
   const animatedX = hasAnimated ? '0%' : x;
 
@@ -74,12 +74,12 @@ export default function OpeningHours({ id, data } : SectionOpeningHoursProps) {
           className={styles.schedule_table}
           aria-live="polite"
         >
-          {/* <div className={styles.schedule_status}>
+          <div className={styles.schedule_status}>
             <strong className={`${styles.status} ${status === 'Aberto ' ? styles.open : styles.closed}`}>
               {status}
             </strong>
             {statusMessage}
-          </div> */}
+          </div>
           {schedule && (schedule.map(({ day, hours }) => (
             <div key={day} className={styles.schedule_row}>
               <strong>

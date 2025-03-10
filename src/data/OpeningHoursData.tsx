@@ -5,7 +5,7 @@ const DEFAULT_HEADER = {
 };
 
 const DEFAULT_SCHEDULE = [
-  { day: 'Terça a Sexta', hours: '10h às 20h' },
+  { day: 'Terça a Sexta', hours: '10h às 21h' },
   { day: 'Sábado', hours: '9h às 20h' },
   { day: 'Domingo', hours: '9h às 14h' },
   { day: 'Feriados', hours: '9h às 20h' },

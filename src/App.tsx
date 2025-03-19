@@ -7,12 +7,19 @@ import usePageData from './CustomHooks/usePageData.tsx';
 
 import Heder from './components/Heder/index.tsx';
 import {
-  SectionHeroWelcome, SectionHighlightGallery, SectionLunch, SectionBreads, SectionAddress, SectionOpeningHours, SectionTemplate,
+  SectionHeroWelcome,
+  SectionHighlightGallery,
+  SectionLunch,
+  SectionBreads,
+  SectionAddress,
+  SectionOpeningHours,
+  SectionTemplate,
 } from './sections/index.ts';
+
+import LoadingSpinner from './components/LoadingSpinner/index.tsx';
 import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
-import LoadingSpinner from './components/LoadingSpinner/index.tsx';
 
 function App() {
   const { data, isLoading, error } = usePageData();

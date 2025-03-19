@@ -23,10 +23,9 @@ O projeto **FurtiniPão** é uma aplicação desenvolvida em React com o objetiv
 
 As seguintes bibliotecas são utilizadas para funcionalidades da aplicação:
 
-- **framer-motion**: Animações avançadas para os componentes.
-- **html-react-parser**: Parse de HTML dinâmico para elementos React.
-- **motion**: Integração de animações.
-- **react** e **react-dom**: Core da biblioteca React.
+- **@portabletext/react, @sanity/client, @sanity/image-url**: Integração com Sanity.io para gerenciamento de conteúdo dinâmico.
+- **@tanstack/react-query**: Gerenciamento de cache e requisições assíncronas.
+- **framer-motion**: Animação de Componentes - usado no quadro de horários na seção horário de funcionamento.
 - **react-device-detect**: Identificação de dispositivos e orientação.
 - **react-slick** e **slick-carousel**: Galerias e sliders estilizados.
 

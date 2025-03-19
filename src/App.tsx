@@ -20,13 +20,12 @@ import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 import Footer from './components/Footer/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
 
-// Substitua pelo seu ID do Google Analytics (Formato: G-XXXXXXXXXX)
 const GA_ID = 'G-3FF6SN0BX5';
 
 function App() {
   useEffect(() => {
     ReactGA.initialize(GA_ID);
-    ReactGA.send('pageview'); // Registra a visualização da página
+    ReactGA.send('pageview');
   }, []);
 
   return (

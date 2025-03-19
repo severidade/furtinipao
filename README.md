@@ -45,28 +45,33 @@ As ferramentas utilizadas no ambiente de desenvolvimento são:
 ```plaintext
 src/
 ├── components/
+│   ├──Breads
+│   ├── ButtonTemplate
+│   ├── CallUber
 │   ├── FixedWhatsAppButton/
 │   ├── Footer/
 │   ├── Heder/
 │   ├── HeroImage/
-│   ├── HeroWelcome/
 │   ├── HighlightGallery/
-│   └── OrientationDetectorDevice/
+│   ├── HighlightGaleriaBreads
+│   ├── HighlightGalleryAddress
+│   ├── LoadingSpinner
+│   ├── OrientationDetectorDevice/
+│   └── VideoBg
 ├── sections/
 │   ├── SectionAddress/
 │   ├── SectionBreads/
+│   ├── SectionHero/
+│   ├── SectionHighlightGallery
 │   ├── SectionLunch/
 │   ├── SectionOpeningHours/
 │   └── SectionTemplate/
 ├── data/
-│   ├── BreadsData.tsx
-│   ├── EventsData.tsx
-│   ├── HighlightGalleryData.tsx
-│   ├── HistoryData.tsx
-│   ├── LunchData.tsx
-│   └── SectionAddressData.tsx
+│   ├── OpeningHoursData.tsx
 ├── CSS/
 │   ├── App.css
+│   ├── index.css
+│   ├── reset.css
 │   ├── Halogenfonts.css
 │   └── Macklinfonts.css
 ├── App.tsx
@@ -75,7 +80,7 @@ src/
 
 ---
 
-## Componentes Principais
+## Componentes de destaque
 
 ### **Heder**
 - Componente responsável pelo cabeçalho da aplicação.
@@ -92,13 +97,14 @@ src/
 ### **FixedWhatsAppButton**
 - Botão fixo que redireciona ao WhatsApp da cafeteria.
 
-### **Footer**
-- Contém informações de rodapé, como links e direitos autorais.
+### **CallUber**
+- Desenvolvi um botão de chamada para o Uber que facilita a navegação dos usuários até um destino específico. Ele tenta abrir diretamente o app do Uber nos dispositivos móveis e, caso não esteja instalado, redireciona automaticamente para a versão web do serviço. Essa abordagem melhora a experiência do usuário, garantindo que a funcionalidade esteja acessível independentemente da plataforma utilizada.
+
+### **VideoBg**
+- Este componente foi desenvolvido para exibir um vídeo de fundo de forma dinâmica, utilizando dados do Sanity.io ou valores padrão. Ele implementa um mecanismo para tentar a reprodução automática do vídeo e, caso isso não seja permitido pelo navegador (especialmente no iOS), um evento de touchstart é adicionado para iniciar a reprodução na primeira interação do usuário.
 
 ### **OrientationDetectorDevice**
-- Detecta orientação e tipo de dispositivo do usuário.
-- Baseado na biblioteca "react-device-detect".
-
+Desenvolvi a função ```useDeviceInfo```, que inicialmente retornava apenas a largura do dispositivo e um booleano indicando se era um mobile com base no tamanho da tela. O problema era que, com essa abordagem, qualquer dispositivo com menos de 1024px de largura era considerado móvel. Agora, implementei uma melhoria utilizando ```react-device-detect```, aplicando uma dupla verificação para garantir que apenas dispositivos móveis reais sejam identificados, evitando falsos positivos em navegadores desktop redimensionados. Além disso, bloqueio o scroll enquanto o dispositivo está na horizontal, garantindo que a interface permaneça no mesmo ponto ao voltar para a posição vertical.
 ---
 
 ## Seções

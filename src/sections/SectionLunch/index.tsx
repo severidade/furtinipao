@@ -3,6 +3,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { LunchType } from '../../types/PageDataType.tsx';
 import styles from './Lunch.module.css';
+import img from './img/cafeamesa.png';
+import icone_cafe from './img/xicara.png';
+import icone_pao from './img/pao.png';
 
 interface SectionLunchProps {
   id: string;
@@ -23,11 +26,22 @@ function Figure({ figure }: { figure?: { url: string; altText?: string } }) {
   );
 }
 
-function Header({ header }: { header: { title: string; subtitle?: string; figure?: { url: string; altText?: string } } }) {
+function Header({
+  header,
+}: {
+  header: {
+    title: string;
+    subtitle?: string;
+    figure?: { url: string; altText?: string };
+  };
+}) {
   return (
     <section className={styles.header_lunch}>
       <h2 className={styles.header_lunch_title}>{header.title}</h2>
-      {header.figure && <Figure figure={header.figure} />}
+      {/* {header.figure && <Figure figure={header.figure} />} */}
+      <figure className={styles.header_lunch_dish_photo}>
+        <img src={img} alt="imagem temporaria" loading="lazy" />
+      </figure>
       <h3 className={styles.header_lunch_hours}>{header.subtitle}</h3>
     </section>
   );
@@ -36,22 +50,49 @@ function Header({ header }: { header: { title: string; subtitle?: string; figure
 function Content({ content }: { content: string }) {
   return (
     <section className={styles.lunch_footer}>
-      <p>{content}</p>
+      {/* <p>{content}</p> */}
+      {/* desabilitar pra acessar o conteúdo do saniti  */}
+      <p>No seu momento de pausa, deixe a pressa de lado. Saborei conosco um delicioso café e produtos recém-saídos do forno.</p>
     </section>
   );
 }
 
 export default function Lunch({ id, data }: SectionLunchProps) {
-  const {
-    header,
-    content,
-  } = data[0];
+  const { header, content } = data[0];
 
   return (
     <section id={id} className={styles.container_lunch}>
       <div className={styles.container_lunch_card}>
         {header && <Header header={header} />}
         {content && <Content content={content} />}
+        <div className={styles.features}>
+          <div className={styles.feature_item}>
+            <div className={styles.icon_circle}>
+              <img className={styles.icon_cafe} src={icone_cafe} alt="" />
+            </div>
+
+            <span>
+              Cafés
+              <br />
+              Especiais
+            </span>
+          </div>
+
+          <div className={styles.divider} />
+
+          <div className={styles.feature_item}>
+            <div className={styles.icon_circle}>
+              <img className={styles.icon_pao} src={icone_pao} alt="" />
+            </div>
+
+            <span>
+              Produtos
+              <br />
+              Fresquinhos
+            </span>
+          </div>
+
+        </div>
       </div>
     </section>
   );

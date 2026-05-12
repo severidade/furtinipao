@@ -82,23 +82,11 @@ src/
 
 ## Componentes de destaque
 
-### **Heder**
-- Componente responsável pelo cabeçalho da aplicação.
-- Inclui logotipo e navegação.
-
-### **HeroImage** e **HeroWelcome**
-- Composição da seção hero.
-- Exibe uma imagem principal e uma mensagem de boas-vindas.
-
-### **HighlightGallery**
-- Galeria com itens destacados, recebendo dados via props.
-- Baseada em "react-slick" para sliders.
-
-### **FixedWhatsAppButton**
-- Botão fixo que redireciona ao WhatsApp da cafeteria.
-
 ### **CallUber**
 - Desenvolvi um botão de chamada para o Uber que facilita a navegação dos usuários até um destino específico. Ele tenta abrir diretamente o app do Uber nos dispositivos móveis e, caso não esteja instalado, redireciona automaticamente para a versão web do serviço. Essa abordagem melhora a experiência do usuário, garantindo que a funcionalidade esteja acessível independentemente da plataforma utilizada.
+
+### **ButtonTemplate**
+- Este componente rederiza um botão CTA. Os dados fornecidos ao componente ```ButtonTemplate``` são configurados pelo usuário através do Sanity. O usuário pode definir o número de telefone (phoneNumber), o título do botão (buttonTitle), a mensagem pré-configurada (message) e o modelo de estilo (model) diretamente na interface de gerenciamento de conteúdo. 
 
 ### **VideoBg**
 - Este componente foi desenvolvido para exibir um vídeo de fundo de forma dinâmica, utilizando dados do Sanity.io ou valores padrão. Ele implementa um mecanismo para tentar a reprodução automática do vídeo e, caso isso não seja permitido pelo navegador (especialmente no iOS), um evento de touchstart é adicionado para iniciar a reprodução na primeira interação do usuário.
@@ -111,13 +99,13 @@ Desenvolvi a função ```useDeviceInfo```, que inicialmente retornava apenas a l
 
 ### **SectionBreads**
 - Exibe os produtos de panificação da cafeteria.
-- Dados fornecidos via arquivo estático `BreadsData.tsx`.
+- Botão para fazer pedidos de pães
 
 ### **SectionAddress**
-- Exibe o endereço da cafeteria, com dados carregados de `SectionAddressData.tsx`.
+- Exibe o endereço da cafeteria e contém o botão para chamar o Uber.
 
 ### **SectionLunch**
-- Exibe os pratos do almoço, utilizando dados do arquivo `LunchData.tsx`.
+- Comunica horário de funcionamento do espaço para para o almoço. 
 
 ### **SectionOpeningHours**
 - Informa os horários de funcionamento.
@@ -131,13 +119,7 @@ Desenvolvi a função ```useDeviceInfo```, que inicialmente retornava apenas a l
 ## Dados Estáticos
 
 Os dados atualmente utilizados na aplicação estão localizados na pasta `src/data/` e incluem:
-
-- **HighlightGalleryData.tsx**: Itens destacados para a galeria.
-- **LunchData.tsx**: Cardápio de almoço.
-- **BreadsData.tsx**: Produtos de panificação.
-- **SectionAddressData.tsx**: Endereço da cafeteria.
-- **HistoryData.tsx**: Informações históricas.
-- **EventsData.tsx**: Informações sobre eventos futuros.
+- **OpeningHoursData.tsx**: Retorna dados do horário de funcionamento.
 
 ---
 
@@ -147,11 +129,3 @@ Os dados atualmente utilizados na aplicação estão localizados na pasta `src/d
 - O projeto está configurado para utilizar ESLint com as regras do Airbnb, garantindo a consistência do código.
 
 ---
-
-## Próximos Passos
-
-1. Implementar backend para substituir os dados estáticos.
-2. Melhorar a responsividade para dispositivos móveis.
-3. Otimizar o desempenho de componentes pesados como sliders e galerias.
-
-teste3

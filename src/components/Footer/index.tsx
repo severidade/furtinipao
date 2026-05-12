@@ -70,7 +70,7 @@ export default function Footer() {
             </a>
             <span className={styles.label}>Pedidos</span>
           </li>
-          <li>
+          {/* <li>
             <a
               className={`${styles.tel} link`}
               href="tel:+5531992456878"
@@ -79,7 +79,7 @@ export default function Footer() {
               (31) 99245-6878
             </a>
             <span className={styles.label}>Reservas</span>
-          </li>
+          </li> */}
         </ul>
       </section>
 
@@ -87,10 +87,10 @@ export default function Footer() {
         <h3 className={styles.opening_hours_title}>Atendimento</h3>
 
         <div className={styles.opening_hours_footer}>
-          <div className={styles.opening_hours_footer_info}>Terça a Sexta - 10 às 20h</div>
-          <div className={styles.opening_hours_footer_info}>Sábado - 9 às 20h</div>
-          <div className={styles.opening_hours_footer_info}>Domingo - 9 às 14h</div>
-          <div className={styles.opening_hours_footer_info}>Feriados - 9 às 20h</div>
+          <div className={styles.opening_hours_footer_info}>Quarta a Sexta - 10 às 18h</div>
+          <div className={styles.opening_hours_footer_info}>Sábado - 10 às 14h</div>
+          {/* <div className={styles.opening_hours_footer_info}>Domingo - 9 às 14h</div> */}
+          {/* <div className={styles.opening_hours_footer_info}>Feriados - 9 às 20h</div> */}
         </div>
       </section>
 

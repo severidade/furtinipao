@@ -15,12 +15,12 @@ export default function Header() {
   const sections = useMemo(
     () => [
       { id: 'sectionHeroWelcome', label: 'Home' },
-      { id: 'lunch', label: 'Almoço' },
+      { id: 'lunch', label: 'Cafeteria' },
       { id: 'breads', label: 'Fornadas' },
-      { id: 'sectionAddress', label: 'Localização' },
-      { id: 'openingHours', label: 'Horários' },
+      { id: 'sectionAddress', label: 'Nossa Casa' },
+      { id: 'openingHours', label: 'Funcionamento' },
       { id: 'history', label: 'História' },
-      { id: 'events', label: 'Reservas' },
+      { id: 'events', label: 'Oficinas' },
     ],
     [],
   );
@@ -61,7 +61,10 @@ export default function Header() {
     };
   }, [determineActiveSection]);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string): void => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string,
+  ): void => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
 
@@ -119,13 +122,13 @@ export default function Header() {
       >
         <div className={`${menuOpen ? styles.open : ''}`}>
           {isMobile && (
-          <button
-            className={styles.close_menu}
-            type="button"
-            onClick={toggleMenu}
-          >
-            Fechar
-          </button>
+            <button
+              className={styles.close_menu}
+              type="button"
+              onClick={toggleMenu}
+            >
+              Fechar
+            </button>
           )}
           <ul className={styles.container_menu_itens}>
             {sections.slice(1).map(({ id, label }) => (

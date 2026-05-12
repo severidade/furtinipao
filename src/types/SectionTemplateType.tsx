@@ -3,7 +3,7 @@ import { GallerySliderType } from './GallerySliderType.tsx';
 export type SectionTemplateType = {
   id?: number; // Identificador único da seção
 
-  header: {
+  header?: {
     title: string; // Título da seção
     subtitle?: string; // Subtítulo da seção (opcional)
     figure?: {

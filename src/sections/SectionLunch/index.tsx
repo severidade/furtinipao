@@ -41,7 +41,9 @@ function Header({
         <img src={img} alt="imagem temporaria" loading="lazy" />
       </figure>
       <section className={styles.header_lunch}>
-        <h2 className={styles.header_lunch_title}>{header.title}</h2>
+        {/* <h2 className={styles.header_lunch_title}>{header.title}</h2> */}
+
+        <h2 className={styles.header_lunch_title}>Cafeteria</h2>
         {/* {header.figure && <Figure figure={header.figure} />} */}
         {/* <figure className={styles.header_lunch_dish_photo}>
           <img src={img} alt="imagem temporaria" loading="lazy" />

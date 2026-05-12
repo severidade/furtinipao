@@ -146,8 +146,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid;
-  border-color: #cbad8e5c;
+  /* border: solid; */
+  /* border-color: #cbad8e5c; */
 }
 
 .icon_cafe {

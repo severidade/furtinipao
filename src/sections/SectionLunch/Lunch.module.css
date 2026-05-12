@@ -17,6 +17,12 @@
   /* background: linear-gradient(180deg, var(--areia-light) 0%, #f7e5d4 100%); */
   padding: var(--spacing-medium);
   border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  padding-top: 220px;
+  
+/* esse padding-top é pra empurra o conteudo */
+/* a foto é posicionada absoutametne */
 }
 
 .header_lunch {
@@ -25,6 +31,7 @@
   grid-template-rows: auto auto;
   grid-column-gap:var(--gap);
   grid-row-gap: var(--spacing-small);
+  /* border: solid tomato; */
 }
 
 .header_lunch_title {
@@ -40,20 +47,51 @@
   line-height: 1;
   font-weight:900 ;
   color: var(--brown-darker);
+
+
 }
 
+
+/* fotografia */
 .header_lunch_dish_photo {
-  height: 100%;
+  height: 200px;
   width: 100%;
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
+  position: relative;
+  /* grid-column: 2 / 3;
+  grid-row: 1 / 3; */
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.header_lunch_dish_photo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background: linear-gradient( to bottom, rgba(239, 235, 227, 0) 0%, var(--areia-light) 100% );
 }
 
 .header_lunch_dish_photo img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(10px 10px 15px var(--terracota-darker));
+  display: block;
+  object-fit: cover;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .header_lunch_hours {
@@ -69,6 +107,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-small);
+
+  /* border: solid turquoise; */
 }
 
 
@@ -76,7 +116,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 20px 32px;
+  /* padding: 28px 20px 32px; */
+  gap: 20px;
+  /* border: solid green ; */
+}
+
+.features_destaque {
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: var(--terracota-darker);
+  font-weight: 700;
 }
 
 .feature_item {
@@ -97,8 +146,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 2rem;
+  border: solid;
+  border-color: #cbad8e5c;
 }
 
 .icon_cafe {

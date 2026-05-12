@@ -36,14 +36,19 @@ function Header({
   };
 }) {
   return (
-    <section className={styles.header_lunch}>
-      <h2 className={styles.header_lunch_title}>{header.title}</h2>
-      {/* {header.figure && <Figure figure={header.figure} />} */}
+    <>
       <figure className={styles.header_lunch_dish_photo}>
         <img src={img} alt="imagem temporaria" loading="lazy" />
       </figure>
-      <h3 className={styles.header_lunch_hours}>{header.subtitle}</h3>
-    </section>
+      <section className={styles.header_lunch}>
+        <h2 className={styles.header_lunch_title}>{header.title}</h2>
+        {/* {header.figure && <Figure figure={header.figure} />} */}
+        {/* <figure className={styles.header_lunch_dish_photo}>
+          <img src={img} alt="imagem temporaria" loading="lazy" />
+        </figure> */}
+        {/* <h3 className={styles.header_lunch_hours}>{header.subtitle}</h3> esse texto não esta mais sendo usado */}
+      </section>
+    </>
   );
 }
 
@@ -71,7 +76,7 @@ export default function Lunch({ id, data }: SectionLunchProps) {
               <img className={styles.icon_cafe} src={icone_cafe} alt="" />
             </div>
 
-            <span>
+            <span className={styles.features_destaque}>
               Cafés
               <br />
               Especiais
@@ -85,7 +90,7 @@ export default function Lunch({ id, data }: SectionLunchProps) {
               <img className={styles.icon_pao} src={icone_pao} alt="" />
             </div>
 
-            <span>
+            <span className={styles.features_destaque}>
               Produtos
               <br />
               Fresquinhos

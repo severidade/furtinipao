@@ -50,9 +50,11 @@ export default function SectionAddress({ id, data }: AddressProps) {
   return (
     <section id={id} className={styles.container_address}>
       {gallerySlider && <Gallery gallerySlider={gallerySlider} />}
+
       <Header title={header.title} subtitle={header.subtitle} />
       {content && <Characteristics content={content} />}
       <CallUber />
+
     </section>
   );
 }

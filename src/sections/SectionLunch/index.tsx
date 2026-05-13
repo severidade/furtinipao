@@ -4,8 +4,8 @@
 import { LunchType } from '../../types/PageDataType.tsx';
 import styles from './Lunch.module.css';
 import img from './img/cafeamesa.png';
-import icone_cafe from './img/xicara.png';
-import icone_pao from './img/pao.png';
+import iconeCafe from './img/xicara.png';
+import iconePao from './img/pao.png';
 
 interface SectionLunchProps {
   id: string;
@@ -72,10 +72,12 @@ export default function Lunch({ id, data }: SectionLunchProps) {
       <div className={styles.container_lunch_card}>
         {header && <Header header={header} />}
         {content && <Content content={content} />}
-        <div className={styles.features}>
-          <div className={styles.feature_item}>
-            <div className={styles.icon_circle}>
-              <img className={styles.icon_cafe} src={icone_cafe} alt="" />
+
+        <div className={styles.highlights}>
+
+          <div className={styles.highlight_item}>
+            <div className={styles.highlight_icon_circle}>
+              <img className={styles.icon_cafe} src={iconeCafe} alt="" />
             </div>
 
             <span className={styles.features_destaque}>
@@ -87,9 +89,9 @@ export default function Lunch({ id, data }: SectionLunchProps) {
 
           <div className={styles.divider} />
 
-          <div className={styles.feature_item}>
-            <div className={styles.icon_circle}>
-              <img className={styles.icon_pao} src={icone_pao} alt="" />
+          <div className={styles.highlight_item}>
+            <div className={styles.highlight_icon_circle}>
+              <img className={styles.icon_pao} src={iconePao} alt="" />
             </div>
 
             <span className={styles.features_destaque}>

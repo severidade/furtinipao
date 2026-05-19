@@ -3,7 +3,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { LunchType } from '../../types/PageDataType.tsx';
 import styles from './Lunch.module.css';
-import img from './img/cafeamesa.png';
 import iconeCafe from './img/xicara.png';
 import iconePao from './img/pao.png';
 
@@ -38,21 +37,8 @@ function Header({
   return (
     <>
       {header.figure && <Figure figure={header.figure} />}
-      {/* <figure className={styles.header_lunch_dish_photo}>
-        <img src={img} alt="imagem temporaria" loading="lazy" />
-      </figure> */}
-      {/* <figure className={styles.header_lunch_dish_photo}>
-        <img src={img} alt="imagem temporaria" loading="lazy" />
-      </figure> */}
       <section className={styles.header_lunch}>
         <h2 className={styles.header_lunch_title}>{header.title}</h2>
-
-        {/* <h2 className={styles.header_lunch_title}>Cafeteria</h2> */}
-        {/* {header.figure && <Figure figure={header.figure} />} */}
-        {/* <figure className={styles.header_lunch_dish_photo}>
-          <img src={img} alt="imagem temporaria" loading="lazy" />
-        </figure> */}
-        {/* <h3 className={styles.header_lunch_hours}>{header.subtitle}</h3> esse texto não esta mais sendo usado */}
       </section>
     </>
   );
@@ -62,11 +48,6 @@ function Content({ content }: { content: string }) {
   return (
     <section className={styles.lunch_footer}>
       <p>{content}</p>
-      {/* desabilitar pra acessar o conteúdo do saniti  */}
-      {/* <p>
-        No seu momento de pausa, deixe a pressa de lado. Saborei conosco um
-        delicioso café e produtos recém-saídos do forno.
-      </p> */}
     </section>
   );
 }

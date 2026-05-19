@@ -37,13 +37,17 @@ function Header({
 }) {
   return (
     <>
-      <figure className={styles.header_lunch_dish_photo}>
+      {header.figure && <Figure figure={header.figure} />}
+      {/* <figure className={styles.header_lunch_dish_photo}>
         <img src={img} alt="imagem temporaria" loading="lazy" />
-      </figure>
+      </figure> */}
+      {/* <figure className={styles.header_lunch_dish_photo}>
+        <img src={img} alt="imagem temporaria" loading="lazy" />
+      </figure> */}
       <section className={styles.header_lunch}>
-        {/* <h2 className={styles.header_lunch_title}>{header.title}</h2> */}
+        <h2 className={styles.header_lunch_title}>{header.title}</h2>
 
-        <h2 className={styles.header_lunch_title}>Cafeteria</h2>
+        {/* <h2 className={styles.header_lunch_title}>Cafeteria</h2> */}
         {/* {header.figure && <Figure figure={header.figure} />} */}
         {/* <figure className={styles.header_lunch_dish_photo}>
           <img src={img} alt="imagem temporaria" loading="lazy" />
@@ -57,9 +61,12 @@ function Header({
 function Content({ content }: { content: string }) {
   return (
     <section className={styles.lunch_footer}>
-      {/* <p>{content}</p> */}
+      <p>{content}</p>
       {/* desabilitar pra acessar o conteúdo do saniti  */}
-      <p>No seu momento de pausa, deixe a pressa de lado. Saborei conosco um delicioso café e produtos recém-saídos do forno.</p>
+      {/* <p>
+        No seu momento de pausa, deixe a pressa de lado. Saborei conosco um
+        delicioso café e produtos recém-saídos do forno.
+      </p> */}
     </section>
   );
 }
@@ -74,7 +81,6 @@ export default function Lunch({ id, data }: SectionLunchProps) {
         {content && <Content content={content} />}
 
         <div className={styles.highlights}>
-
           <div className={styles.highlight_item}>
             <div className={styles.highlight_icon_circle}>
               <img className={styles.icon_cafe} src={iconeCafe} alt="" />
@@ -100,7 +106,6 @@ export default function Lunch({ id, data }: SectionLunchProps) {
               Fresquinhos
             </span>
           </div>
-
         </div>
       </div>
     </section>

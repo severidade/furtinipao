@@ -37,7 +37,6 @@ export default function SectionBreads({ id, data }: SectionBreadsProps) {
     callToActionBt,
     gallerySlider,
   } = data[0];
-
   return (
     <section id={id} className="container_breads">
       <Header header={header} />

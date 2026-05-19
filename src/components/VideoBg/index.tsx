@@ -18,7 +18,6 @@ type VideoBgProps = {
 export default function VideoBg({ data }: VideoBgProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Usa os dados recebidos do sanity.io ou os valores padrão
   const media = {
     video: data?.videoUrl || videoSrc,
     poster: data?.poster?.url || posterImage,
@@ -66,6 +65,3 @@ export default function VideoBg({ data }: VideoBgProps) {
     </div>
   );
 }
-
-// eslint-disable-next-line max-len
-// No iOS, especialmente em iPhones, existem restrições para reprodução automática de vídeos. Isso faz parte das medidas da Apple para economizar bateria e dados.

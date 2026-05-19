@@ -1,47 +1,69 @@
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable max-len */
+import { useState, useEffect } from 'react';
 import './CSS/Halogenfonts.css';
 import './CSS/Macklinfonts.css';
-import './App.css';
+import usePageData from './CustomHooks/usePageData.tsx';
 
 import Heder from './components/Heder/index.tsx';
-import HeroImage from './components/HeroImage/index.tsx';
-import HeroWelcome from './components/HeroWelcome/index.tsx';
-import HighlightGallery from './components/HighlightGallery/index.tsx';
+import {
+  SectionHeroWelcome,
+  SectionHighlightGallery,
+  SectionLunch,
+  SectionBreads,
+  SectionAddress,
+  SectionOpeningHours,
+  SectionTemplate,
+} from './sections/index.ts';
+
+import LoadingSpinner from './components/LoadingSpinner/index.tsx';
 import FixedWhatsAppButton from './components/FixedWhatsAppButton/index.tsx';
 import Footer from './components/Footer/index.tsx';
-
-import SectionBreads from './sections/SectionBreads/index.tsx';
-import SectionAddress from './sections/SectionAddress/index.tsx';
-import SectionOpeningHours from './sections/SectionOpeningHours/index.tsx';
-import SectionTemplate from './sections/SectionTemplate/index.tsx';
-
-// Dados que no futuro podem ser o retorno de uma api
-import highlightItems from './data/HighlightGalleryData.tsx';
-import LunchData from './data/LunchData.tsx';
-import BreadsData from './data/BreadsData.tsx';
-import SectionAddressData from './data/SectionAddressData.tsx';
-import HistoryData from './data/HistoryData.tsx';
-import EventsData from './data/EventsData.tsx';
-import SectionLunch from './sections/SectionLunch/index.tsx';
 import OrientationDetectorDevice from './components/OrientationDetectorDevice/index.tsx';
 
 function App() {
+  const { data, isLoading, error } = usePageData();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    if (isLoading) {
+      setProgress(0);
+      const interval = setInterval(() => {
+        setProgress((prev) => (prev < 100 ? prev + 10 : 100));
+      }, 500);
+
+      return () => clearInterval(interval);
+    }
+    return undefined;
+  }, [isLoading]);
+
+  if (isLoading) return <LoadingSpinner progress={progress} />;
+
+  if (error) {
+    return (
+      <div className="container_error">
+        <div className="alert_error">
+          Erro ao carregar dados:
+          {' '}
+          {error.message}
+        </div>
+      </div>
+    );
+  }
+  if (!data) return null;
+
   return (
     <>
       <Heder />
-      <div id="hero" className="container-hero">
-        <HeroImage />
-        <HeroWelcome />
-      </div>
-
-      <HighlightGallery id="highlights" highlightItems={highlightItems} />
-      <SectionLunch id="lunch" dataSection={LunchData} />
-      <SectionBreads id="breads" dataSection={BreadsData} />
-      <SectionAddress id="address" dataSection={SectionAddressData} />
-      <SectionOpeningHours id="opening-hours" />
-      <SectionTemplate id="history" dataSection={HistoryData} />
-      <SectionTemplate id="events" dataSection={EventsData} />
-      <FixedWhatsAppButton />
+      <SectionHeroWelcome id="sectionHeroWelcome" data={data.heroWelcome} />
+      <SectionHighlightGallery id="highlightGallery" data={data.highlightGallery} />
+      <SectionLunch id="lunch" data={data.lunch} />
+      <SectionBreads id="breads" data={data.breads} />
+      <SectionAddress id="sectionAddress" data={data.address} />
+      <SectionOpeningHours id="openingHours" data={data.openingHours} />
+      <SectionTemplate id="history" data={data.history} />
+      <SectionTemplate id="events" data={data.events} />
+      <FixedWhatsAppButton data={data.whatsAppButton} />
       <Footer />
       <OrientationDetectorDevice />
     </>
@@ -49,5 +71,3 @@ function App() {
 }
 
 export default App;
-
-// https://squoosh.app/ comprimir imagens

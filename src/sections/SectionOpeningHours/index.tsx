@@ -9,18 +9,24 @@ import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
 import VideoBg from '../../components/VideoBg/index.tsx';
 
 import OpeningHoursData from '../../data/OpeningHoursData.tsx';
+// import { useFetchOpeningHours } from '../../CustomHooks/useFetchOpeningHours.tsx';
 
-type OpeningHoursProps = {
+import { OpeningHoursType } from '../../types/PageDataType.tsx';
+
+type SectionOpeningHoursProps = {
   id: string;
+  data: OpeningHoursType[];
 }
 
-export default function OpeningHours({ id } : OpeningHoursProps) {
+export default function OpeningHours({ id, data } : SectionOpeningHoursProps) {
   const containerRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [status, setStatus] = useState('');
 
-  const [{ header: { title }, schedule, callToActionBt }] = OpeningHoursData;
+  // const { openingHours, isLoading, error } = useFetchOpeningHours(id);
+
+  const [{ schedule }] = OpeningHoursData;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -48,15 +54,22 @@ export default function OpeningHours({ id } : OpeningHoursProps) {
 
   const animatedX = hasAnimated ? '0%' : x;
 
+  const {
+    header,
+    callToActionBt,
+    videoSection,
+  } = data[0];
+
   return (
     <section id={id} ref={containerRef} className={styles.container_opening_hours}>
-      <VideoBg />
+      {/* <VideoBg /> */}
+      {videoSection && <VideoBg data={videoSection} />}
       <motion.div
         className={styles.opening_hours_card}
         style={{ x: animatedX }}
         transition={{ type: 'spring', stiffness: 70, damping: 20 }}
       >
-        <h2 className={styles.opening_hours_title}>{title}</h2>
+        <h2 className={styles.opening_hours_title}>{header.title}</h2>
         <section
           className={styles.schedule_table}
           aria-live="polite"

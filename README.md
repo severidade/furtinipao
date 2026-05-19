@@ -23,10 +23,9 @@ O projeto **FurtiniPão** é uma aplicação desenvolvida em React com o objetiv
 
 As seguintes bibliotecas são utilizadas para funcionalidades da aplicação:
 
-- **framer-motion**: Animações avançadas para os componentes.
-- **html-react-parser**: Parse de HTML dinâmico para elementos React.
-- **motion**: Integração de animações.
-- **react** e **react-dom**: Core da biblioteca React.
+- **@portabletext/react, @sanity/client, @sanity/image-url**: Integração com Sanity.io para gerenciamento de conteúdo dinâmico.
+- **@tanstack/react-query**: Gerenciamento de cache e requisições assíncronas.
+- **framer-motion**: Animação de Componentes - usado no quadro de horários na seção horário de funcionamento.
 - **react-device-detect**: Identificação de dispositivos e orientação.
 - **react-slick** e **slick-carousel**: Galerias e sliders estilizados.
 
@@ -46,28 +45,33 @@ As ferramentas utilizadas no ambiente de desenvolvimento são:
 ```plaintext
 src/
 ├── components/
+│   ├──Breads
+│   ├── ButtonTemplate
+│   ├── CallUber
 │   ├── FixedWhatsAppButton/
 │   ├── Footer/
 │   ├── Heder/
 │   ├── HeroImage/
-│   ├── HeroWelcome/
 │   ├── HighlightGallery/
-│   └── OrientationDetectorDevice/
+│   ├── HighlightGaleriaBreads
+│   ├── HighlightGalleryAddress
+│   ├── LoadingSpinner
+│   ├── OrientationDetectorDevice/
+│   └── VideoBg
 ├── sections/
 │   ├── SectionAddress/
 │   ├── SectionBreads/
+│   ├── SectionHero/
+│   ├── SectionHighlightGallery
 │   ├── SectionLunch/
 │   ├── SectionOpeningHours/
 │   └── SectionTemplate/
 ├── data/
-│   ├── BreadsData.tsx
-│   ├── EventsData.tsx
-│   ├── HighlightGalleryData.tsx
-│   ├── HistoryData.tsx
-│   ├── LunchData.tsx
-│   └── SectionAddressData.tsx
+│   ├── OpeningHoursData.tsx
 ├── CSS/
 │   ├── App.css
+│   ├── index.css
+│   ├── reset.css
 │   ├── Halogenfonts.css
 │   └── Macklinfonts.css
 ├── App.tsx
@@ -76,43 +80,32 @@ src/
 
 ---
 
-## Componentes Principais
+## Componentes de destaque
 
-### **Heder**
-- Componente responsável pelo cabeçalho da aplicação.
-- Inclui logotipo e navegação.
+### **CallUber**
+- Desenvolvi um botão de chamada para o Uber que facilita a navegação dos usuários até um destino específico. Ele tenta abrir diretamente o app do Uber nos dispositivos móveis e, caso não esteja instalado, redireciona automaticamente para a versão web do serviço. Essa abordagem melhora a experiência do usuário, garantindo que a funcionalidade esteja acessível independentemente da plataforma utilizada.
 
-### **HeroImage** e **HeroWelcome**
-- Composição da seção hero.
-- Exibe uma imagem principal e uma mensagem de boas-vindas.
+### **ButtonTemplate**
+- Este componente rederiza um botão CTA. Os dados fornecidos ao componente ```ButtonTemplate``` são configurados pelo usuário através do Sanity. O usuário pode definir o número de telefone (phoneNumber), o título do botão (buttonTitle), a mensagem pré-configurada (message) e o modelo de estilo (model) diretamente na interface de gerenciamento de conteúdo. 
 
-### **HighlightGallery**
-- Galeria com itens destacados, recebendo dados via props.
-- Baseada em "react-slick" para sliders.
-
-### **FixedWhatsAppButton**
-- Botão fixo que redireciona ao WhatsApp da cafeteria.
-
-### **Footer**
-- Contém informações de rodapé, como links e direitos autorais.
+### **VideoBg**
+- Este componente foi desenvolvido para exibir um vídeo de fundo de forma dinâmica, utilizando dados do Sanity.io ou valores padrão. Ele implementa um mecanismo para tentar a reprodução automática do vídeo e, caso isso não seja permitido pelo navegador (especialmente no iOS), um evento de touchstart é adicionado para iniciar a reprodução na primeira interação do usuário.
 
 ### **OrientationDetectorDevice**
-- Detecta orientação e tipo de dispositivo do usuário.
-- Baseado na biblioteca "react-device-detect".
-
+Desenvolvi a função ```useDeviceInfo```, que inicialmente retornava apenas a largura do dispositivo e um booleano indicando se era um mobile com base no tamanho da tela. O problema era que, com essa abordagem, qualquer dispositivo com menos de 1024px de largura era considerado móvel. Agora, implementei uma melhoria utilizando ```react-device-detect```, aplicando uma dupla verificação para garantir que apenas dispositivos móveis reais sejam identificados, evitando falsos positivos em navegadores desktop redimensionados. Além disso, bloqueio o scroll enquanto o dispositivo está na horizontal, garantindo que a interface permaneça no mesmo ponto ao voltar para a posição vertical.
 ---
 
 ## Seções
 
 ### **SectionBreads**
 - Exibe os produtos de panificação da cafeteria.
-- Dados fornecidos via arquivo estático `BreadsData.tsx`.
+- Botão para fazer pedidos de pães
 
 ### **SectionAddress**
-- Exibe o endereço da cafeteria, com dados carregados de `SectionAddressData.tsx`.
+- Exibe o endereço da cafeteria e contém o botão para chamar o Uber.
 
 ### **SectionLunch**
-- Exibe os pratos do almoço, utilizando dados do arquivo `LunchData.tsx`.
+- Comunica horário de funcionamento do espaço para para o almoço. 
 
 ### **SectionOpeningHours**
 - Informa os horários de funcionamento.
@@ -126,13 +119,7 @@ src/
 ## Dados Estáticos
 
 Os dados atualmente utilizados na aplicação estão localizados na pasta `src/data/` e incluem:
-
-- **HighlightGalleryData.tsx**: Itens destacados para a galeria.
-- **LunchData.tsx**: Cardápio de almoço.
-- **BreadsData.tsx**: Produtos de panificação.
-- **SectionAddressData.tsx**: Endereço da cafeteria.
-- **HistoryData.tsx**: Informações históricas.
-- **EventsData.tsx**: Informações sobre eventos futuros.
+- **OpeningHoursData.tsx**: Retorna dados do horário de funcionamento.
 
 ---
 
@@ -142,10 +129,3 @@ Os dados atualmente utilizados na aplicação estão localizados na pasta `src/d
 - O projeto está configurado para utilizar ESLint com as regras do Airbnb, garantindo a consistência do código.
 
 ---
-
-## Próximos Passos
-
-1. Implementar backend para substituir os dados estáticos.
-2. Melhorar a responsividade para dispositivos móveis.
-3. Otimizar o desempenho de componentes pesados como sliders e galerias.
-

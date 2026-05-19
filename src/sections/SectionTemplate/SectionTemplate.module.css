@@ -12,7 +12,9 @@
 
 .container_img{
   height: calc(100vw - 4rem);
-  background-color: var(--areia-dark);
+  /* background: var(--areia-dark); */
+  background: var(--areia-dark) url(./assets/camera.svg) no-repeat center;
+  background-size: 4rem;
   overflow: hidden;
 }
 
@@ -59,6 +61,10 @@
   padding-top: var(--spacing-medium);
 }
 
+.content {
+  display: block;
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 50vw;
@@ -68,7 +74,8 @@
 
   .container_img {
     width: 100%;
-    height: 30vh;
+    /* height: 30vh; */
+    height: calc(30vw - 6rem);
     object-fit: cover;
   }
 }

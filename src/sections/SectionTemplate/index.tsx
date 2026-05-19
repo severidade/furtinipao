@@ -1,23 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
-import parse from 'html-react-parser';
 import styles from './SectionTemplate.module.css';
-import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
 import ButtonTemplate from '../../components/ButtonTemplate/index.tsx';
+import { SectionTemplateType, Figure as FigureType, Header as HeaderType } from '../../types/PageDataType.tsx';
 
 type SectionTemplateProps = {
   id: string;
-  dataSection: SectionTemplateType[];
-}
+  data: SectionTemplateType[]
+};
 
-function Figure({ figure }: { figure: { url: string, altText?: string } }) {
-  const altText = figure.altText || 'Imagem destacada'; // Como não é obrigatório coloco um texto
+function Figure({ figure }: { figure: FigureType}) {
+  const altText = figure.altText || 'Imagem destacada';
   return (
     <figure className={styles.container_img}>
       <img
-        src={figure.url}
-        alt={altText}
+        src={figure.url ?? undefined}
+        alt={altText || '📷 - Imagem sem descrição'}
         loading="lazy"
         className="highlight_image"
       />
@@ -25,7 +24,7 @@ function Figure({ figure }: { figure: { url: string, altText?: string } }) {
   );
 }
 
-function Header({ header }: { header: { title: string; subtitle?: string } }) {
+function Header({ header }: { header: HeaderType }) {
   return (
     <section className={styles.header}>
       <h2 className={styles.header_title}>{header.title}</h2>
@@ -35,24 +34,21 @@ function Header({ header }: { header: { title: string; subtitle?: string } }) {
 }
 
 function Content({ content }: { content: string }) {
+  if (!content) return null;
+
   return (
     <section className={styles.container_content}>
       <p className={styles.content}>
-        {parse(content)}
+        {content}
       </p>
     </section>
   );
 }
 
-export default function SectionTemplate({ id, dataSection }: SectionTemplateProps) {
-  if (!dataSection.length) return null; // evita renderização caso seja vazio
-
+export default function SectionTemplate({ id, data }: SectionTemplateProps) {
   const {
-    header,
-    figure,
-    content,
-    callToActionBt,
-  } = dataSection[0];
+    header, figure, content, callToActionBt,
+  } = data[0];
 
   return (
     <section id={id} className={styles.container}>

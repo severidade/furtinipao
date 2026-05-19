@@ -1,18 +1,23 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
-import styles from './SectionAddress.module.css';
-import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+import { PortableText } from '@portabletext/react';
+import { getPortableTextComponents } from '../../utils/getPortableTextComponents.tsx';
 import HighlightGalleryAddress from '../../components/HighlightGalleryAddress/index.tsx';
 import CallUber from '../../components/CallUber/index.tsx';
+import styles from './SectionAddress.module.css';
+
+import { AddressType } from '../../types/PageDataType.tsx';
 
 type AddressProps = {
   id: string;
-  dataSection: SectionTemplateType[];
+  data: AddressType[];
 };
 
+const portableTextComponents = getPortableTextComponents();
+
 // Subcomponente para o título e subtítulo
-function Header({ title, subtitle }: { title: string; subtitle?: string }) {
+function Header({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <section className={styles.header_address}>
       <h2 className={styles.header_address_title}>{title}</h2>
@@ -22,14 +27,10 @@ function Header({ title, subtitle }: { title: string; subtitle?: string }) {
 }
 
 // Subcomponente para as características
-function Characteristics({ characteristics }: { characteristics: { id: string; value: string }[] }) {
+function Characteristics({ content }: { content: any[] }) {
   return (
     <section className={styles.accessibility_info}>
-      {characteristics.map((item) => (
-        <div key={item.id} className={styles.characteristics}>
-          {item.value}
-        </div>
-      ))}
+      <PortableText value={content} components={portableTextComponents} />
     </section>
   );
 }
@@ -39,19 +40,21 @@ function Gallery({ gallerySlider }: { gallerySlider: any[] }) {
   return <HighlightGalleryAddress highlightItems={gallerySlider} />;
 }
 
-export default function SectionAddress({ id, dataSection }: AddressProps) {
+export default function SectionAddress({ id, data }: AddressProps) {
   const {
-    header: { title, subtitle },
-    characteristics,
+    header,
     gallerySlider,
-  } = dataSection[0];
+    content,
+  } = data[0];
 
   return (
     <section id={id} className={styles.container_address}>
       {gallerySlider && <Gallery gallerySlider={gallerySlider} />}
-      <Header title={title} subtitle={subtitle} />
-      {characteristics && <Characteristics characteristics={characteristics} />}
+
+      <Header title={header.title} subtitle={header.subtitle} />
+      {content && <Characteristics content={content} />}
       <CallUber />
+
     </section>
   );
 }

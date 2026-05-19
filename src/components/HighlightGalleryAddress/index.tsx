@@ -26,10 +26,11 @@ export default function HighlightGalleryAddress({ highlightItems } : {highlightI
     >
       <Slider {...settings}>
         {highlightItems.map((i) => (
-          <figure key={i.id} className="slider">
+          <figure key={i.image._id} className="slider">
             <img
-              src={i.image}
-              alt={i.altText}
+              src={i.image.url}
+              // alt={i.image.altText}
+              alt={i.image.altText || '📷 - Imagem sem descrição'}
               className="highlight_image"
             />
           </figure>

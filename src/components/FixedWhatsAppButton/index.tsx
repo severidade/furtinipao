@@ -1,9 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
+// import { data } from 'framer-motion/client';
+// import { useFetchWhatsAppButton } from '../../CustomHooks/useFetchWhatsAppButton.tsx';
+
 import styles from './FixedWhatsAppButton.module.css';
 
-export default function FixedWhatsAppButton() {
-  const phoneNumber = '5531992456878';
-  const message = 'Olá! Gostaria de fazer uma reserva.';
+import { WhatsAppButtonType } from '../../types/PageDataType.tsx';
+
+type FixedWhatsAppButtonProps ={
+  data : WhatsAppButtonType[],
+}
+
+export default function FixedWhatsAppButton({ data } : FixedWhatsAppButtonProps) {
+  const { phoneNumber, message } = data[0];
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -12,7 +20,7 @@ export default function FixedWhatsAppButton() {
       className={styles.WhatsAppReserve_fixed}
       onClick={() => window.open(whatsappLink, '_blank')}
     >
-      Reservar pelo WhatsApp
+      WhatsApp
     </button>
   );
 }

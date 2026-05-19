@@ -51,7 +51,7 @@
 
 }
 
-.address_details, .characteristics{
+.address_details, .characteristics {
   font-family: 'MacklinText';
   font-size: var(--font-size-small);
   color: var(--brown-darker);
@@ -65,14 +65,21 @@
   padding-top: var(--gap);
 }
 
-.characteristics { 
+.accessibility_info li { 
   padding-left: 5rem;
   position: relative;
   font-size: 1.6rem;
   line-height: 1.6;
+  font-family: 'MacklinText';
+  font-weight: 500;
+  color: var(--brown-darker);
+  line-height: 1.6;
+  width: 60ch;
+  max-width: 100%;
+  /* background-color: tomato; */
 }
 
-.characteristics::before{
+.accessibility_info li::before{
   content: "";
   position: absolute;
   left: 34px;

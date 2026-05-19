@@ -1,16 +1,18 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
+import { LunchType } from '../../types/PageDataType.tsx';
 import styles from './Lunch.module.css';
-import { SectionTemplateType } from '../../types/SectionTemplateType.tsx';
+import iconeCafe from './img/xicara.png';
+import iconePao from './img/pao.png';
 
-type LunchProps = {
+interface SectionLunchProps {
   id: string;
-  dataSection: SectionTemplateType[];
-};
+  data: LunchType[];
+}
 
-function Figure({ figure = undefined }: { figure?: { url: string; altText?: string } }) {
-  if (!figure) return null;
+function Figure({ figure }: { figure?: { url: string; altText?: string } }) {
+  if (!figure?.url) return null; // Se não houver `url`, retorna `null`
 
   return (
     <figure className={styles.header_lunch_dish_photo}>
@@ -23,13 +25,22 @@ function Figure({ figure = undefined }: { figure?: { url: string; altText?: stri
   );
 }
 
-function Header({ header }: { header: { title: string; subtitle?: string; figure?: { url: string; altText?: string } } }) {
+function Header({
+  header,
+}: {
+  header: {
+    title: string;
+    subtitle?: string;
+    figure?: { url: string; altText?: string };
+  };
+}) {
   return (
-    <section className={styles.header_lunch}>
-      <h2 className={styles.header_lunch_title}>{header.title}</h2>
+    <>
       {header.figure && <Figure figure={header.figure} />}
-      <h3 className={styles.header_lunch_hours}>{header.subtitle}</h3>
-    </section>
+      <section className={styles.header_lunch}>
+        <h2 className={styles.header_lunch_title}>{header.title}</h2>
+      </section>
+    </>
   );
 }
 
@@ -41,16 +52,42 @@ function Content({ content }: { content: string }) {
   );
 }
 
-export default function Lunch({ id, dataSection }: LunchProps) {
-  if (!dataSection.length) return null;
-
-  const { header, content } = dataSection[0];
+export default function Lunch({ id, data }: SectionLunchProps) {
+  const { header, content } = data[0];
 
   return (
     <section id={id} className={styles.container_lunch}>
       <div className={styles.container_lunch_card}>
         {header && <Header header={header} />}
         {content && <Content content={content} />}
+
+        <div className={styles.highlights}>
+          <div className={styles.highlight_item}>
+            <div className={styles.highlight_icon_circle}>
+              <img className={styles.icon_cafe} src={iconeCafe} alt="" />
+            </div>
+
+            <span className={styles.features_destaque}>
+              Cafés
+              <br />
+              Especiais
+            </span>
+          </div>
+
+          <div className={styles.divider} />
+
+          <div className={styles.highlight_item}>
+            <div className={styles.highlight_icon_circle}>
+              <img className={styles.icon_pao} src={iconePao} alt="" />
+            </div>
+
+            <span className={styles.features_destaque}>
+              Produtos
+              <br />
+              Fresquinhos
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

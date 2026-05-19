@@ -17,6 +17,12 @@
   /* background: linear-gradient(180deg, var(--areia-light) 0%, #f7e5d4 100%); */
   padding: var(--spacing-medium);
   border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  padding-top: 220px;
+  
+/* esse padding-top é pra empurra o conteudo */
+/* a foto é posicionada absoutametne */
 }
 
 .header_lunch {
@@ -25,11 +31,12 @@
   grid-template-rows: auto auto;
   grid-column-gap:var(--gap);
   grid-row-gap: var(--spacing-small);
+  /* border: solid tomato; */
 }
 
 .header_lunch_title {
   grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-row: 1 / 3;
 
   display: flex;
   flex-direction: column;
@@ -40,26 +47,54 @@
   line-height: 1;
   font-weight:900 ;
   color: var(--brown-darker);
+
+
 }
 
+
+/* fotografia */
 .header_lunch_dish_photo {
-  height: 100%;
+  height: 200px;
   width: 100%;
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
+  position: relative;
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.header_lunch_dish_photo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background: linear-gradient( to bottom, rgba(239, 235, 227, 0) 0%, var(--areia-light) 100% );
 }
 
 .header_lunch_dish_photo img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(10px 10px 15px var(--terracota-darker));
+  display: block;
+  object-fit: cover;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .header_lunch_hours {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-
   font-family: 'Halogen';
   font-size: var(--font-size-medium);
   color: var(--brown-darker);
@@ -70,8 +105,52 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-small);
+
+  /* border: solid turquoise; */
 }
 
+/*seção destaques */
+.highlights {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  /* border: solid green ; */
+}
+
+.highlight_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.features_destaque {
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: var(--terracota-darker);
+  font-weight: 700;
+}
+
+
+
+.highlight_icon_circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: solid;
+  border-color: #cbad8e5c; */
+}
+
+.icon_cafe { width: 50%; height: 50%;}
+.icon_pao { width: 60%; height: 60%;}
+.divider { width: 1px; height: 120px; background: var(--brown-darker);}
 
 @media (min-width: 1024px) {
   .container_lunch{
@@ -81,7 +160,47 @@
   }
 
   .header_lunch_dish_photo {
-    height: 15rem;
-    width: 15rem;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+  }
+
+  .container_lunch_card{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-large);
+    background: var(--areia-light);
+    padding-top: 20px;
+    padding-right: 60%;
+  }
+
+  .header_lunch_dish_photo img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 25%
+    );
+  
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 25%
+    );
+  }
+
+  .header_lunch_dish_photo::after {
+    content: '';
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 300px;
+    background: linear-gradient( to left, rgba(239, 235, 227, 0) 0%, var(--areia-light) 100% );
   }
 }

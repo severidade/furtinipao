@@ -14,13 +14,13 @@ export default function Header() {
   // Para atualizar menu basta alterar esse Array
   const sections = useMemo(
     () => [
-      { id: 'hero', label: 'Home' },
-      { id: 'lunch', label: 'Almoço' },
+      { id: 'sectionHeroWelcome', label: 'Home' },
+      { id: 'lunch', label: 'Cafeteria' },
       { id: 'breads', label: 'Fornadas' },
-      { id: 'address', label: 'Localização' },
-      { id: 'opening-hours', label: 'Horários' },
+      { id: 'sectionAddress', label: 'Nossa Casa' },
+      { id: 'openingHours', label: 'Funcionamento' },
       { id: 'history', label: 'História' },
-      { id: 'events', label: 'Eventos' },
+      { id: 'events', label: 'Oficinas' },
     ],
     [],
   );
@@ -61,7 +61,10 @@ export default function Header() {
     };
   }, [determineActiveSection]);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string): void => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string,
+  ): void => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
 
@@ -98,8 +101,8 @@ export default function Header() {
       <div className={styles.nav_header}>
         <a
           className={styles.logo}
-          href="#hero"
-          onClick={(e) => handleClick(e, 'hero')}
+          href="#sectionHeroWelcome"
+          onClick={(e) => handleClick(e, 'sectionHeroWelcome')}
         >
           Frutini padaria e confeitaria
         </a>
@@ -117,19 +120,30 @@ export default function Header() {
       <div
         className={`${isMobile ? styles.container_sidebar_mobile : styles.container_sidebar_desktop}`}
       >
-        <ul className={`${menuOpen ? styles.open : ''}`}>
-          {sections.slice(1).map(({ id, label }) => (
-            <li key={id}>
-              <a
-                className={`${styles.menu_item} ${activeSection === id ? styles.active : ''}`}
-                href={`#${id}`}
-                onClick={(e) => handleClick(e, id)}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className={`${menuOpen ? styles.open : ''}`}>
+          {isMobile && (
+            <button
+              className={styles.close_menu}
+              type="button"
+              onClick={toggleMenu}
+            >
+              Fechar
+            </button>
+          )}
+          <ul className={styles.container_menu_itens}>
+            {sections.slice(1).map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  className={`${styles.menu_item} ${activeSection === id ? styles.active : ''}`}
+                  href={`#${id}`}
+                  onClick={(e) => handleClick(e, id)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

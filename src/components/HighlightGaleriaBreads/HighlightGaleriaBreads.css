@@ -28,6 +28,19 @@
   border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 }
 
+.slider_breads .carregando.slider::after {
+  content: "";
+  background: url(./assets/pao_animado.svg) no-repeat center;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
 /* ok */
 .bread_highlight_image {
   width: 100%;

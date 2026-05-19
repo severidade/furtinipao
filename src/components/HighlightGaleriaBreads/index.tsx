@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
 /* eslint-disable react/react-in-jsx-scope */
+import { useState } from 'react';
 import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
@@ -39,16 +40,30 @@ export default function HighlightGaleriaBreads({ gallerySlider }: HighlightGaler
     ],
   };
 
+  // cria um estado para armazenar o carregamento de cada imagem
+  const [loadingStates, setLoadingStates] = useState(
+    gallerySlider.map(() => true), // Inicializa todas as imagens como "carregando"
+  );
+
+  const handleImageLoad = (index: number) => {
+    setLoadingStates((prev) => {
+      const newLoadingStates = [...prev];
+      newLoadingStates[index] = false; // Define o índice como carregado
+      return newLoadingStates;
+    });
+  };
+
   return (
     <div className="slider_breads">
       <Slider {...settings}>
-        {gallerySlider && gallerySlider.map((i) => (
-          <div key={i.id}>
-            <figure className="slider">
+        {gallerySlider.map((i, index) => (
+          <div key={i.breadName}>
+            <figure className={`slider ${loadingStates[index] ? 'carregando' : ''}`}>
               <img
-                src={i.image}
-                alt={i.altText}
+                src={i.image.url}
+                alt={i.image.altText}
                 className="bread_highlight_image"
+                onLoad={() => handleImageLoad(index)}
               />
             </figure>
             <h3 className="slider_title">{i.breadName}</h3>

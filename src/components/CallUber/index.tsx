@@ -1,12 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/react-in-jsx-scope */
+
 import styles from './CallUber.module.css';
 
 export default function CallUber() {
   // Defina as coordenadas do destino
-  const destinationLatitude = -19.94255881205757;
-  const destinationLongitude = -43.94252626406074;
+  const destinationLatitude = -19.936275969690357;
+  const destinationLongitude = -43.93732732106828;
 
   // Construa o deep link para o Uber (web)
   const deepLinking = `https://m.uber.com/ul/?client_id=x-1pDA1HL7fNOYu0xmShIx5zVKDXSZFS&action=setPickup&pickup=my_location&dropoff[latitude]=${destinationLatitude}&dropoff[longitude]=${destinationLongitude}`;

@@ -3,16 +3,17 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import './HighlightGallery.css';
-import { GallerySliderType } from '../../types/GallerySliderType.tsx';
+import './SectionHighlightGallery.css';
+
+import { HighlightGalleryType } from '../../types/PageDataType.tsx';
 
 type HighlightGalleryProps = {
   id: string;
-  highlightItems: { gallerySlider: GallerySliderType[] }[];
+  data: HighlightGalleryType[];
 };
 
 // eslint-disable-next-line max-len
-export default function HighlightGallery({ id, highlightItems } : HighlightGalleryProps) {
+export default function SectionHighlightGallery({ id, data } : HighlightGalleryProps) {
   const settings = {
     dots: false,
     infinite: false,
@@ -45,15 +46,15 @@ export default function HighlightGallery({ id, highlightItems } : HighlightGalle
       className="container_highlight"
     >
       <Slider {...settings}>
-        {highlightItems[0].gallerySlider.map((item) => (
-          <figure key={item.id} className="slider">
+        {data[0]?.gallerySlider?.map((item) => (
+          <figure key={item._id} className="slider">
             <img
-              src={item.image}
-              alt={item.altText}
+              src={item.url} // Acesso direto à propriedade 'url'
+              alt={item.altText || '📷 - Imagem sem descrição'} // Acesso direto à propriedade 'altText'
               className="highlight_image"
             />
           </figure>
-        ))}
+        )) || null}
       </Slider>
     </section>
   );

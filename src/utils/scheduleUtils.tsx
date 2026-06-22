@@ -17,6 +17,7 @@ export const operatingHoursByDay: OperatingHoursByDay = {
   3: { open: 10, close: 18 }, // Quarta
   4: { open: 10, close: 18 }, // Quinta
   5: { open: 10, close: 18 }, // Sexta
+
   6: false, // Sábado
 };
 

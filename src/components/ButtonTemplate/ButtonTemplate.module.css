@@ -46,6 +46,6 @@
     transform: translateX(-50%);
     width: calc(100% - 10vw);
     height: 5.6rem;
-    padding: 0 5vw;
+    padding: 0 2vw;
   }
 }

@@ -18,6 +18,7 @@ export interface OperatingHoursByDay {
 //   4: { open: 10, close: 21 }, // Quinta
 //   5: { open: 10, close: 21 }, // Sexta
 //   6: { open: 9, close: 20 }, // Sábado
+
 // };
 export const operatingHoursByDay: OperatingHoursByDay = {
   0: false, // Domingo

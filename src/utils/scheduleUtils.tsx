@@ -10,23 +10,14 @@ export interface OperatingHoursByDay {
   [key: number]: OperatingHours | false;
 }
 
-// export const operatingHoursByDay: OperatingHoursByDay = {
-//   0: { open: 9, close: 14 }, // Domingo
-//   1: false, // Segunda nao funciona
-//   2: { open: 10, close: 21 }, // Terça
-//   3: { open: 10, close: 21 }, // Quarta
-//   4: { open: 10, close: 21 }, // Quinta
-//   5: { open: 10, close: 21 }, // Sexta
-//   6: { open: 9, close: 20 }, // Sábado
-// };
 export const operatingHoursByDay: OperatingHoursByDay = {
   0: false, // Domingo
   1: false, // Segunda
-  2: false, // Terça
+  2: { open: 10, close: 18 }, // Terça
   3: { open: 10, close: 18 }, // Quarta
   4: { open: 10, close: 18 }, // Quinta
   5: { open: 10, close: 18 }, // Sexta
-  6: { open: 10, close: 14 }, // Sábado
+  6: false, // Sábado
 };
 
 interface Holiday {
